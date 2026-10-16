@@ -1,0 +1,74 @@
+{
+  "design_version": "0.1",
+  "status": "manually_labelled_not_executed",
+  "purpose": "Topic retrieval only; relevance labels do not imply eligibility or open registration.",
+  "corpus": {
+    "file": "linked-data.sample.json",
+    "opportunity_ids": ["OPP-DEMO-001", "OPP-DEMO-002", "OPP-DEMO-003", "OPP-DEMO-004"]
+  },
+  "proposed_configuration": {
+    "embedding_model": "BAAI/bge-m3",
+    "model_revision": null,
+    "embedding_mode": "dense",
+    "dimensions": 1024,
+    "device": "cpu",
+    "store": "postgresql_pgvector",
+    "search_mode": "exact",
+    "metric": "cosine",
+    "top_k": 2,
+    "structured_filters": false
+  },
+  "queries": [
+    {
+      "id": "RET-001",
+      "query": "ورشة ترجمة المحتوى التعليمي",
+      "relevant_opportunity_ids": ["OPP-DEMO-001", "OPP-DEMO-002"],
+      "case": "direct_topic"
+    },
+    {
+      "id": "RET-002",
+      "query": "أبغى أتعلم تحسين ترجمة المواد الدراسية ومراجعة المصطلحات",
+      "relevant_opportunity_ids": ["OPP-DEMO-001", "OPP-DEMO-002"],
+      "case": "arabic_rephrasing"
+    },
+    {
+      "id": "RET-003",
+      "query": "إنتاج قصة صوتية قصيرة",
+      "relevant_opportunity_ids": ["OPP-DEMO-003"],
+      "case": "direct_topic"
+    },
+    {
+      "id": "RET-004",
+      "query": "أبي أتعلم كتابة نص وتسجيل مقاطع صوتية لسرد قصة",
+      "relevant_opportunity_ids": ["OPP-DEMO-003"],
+      "case": "arabic_rephrasing"
+    },
+    {
+      "id": "RET-005",
+      "query": "تحليل البيانات باستخدام Excel",
+      "relevant_opportunity_ids": ["OPP-DEMO-004"],
+      "case": "technical_term"
+    },
+    {
+      "id": "RET-006",
+      "query": "أتعلم ترتيب الجداول وقراءة المؤشرات في إكسل",
+      "relevant_opportunity_ids": ["OPP-DEMO-004"],
+      "case": "arabic_technical_rephrasing"
+    },
+    {
+      "id": "RET-007",
+      "query": "ورشة طبخ للمبتدئين",
+      "relevant_opportunity_ids": [],
+      "case": "out_of_sample_topics",
+      "expected_review": "Returned nearest neighbours must not be assumed relevant. Recall is not applicable; assess abstention separately."
+    },
+    {
+      "id": "RET-008",
+      "query": "أبي تدريب على الإسعافات الأولية",
+      "relevant_opportunity_ids": [],
+      "case": "out_of_sample_topics",
+      "expected_review": "No relevant opportunity in this four-opportunity sample; this is not a claim about the full dataset."
+    }
+  ],
+  "results": null
+}

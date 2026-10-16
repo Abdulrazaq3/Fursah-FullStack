@@ -1,0 +1,7 @@
+# Day 4 tracing with Phoenix. Install after requirements.txt:
+#   python -m pip install -r requirements-observability.txt
+arize-phoenix==20.19.0
+arize-phoenix-otel==0.17.1
+openinference-instrumentation-langchain==0.1.78
+openinference-instrumentation-pydantic-ai==0.1.29
+openinference-instrumentation-openai==0.1.63

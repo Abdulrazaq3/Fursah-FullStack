@@ -1,0 +1,14 @@
+.venv/
+.local/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+*.tsbuildinfo
+.pytest_cache/
+.coverage
+/FlagEmbedding/
+results/*.npy

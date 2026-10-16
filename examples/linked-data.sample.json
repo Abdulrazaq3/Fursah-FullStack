@@ -1,0 +1,539 @@
+{
+  "design_version": "0.1",
+  "example_kind": "manually_curated_design_sample",
+  "scope_note": "Only selected facts are modelled for examples 002-004; omitted fields are not declarations of no restriction.",
+  "dataset_origin": "https://github.com/Abdulrazaq3/Day3-Implementation/blob/main/fursah-starter/data/raw/raw_opportunities.csv",
+  "raw_file_sha256": "5401fe1ae22485760821ab0b2c392db72522c283ae6f6e7e4ace9172caf01593",
+  "evaluation_time": "2026-10-18T12:00:00+03:00",
+  "sources": [
+    {
+      "source_id": "SRC-0943",
+      "source_type": "social_post",
+      "source_name": "رواق المسار",
+      "published_at": "2026-10-04T14:24:00+03:00",
+      "content": "للمهتمين، هل يهمك موضوع «الترجمة للمحتوى التعليمي للمجتمع»؟ ينظم رواق المسار جلسة تدريبية عملية. باب المشاركة مفتوح وقت نشر الإعلان. يبدأ البرنامج يوم 24 ديسمبر 2026 وينتهي يوم 7 يناير 2027. هذه فرصة لمن يريد تجربة المجال للمرة الأولى. سيتناول المشاركون مقارنة الصياغات وتحرير المصطلحات، ثم يناقشون أمثلة من واقع مدنهم. المشاركة مجانية. آخر يوم للتقديم 19 أكتوبر 2026. المشاركة عن بعد بالكامل عبر قاعة إلكترونية. للمعلومات: https://fursah-72.example/info"
+    },
+    {
+      "source_id": "SRC-0477",
+      "source_type": "social_post",
+      "source_name": "منصة الشرفة",
+      "published_at": "2026-10-14T15:30:00+03:00",
+      "content": "📌 أهلاً بالجميع؛ لدى منصة الشرفة ورشة عمل بعنوان «الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق». يبدأ البرنامج يوم 3 يناير 2027 وينتهي يوم 5 يناير 2027. المشاركة متاحة للراغبين في استكشاف الموضوع دون تحديد مستوى. سيتناول المشاركون مقارنة الصياغات وتحرير المصطلحات، ثم يناقشون أمثلة من واقع مدنهم. لم تُحدد رسوم المشاركة. المشاركة عن بعد بالكامل عبر قاعة إلكترونية. للمعلومات: https://fursah-150.example/info"
+    },
+    {
+      "source_id": "SRC-0251",
+      "source_type": "group_message",
+      "source_name": "رواق الفضاء",
+      "published_at": "2026-10-06T14:48:00+03:00",
+      "content": "مرحباً جميعاً، أهلاً بالجميع؛ لدى رواق الفضاء جلسة تدريبية عملية بعنوان «إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق». المشاركة عن بعد بالكامل عبر قاعة إلكترونية. رسوم المشاركة 50 ريالاً. تدور الأنشطة حول كتابة النص وتسجيل المقاطع؛ وتتاح فرصة لتجريب الأفكار خلال اللقاء. لم يبدأ التسجيل بعد؛ يفتح يوم 9 أكتوبر 2026. الدعوة موجهة إلى طلاب الجامعة والخريجين المهتمين بالموضوع. يبدأ البرنامج يوم 11 نوفمبر 2026 وينتهي يوم 13 نوفمبر 2026. آخر يوم للتقديم 15 أكتوبر 2026. للمعلومات: https://fursah-864.example/info"
+    },
+    {
+      "source_id": "SRC-0252",
+      "source_type": "email",
+      "source_name": "رواق الفضاء",
+      "published_at": "2026-10-09T15:48:00+03:00",
+      "content": "الموضوع: تفاصيل الفرصة\nالسلام عليكم،\nتذكير من رواق الفضاء بشأن «إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق»، المعلن يوم 6 أكتوبر 2026: ضمن أنشطته الجديدة، يقدم رواق الفضاء جلسة تدريبية عملية حول «إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق».\nيبدأ البرنامج يوم 11 نوفمبر 2026 وينتهي يوم 13 نوفمبر 2026.\nآخر يوم للتقديم 15 أكتوبر 2026.\nرسوم المشاركة 50 ريالاً.\nالمشاركة عن بعد بالكامل عبر قاعة إلكترونية.\nلم يبدأ التسجيل بعد؛ يفتح يوم 13 أكتوبر 2026.\nالمحتوى مناسب للمبتدئين، والخبرة السابقة ليست شرطاً.\nسيتناول المشاركون كتابة النص وتسجيل المقاطع، ثم يناقشون أمثلة من واقع مدنهم.\nللمعلومات: https://fursah-864.example/info\nمع التحية،\nفريق رواق الفضاء"
+    },
+    {
+      "source_id": "SRC-0496",
+      "source_type": "email",
+      "source_name": "مبادرة الحكاية",
+      "published_at": "2026-10-11T09:47:00+03:00",
+      "content": "الموضوع: تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق\nالسلام عليكم،\nتبدأ حكاية «تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق» مع مبادرة الحكاية في ورشة تطبيقية.\nرسوم المشاركة 50 ريالاً.\nسيتناول المشاركون ترتيب الجداول وقراءة المؤشرات، ثم يناقشون أمثلة من واقع مدنهم.\nيبدأ البرنامج يوم 1 نوفمبر 2026 وينتهي يوم 15 نوفمبر 2026.\nآخر يوم للتقديم 18 أكتوبر 2026.\nالبداية حضورية في تبوك، ثم تُعقد جلسة متابعة عن بعد؛ يتطلب إكمال البرنامج حضور اللقاء الأول في الموقع.\nهذه فرصة لمن يريد تجربة المجال للمرة الأولى.\nللمعلومات: https://fursah-881.example/info\nمع التحية،\nفريق مبادرة الحكاية"
+    },
+    {
+      "source_id": "SRC-0497",
+      "source_type": "social_post",
+      "source_name": "مبادرة الحكاية",
+      "published_at": "2026-10-14T10:47:00+03:00",
+      "content": "✨ تحديث من مبادرة الحكاية بتاريخ 14 أكتوبر 2026 لفرصة «تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق» المعلنة يوم 11 أكتوبر 2026: تغيّر الموعد من 1 نوفمبر 2026 إلى 8 نوفمبر 2026، ومُدد آخر يوم للتقديم من 18 أكتوبر 2026 إلى 22 أكتوبر 2026. يدعو مبادرة الحكاية المهتمين إلى «تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق» عبر ورشة تطبيقية. رسوم المشاركة 50 ريالاً. يمكن للحضور متابعة شرح ترتيب الجداول وقراءة المؤشرات ومشاركة ما توصلوا إليه. آخر يوم للتقديم 22 أكتوبر 2026. البداية حضورية في تبوك، ثم تُعقد جلسة متابعة عن بعد؛ يتطلب إكمال البرنامج حضور اللقاء الأول في الموقع. صمم النشاط للمهتمين بالمجال في بداية رحلتهم. يبدأ البرنامج يوم 8 نوفمبر 2026 وينتهي يوم 15 نوفمبر 2026. للمعلومات: https://fursah-881.example/info"
+    }
+  ],
+  "opportunities": [
+    {
+      "opportunity_id": "OPP-DEMO-001",
+      "source_ids": [
+        "SRC-0943"
+      ],
+      "grouping_reason": "Single announcement in this example.",
+      "facts": {
+        "title": {
+          "value": "الترجمة للمحتوى التعليمي للمجتمع",
+          "status": "known",
+          "evidence_ids": [
+            "EV-001"
+          ]
+        },
+        "organizer": {
+          "value": "رواق المسار",
+          "status": "known",
+          "evidence_ids": [
+            "EV-002"
+          ]
+        },
+        "opportunity_type": {
+          "value": "workshop",
+          "status": "known",
+          "evidence_ids": [
+            "EV-003"
+          ]
+        },
+        "cost_sar": {
+          "value": 0,
+          "status": "known",
+          "evidence_ids": [
+            "EV-004"
+          ]
+        },
+        "delivery_mode": {
+          "value": "online",
+          "status": "known",
+          "evidence_ids": [
+            "EV-005"
+          ]
+        },
+        "physical_attendance_required": {
+          "value": false,
+          "status": "known",
+          "evidence_ids": [
+            "EV-006"
+          ]
+        },
+        "start_date": {
+          "value": "2026-12-24",
+          "status": "known",
+          "evidence_ids": [
+            "EV-007"
+          ]
+        },
+        "end_date": {
+          "value": "2027-01-07",
+          "status": "known",
+          "evidence_ids": [
+            "EV-008"
+          ]
+        },
+        "deadline": {
+          "value": {
+            "date": "2026-10-19",
+            "time": null,
+            "timezone": null,
+            "precision": "date"
+          },
+          "status": "known",
+          "evidence_ids": [
+            "EV-009"
+          ]
+        },
+        "application_status_reported": {
+          "value": "open_at_publication",
+          "status": "known",
+          "evidence_ids": [
+            "EV-010"
+          ]
+        },
+        "mandatory_requirements": {
+          "value": null,
+          "status": "unknown",
+          "evidence_ids": []
+        },
+        "required_skills": {
+          "value": null,
+          "status": "unknown",
+          "evidence_ids": []
+        },
+        "location": {
+          "value": null,
+          "status": "unknown",
+          "evidence_ids": []
+        },
+        "duration_days": {
+          "value": null,
+          "status": "unknown",
+          "evidence_ids": []
+        },
+        "application_url": {
+          "value": null,
+          "status": "unknown",
+          "evidence_ids": []
+        },
+        "information_url": {
+          "value": "https://fursah-72.example/info",
+          "status": "known",
+          "evidence_ids": [
+            "EV-011"
+          ]
+        }
+      },
+      "last_verified_at": null
+    },
+    {
+      "opportunity_id": "OPP-DEMO-002",
+      "source_ids": [
+        "SRC-0477"
+      ],
+      "grouping_reason": "Single announcement; different organizer and opportunity from OPP-DEMO-001.",
+      "facts": {
+        "title": {
+          "value": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "status": "known",
+          "evidence_ids": [
+            "EV-012"
+          ]
+        },
+        "cost_sar": {
+          "value": null,
+          "status": "unknown",
+          "evidence_ids": [
+            "EV-013"
+          ]
+        },
+        "delivery_mode": {
+          "value": "online",
+          "status": "known",
+          "evidence_ids": [
+            "EV-014"
+          ]
+        },
+        "deadline": {
+          "value": null,
+          "status": "unknown",
+          "evidence_ids": []
+        },
+        "application_status_reported": {
+          "value": null,
+          "status": "unknown",
+          "evidence_ids": []
+        }
+      },
+      "last_verified_at": null
+    },
+    {
+      "opportunity_id": "OPP-DEMO-003",
+      "source_ids": [
+        "SRC-0251",
+        "SRC-0252"
+      ],
+      "grouping_reason": "Same title, organizer, information URL, and explicit reference to the earlier announcement.",
+      "facts": {
+        "title": {
+          "value": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "status": "known",
+          "evidence_ids": [
+            "EV-017"
+          ]
+        },
+        "registration_opens_on": {
+          "value": null,
+          "status": "conflicted",
+          "evidence_ids": [
+            "EV-015",
+            "EV-016"
+          ]
+        },
+        "deadline": {
+          "value": {
+            "date": "2026-10-15",
+            "time": null,
+            "timezone": null,
+            "precision": "date"
+          },
+          "status": "known",
+          "evidence_ids": [
+            "EV-018",
+            "EV-019"
+          ]
+        }
+      },
+      "last_verified_at": null
+    },
+    {
+      "opportunity_id": "OPP-DEMO-004",
+      "source_ids": [
+        "SRC-0496",
+        "SRC-0497"
+      ],
+      "grouping_reason": "Same organizer, title and information URL; later announcement explicitly updates earlier dates.",
+      "facts": {
+        "title": {
+          "value": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "status": "known",
+          "evidence_ids": [
+            "EV-020"
+          ]
+        },
+        "start_date": {
+          "value": "2026-11-08",
+          "status": "known",
+          "evidence_ids": [
+            "EV-022"
+          ],
+          "resolution": {
+            "kind": "explicit_update",
+            "superseded_evidence_ids": [
+              "EV-021"
+            ],
+            "update_evidence_ids": [
+              "EV-022"
+            ]
+          }
+        },
+        "deadline": {
+          "value": {
+            "date": "2026-10-22",
+            "time": null,
+            "timezone": null,
+            "precision": "date"
+          },
+          "status": "known",
+          "evidence_ids": [
+            "EV-024"
+          ],
+          "resolution": {
+            "kind": "explicit_update",
+            "superseded_evidence_ids": [
+              "EV-023"
+            ],
+            "update_evidence_ids": [
+              "EV-024"
+            ]
+          }
+        }
+      },
+      "last_verified_at": null
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "EV-001",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "title",
+      "source_id": "SRC-0943",
+      "asserted_value": "الترجمة للمحتوى التعليمي للمجتمع",
+      "quote": "«الترجمة للمحتوى التعليمي للمجتمع»"
+    },
+    {
+      "evidence_id": "EV-002",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "organizer",
+      "source_id": "SRC-0943",
+      "asserted_value": "رواق المسار",
+      "quote": "ينظم رواق المسار جلسة تدريبية عملية."
+    },
+    {
+      "evidence_id": "EV-003",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "opportunity_type",
+      "source_id": "SRC-0943",
+      "asserted_value": "workshop",
+      "quote": "جلسة تدريبية عملية",
+      "normalization_note": "توحيد وصف «جلسة تدريبية عملية» إلى النوع workshop، مع الاحتفاظ بالوصف الأصلي في الدليل."
+    },
+    {
+      "evidence_id": "EV-004",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "cost_sar",
+      "source_id": "SRC-0943",
+      "asserted_value": 0,
+      "quote": "المشاركة مجانية.",
+      "normalization_note": "تحويل تصريح المجانية إلى تكلفة صفر بالريال."
+    },
+    {
+      "evidence_id": "EV-005",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "delivery_mode",
+      "source_id": "SRC-0943",
+      "asserted_value": "online",
+      "quote": "المشاركة عن بعد بالكامل عبر قاعة إلكترونية.",
+      "normalization_note": "توحيد تصريح المشاركة عن بعد بالكامل إلى online."
+    },
+    {
+      "evidence_id": "EV-006",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "physical_attendance_required",
+      "source_id": "SRC-0943",
+      "asserted_value": false,
+      "quote": "المشاركة عن بعد بالكامل عبر قاعة إلكترونية.",
+      "normalization_note": "تفسير «عن بعد بالكامل» على أن المشاركة لا تتطلب حضورًا فعليًا؛ الوصف الصريح هو السند وليس online وحدها."
+    },
+    {
+      "evidence_id": "EV-007",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "start_date",
+      "source_id": "SRC-0943",
+      "asserted_value": "2026-12-24",
+      "quote": "يبدأ البرنامج يوم 24 ديسمبر 2026 وينتهي يوم 7 يناير 2027."
+    },
+    {
+      "evidence_id": "EV-008",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "end_date",
+      "source_id": "SRC-0943",
+      "asserted_value": "2027-01-07",
+      "quote": "يبدأ البرنامج يوم 24 ديسمبر 2026 وينتهي يوم 7 يناير 2027."
+    },
+    {
+      "evidence_id": "EV-009",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "deadline",
+      "source_id": "SRC-0943",
+      "asserted_value": {
+        "date": "2026-10-19",
+        "time": null,
+        "timezone": null,
+        "precision": "date"
+      },
+      "quote": "آخر يوم للتقديم 19 أكتوبر 2026."
+    },
+    {
+      "evidence_id": "EV-010",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "application_status_reported",
+      "source_id": "SRC-0943",
+      "asserted_value": "open_at_publication",
+      "quote": "باب المشاركة مفتوح وقت نشر الإعلان."
+    },
+    {
+      "evidence_id": "EV-011",
+      "opportunity_id": "OPP-DEMO-001",
+      "field": "information_url",
+      "source_id": "SRC-0943",
+      "asserted_value": "https://fursah-72.example/info",
+      "quote": "للمعلومات: https://fursah-72.example/info"
+    },
+    {
+      "evidence_id": "EV-012",
+      "opportunity_id": "OPP-DEMO-002",
+      "field": "title",
+      "source_id": "SRC-0477",
+      "asserted_value": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+      "quote": "«الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق»"
+    },
+    {
+      "evidence_id": "EV-013",
+      "opportunity_id": "OPP-DEMO-002",
+      "field": "cost_sar",
+      "source_id": "SRC-0477",
+      "asserted_value": null,
+      "quote": "لم تُحدد رسوم المشاركة."
+    },
+    {
+      "evidence_id": "EV-014",
+      "opportunity_id": "OPP-DEMO-002",
+      "field": "delivery_mode",
+      "source_id": "SRC-0477",
+      "asserted_value": "online",
+      "quote": "المشاركة عن بعد بالكامل عبر قاعة إلكترونية."
+    },
+    {
+      "evidence_id": "EV-015",
+      "opportunity_id": "OPP-DEMO-003",
+      "field": "registration_opens_on",
+      "source_id": "SRC-0251",
+      "asserted_value": {
+        "date": "2026-10-09",
+        "time": null,
+        "timezone": null,
+        "precision": "date"
+      },
+      "quote": "لم يبدأ التسجيل بعد؛ يفتح يوم 9 أكتوبر 2026."
+    },
+    {
+      "evidence_id": "EV-016",
+      "opportunity_id": "OPP-DEMO-003",
+      "field": "registration_opens_on",
+      "source_id": "SRC-0252",
+      "asserted_value": {
+        "date": "2026-10-13",
+        "time": null,
+        "timezone": null,
+        "precision": "date"
+      },
+      "quote": "لم يبدأ التسجيل بعد؛ يفتح يوم 13 أكتوبر 2026."
+    },
+    {
+      "evidence_id": "EV-017",
+      "opportunity_id": "OPP-DEMO-003",
+      "field": "title",
+      "source_id": "SRC-0251",
+      "asserted_value": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+      "quote": "«إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق»"
+    },
+    {
+      "evidence_id": "EV-018",
+      "opportunity_id": "OPP-DEMO-003",
+      "field": "deadline",
+      "source_id": "SRC-0251",
+      "asserted_value": {
+        "date": "2026-10-15",
+        "time": null,
+        "timezone": null,
+        "precision": "date"
+      },
+      "quote": "آخر يوم للتقديم 15 أكتوبر 2026."
+    },
+    {
+      "evidence_id": "EV-019",
+      "opportunity_id": "OPP-DEMO-003",
+      "field": "deadline",
+      "source_id": "SRC-0252",
+      "asserted_value": {
+        "date": "2026-10-15",
+        "time": null,
+        "timezone": null,
+        "precision": "date"
+      },
+      "quote": "آخر يوم للتقديم 15 أكتوبر 2026."
+    },
+    {
+      "evidence_id": "EV-020",
+      "opportunity_id": "OPP-DEMO-004",
+      "field": "title",
+      "source_id": "SRC-0497",
+      "asserted_value": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+      "quote": "«تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق»"
+    },
+    {
+      "evidence_id": "EV-021",
+      "opportunity_id": "OPP-DEMO-004",
+      "field": "start_date",
+      "source_id": "SRC-0496",
+      "asserted_value": "2026-11-01",
+      "quote": "يبدأ البرنامج يوم 1 نوفمبر 2026 وينتهي يوم 15 نوفمبر 2026."
+    },
+    {
+      "evidence_id": "EV-022",
+      "opportunity_id": "OPP-DEMO-004",
+      "field": "start_date",
+      "source_id": "SRC-0497",
+      "asserted_value": "2026-11-08",
+      "quote": "تغيّر الموعد من 1 نوفمبر 2026 إلى 8 نوفمبر 2026"
+    },
+    {
+      "evidence_id": "EV-023",
+      "opportunity_id": "OPP-DEMO-004",
+      "field": "deadline",
+      "source_id": "SRC-0496",
+      "asserted_value": {
+        "date": "2026-10-18",
+        "time": null,
+        "timezone": null,
+        "precision": "date"
+      },
+      "quote": "آخر يوم للتقديم 18 أكتوبر 2026."
+    },
+    {
+      "evidence_id": "EV-024",
+      "opportunity_id": "OPP-DEMO-004",
+      "field": "deadline",
+      "source_id": "SRC-0497",
+      "asserted_value": {
+        "date": "2026-10-22",
+        "time": null,
+        "timezone": null,
+        "precision": "date"
+      },
+      "quote": "ومُدد آخر يوم للتقديم من 18 أكتوبر 2026 إلى 22 أكتوبر 2026."
+    }
+  ]
+}

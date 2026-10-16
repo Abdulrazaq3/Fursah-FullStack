@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-10-15T22:01:20.604Z",
+  "scope": "Imported frontend and unfinished API shell; not recommendation acceptance testing",
+  "origin": "http://127.0.0.1:5173",
+  "frontend_rendered": true,
+  "same_origin_discovery_reached_backend": true,
+  "discovery_status": 503,
+  "error_code": "FURSAH_NOT_IMPLEMENTED",
+  "expected_error_rendered": true,
+  "health_status": 200,
+  "readiness_status": 503,
+  "uncaught_page_errors": []
+}

@@ -1,0 +1,11 @@
+# Base: enough to run the API shell.
+fastapi==0.141.1
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+pydantic-settings==2.15.0
+httpx==0.28.1
+# Day 4 tracing helper (infrastructure/observability.py): the small API only, a no-op
+# until Phoenix is set up. The Phoenix stack itself is in requirements-observability.txt.
+opentelemetry-api==1.44.0
+
+# Add dependencies for your chosen implementation yourself. No agent framework is required by the shell.

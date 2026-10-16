@@ -1,0 +1,22 @@
+name: fursah
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    environment:
+      FURSAH_EVALUATION_TIME: ${FURSAH_EVALUATION_TIME:-}
+      FURSAH_ALLOWED_ORIGINS: ${FURSAH_ALLOWED_ORIGINS:-http://localhost:8080,http://127.0.0.1:8080}
+    expose:
+      - "8000"
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FURSAH_HTTP_HOST:-127.0.0.1}:${FURSAH_HTTP_PORT:-8080}:8080"
