@@ -15,5 +15,5 @@
 *.ipynb text eol=lf
 *.ps1 text eol=crlf
 Dockerfile text eol=lf
-data/raw/*.csv -text
+data/raw/*.csv -text whitespace=cr-at-eol
 *.png binary
