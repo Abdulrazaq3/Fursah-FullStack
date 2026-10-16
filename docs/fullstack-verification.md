@@ -15,9 +15,11 @@
 | أخطاء JavaScript غير المعالجة | صفر أثناء هذا المسار |
 | liveness/readiness عبر عنوان الواجهة | /health أعاد 200، و/ready أعاد 503 لأن التطبيق غير مكتمل |
 | ملفات التشغيل وCI | نجح فحص صياغة PowerShell وبنية YAML ومسارات Dockerfiles |
-| بناء Docker وتشغيل الحاويات | لم يُختبر محليًا؛ Docker غير متوفر. أضفنا مهمة CI لتجربته عند رفع المشروع |
+| بناء Docker وتشغيل الحاويات | نجح عبر GitHub Actions، بما يشمل الواجهة وhealth وreadiness. لم يُختبر على الجهاز المحلي لعدم توفر Docker |
 
 الدليل الرقمي في [fullstack-smoke.json](../results/fullstack-smoke.json)، وصورة الحالة في [fullstack-shell.png](../results/fullstack-shell.png).
+
+دليل فحص الحاويات على GitHub في [سجل CI](https://github.com/Abdulrazaq3/Fursah-FullStack/actions/runs/38888508034). نجحت مهام الواجهة والخلفية والحاويات جميعًا.
 
 هذا تحقق من هيكلة وتشغيل الاتصال. جودة توصيات التطبيق الكامل لم تُختبر، لأن API لم يُربط بتجربة الاسترجاع والتحقق بعد.
 

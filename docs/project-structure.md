@@ -43,7 +43,7 @@
 - `scripts/run-retrieval-experiment.ps1`: تجربة الاسترجاع المستقلة السابقة.
 - `backend/Dockerfile` و`frontend/Dockerfile`: بناء منفصل لكل خدمة، من جذر المشروع؛ التشغيل داخل الصور بمستخدم غير root.
 - `compose.yaml`: الواجهة والـAPI عبر عنوان واحد. جاهزية العملية تقاس بـ`/health`، بينما `/ready` يظل 503 حتى تنفيذ مكوناته.
-- `.github/workflows/ci.yml`: بناء الواجهة وفحوص API وإصلاح مخبأ النموذج وبناء وتشغيل الحاويات عند رفع الملفات إلى مستودع GitHub. لم نرفع أو ننشر هذه التغييرات.
+- `.github/workflows/ci.yml`: بناء الواجهة وفحوص API وإصلاح مخبأ النموذج وبناء وتشغيل الحاويات عند رفع الملفات إلى مستودع GitHub. رُفع المشروع إلى [Fursah-FullStack](https://github.com/Abdulrazaq3/Fursah-FullStack)، ونجحت جميع مهام [أول فحص GitHub Actions](https://github.com/Abdulrazaq3/Fursah-FullStack/actions/runs/38888508034). رفع المصدر والتحقق من الحاويات لا يعني نشر خدمة للمستخدمين.
 
 صور API الحالية تحتوي الاعتماديات الأساسية فقط، ولا تحتوي Torch أو BGE-M3 أو قاعدة pgvector. نحدد تجهيز صورة الاستدلال والمخزن عند ربطهما بالخدمة. لا تُنسخ `.local` أو `.env` أو النماذج إلى سياق بناء Docker.
 

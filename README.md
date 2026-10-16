@@ -90,7 +90,7 @@ Last reviewed: **16 October 2026**.
 | Requests outside sample topics | Nearest neighbours still returned | Expand evaluation and implement relevance/abstention handling |
 | Constraints and eligibility | Designed; application integration pending | [Data model](docs/data-model.md) and [tool design](docs/agent-tools.md) |
 | Discovery and details API | Contract available; implementation pending | [Backend guide](backend/README.md) |
-| Container deployment | Definitions prepared; not tested on this device | Docker is not installed locally; CI includes container checks |
+| Container build and startup | Verified on GitHub Actions | [Build, startup and HTTP checks](https://github.com/Abdulrazaq3/Fursah-FullStack/actions/runs/38888508034); Docker is not installed locally |
 
 The first retrieval experiment reached **Recall@2 = 100% on six in-scope development queries**. The other two queries have no relevant opportunity in the sample. This does not establish full-corpus quality or production readiness.
 
