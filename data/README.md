@@ -17,9 +17,9 @@ An announcement is a source, not necessarily a separate opportunity. Our prepara
 
 For example, an original deadline and a later explicit extension belong to the same opportunity. Preserve both sources; do not delete the update as a duplicate. An unstated fee remains unknown, not zero. This implementation prepares saved sources without fetching external websites.
 
-> **Initial design:** the diagram describes the earlier pilot, when extraction/grouping were planned. Preparation code now exists for the supplied dataset; it is not a guarantee of correct extraction for arbitrary announcements. The evaluation found missed closure information.
+> **Reading the counts:** 900 grouped opportunities + 13 saved additions = 913 opportunities. The diagram omits the separate additions input. Preparation is implemented, but evaluation found missed closure information.
 
-![Initial data preparation design](../docs/assets/d2-data-journey-en.png)
+![Data preparation and catalog publication](../docs/assets/d2-data-journey-en.png)
 
 ## Files to follow
 

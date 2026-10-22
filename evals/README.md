@@ -8,6 +8,8 @@
 
 We evaluate the real discovery workflow, not a mocked recommendation. Cases exercise request understanding, retrieval, constraints and source evidence. Phoenix shows what happened; code graders decide whether the checks passed.
 
+![FURSAH evaluation workflow and recorded baseline](../docs/assets/d4-evaluation-en.png)
+
 ## Run and inspect
 
 After [backend setup](../backend/README.md#setup) and catalog publication, run from the repository root in PowerShell:

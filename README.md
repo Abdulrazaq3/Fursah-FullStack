@@ -14,9 +14,9 @@ We kept the React interface and public API contract, then added data preparation
 
 The saved catalog contains **913 opportunities**: 900 grouped from 1,000 supplied announcements, plus 13 saved additions. Searches use this catalog; they do not browse external websites.
 
-> **Initial design, 21 October 2026:** the diagram below describes the earlier four-opportunity pilot. Its status labels are historical. Preparation and Gemini integration now exist, and retrieval searches the larger catalog; quality approval is still pending.
+> **Current implementation:** Gemini handles request understanding through OpenRouter; BGE models and catalog retrieval run locally. Quality validation is ongoing.
 
-![Initial FURSAH system design](docs/assets/d1-architecture-en.png)
+![FURSAH system architecture](docs/assets/d1-architecture-en.png)
 
 ## Our tools and choices
 

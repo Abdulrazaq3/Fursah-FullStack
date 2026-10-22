@@ -20,9 +20,9 @@ For **“a free online Excel course”**:
 
 Reasons quote an activity from the source; a second LLM does not write the final explanation. High similarity alone is not proof of eligibility.
 
-> **Historical diagram:** this shows the four-record pilot. The current code uses Gemini and the full prepared catalog. Stage labels below are not current readiness claims.
+> The diagram summarizes the current full-catalog workflow. The clarification path can return before retrieval; outcome checks do not guarantee recommendation quality.
 
-![Initial search workflow](../docs/assets/d3-search-workflow-en.png)
+![FURSAH search workflow](../docs/assets/d3-search-workflow-en.png)
 
 ## Where to read the code
 
