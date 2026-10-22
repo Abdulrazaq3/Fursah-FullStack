@@ -58,6 +58,14 @@ Create `backend/.env` from [.env.example](.env.example) only if it is missing. S
 .\backend\run.ps1 -Port 8019
 ```
 
+The `run.ps1` script selects the project's `.venv` Python automatically. To run directly from **inside `backend/`**, in CMD or PowerShell:
+
+```powershell
+..\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --port 8000
+```
+
+Choose a port matching the frontend configuration. A bare `uvicorn` command uses the Python environment on PATH; explicitly invoking the project Python uses its installed dependencies.
+
 Publishing prepares the catalog and missing embeddings, then stores a release in PostgreSQL. See [data](../data/README.md) for reusing the saved package.
 
 `FURSAH_EVALUATION_TIME` defaults to actual request time. For the classroom reference use `2026-10-18T12:00:00+03:00`; source dates stay unchanged. `/health` checks liveness; `/ready` also checks readiness/approval, so a running API can still return 503 there. Evaluation failures are documented in the [evaluation guide](../evals/README.md).
