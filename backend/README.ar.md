@@ -1,37 +1,63 @@
-![SAAI](../frontend/readme-header.png)
+![SAAI](https://i.imgur.com/YHRhgqv.png)
 
 [English](README.md) | **العربية**
 
-# Backend
+# الخلفية — من الطلب إلى التوصية
 
-الخلفية تستقبل الطلب بـFastAPI، وتتحقق منه بـPydantic، وتفهمه عبر Gemini، ثم تسترجع الفرص من القاعدة وتعيد ترتيبها وتفحص الأدلة والقيود والأهلية.
+[الرئيسية](../README.ar.md) · [السابق: البيانات](../data/README.ar.md) · [التالي: الواجهة](../frontend/README.ar.md)
+
+تستقبل FastAPI الطلب، ويتحقق Pydantic من بنيته. يجمع مسار Python بين خطة يقترحها النموذج والاسترجاع وقواعد صريحة تستند إلى المصادر.
+
+## تتبّع طلبًا واحدًا
+
+مثال: **«دورة Excel مجانية عن بُعد»**.
+
+1. يقترح Gemini الموضوع والقيود. يتحقق الكود من اقتباساته داخل الطلب ويعالج التعارض مع الملف الشخصي.
+2. يحوّل BGE-M3 نص البحث إلى متجه، وتسترجع pgvector المرشحين؛ العدد الافتراضي 20.
+3. يقيّم BGE reranker الصلة، ويفحص الكود الأدوات والأنشطة المطلوبة.
+4. تفحص قواعد القيود والأهلية الحقائق وأدلة المصادر ومعلومات المستخدم الناقصة.
+5. يطلب المسار توضيحًا مؤثرًا، أو يعرض حتى ثلاث توصيات، أو يعيد عدم تطابق/خطأ. ويتحقق من نسخ الأدلة قبل إرجاع التوصيات.
+
+يقتبس سبب التوصية نشاطًا من المصدر؛ لا يكتبه استدعاء ثانٍ لنموذج لغوي. التشابه العالي لا يثبت الأهلية.
+
+> **رسم تاريخي:** يعرض تجربة الأربع فرص. يستخدم الكود الحالي Gemini والفهرس المجهّز كاملًا؛ حالات المراحل في الرسم ليست إعلانًا عن الجاهزية الحالية.
+
+![مسار البحث الأولي](../docs/assets/d3-search-workflow-ar.png)
+
+## أين تقرأ الكود؟
+
+| الملف داخل `app/` | المسؤولية |
+|---|---|
+| [routes.py](app/routes.py) و[schemas.py](app/schemas.py) | نقاط HTTP والعقود العامة |
+| [catalog_workflow.py](app/catalog_workflow.py) | مسار البحث الحالي كاملًا |
+| [active_understanding.py](app/active_understanding.py) | استدعاء Gemini والتحقق من اقتراحه |
+| [request_plan.py](app/request_plan.py) و[request_requirements.py](app/request_requirements.py) | تعارض القيود ومتطلبات الأدوات والأنشطة |
+| [catalog_store.py](app/catalog_store.py) | الفهرس في PostgreSQL والاسترجاع بالمتجهات |
+| [constraints.py](app/constraints.py) و[eligibility.py](app/eligibility.py) | القرارات المستندة إلى المصدر وأسئلة التوضيح |
+| [infrastructure/models/](app/infrastructure/models/) | ربط النماذج المحلية |
+| [instrumentation/](app/instrumentation/README.ar.md) | تتبّع مراحل الطلب |
+
+النتائج هي `ok` و`needs_info` و`no_match` و`error`. طلب معلومات ناقصة نتيجة طبيعية وليس فشلًا في التثبيت.
+
+<a id="setup"></a>
+## الإعداد
+
+نفّذ الأوامر في **Windows PowerShell من جذر المستودع** بعد تثبيت [المتطلبات](../README.ar.md):
 
 ```powershell
-# من جذر المشروع
+.\backend\setup.ps1 -Models -Evals -Frontend
+.\backend\scripts\setup-postgres.ps1
+.\.venv\Scripts\python.exe backend/scripts/download-model.py
+.\.venv\Scripts\python.exe backend/scripts/download-reranker.py
+```
+
+أنشئ `backend/.env` من [.env.example](.env.example) إذا لم يكن موجودًا. ضع مفتاح OpenRouter في `FURSAH_MODEL_API_KEY`. احتفظ بإعدادات نموذج Gemini والمزوّد في المثال؛ يتحقق الربط الحالي منها. استخدم `FURSAH_CATALOG_MODE=prepared` و`FURSAH_UNDERSTANDING_MODE=active`، واترك التجربة القديمة معطلة. تبقى المفاتيح في الخلفية.
+
+```powershell
+.\.venv\Scripts\python.exe backend/scripts/prepare-catalog.py --publish
 .\backend\run.ps1 -Port 8019
 ```
 
-| المكان | دوره |
-|---|---|
-| `app/catalog_workflow.py` | رحلة الطلب كاملة |
-| `app/schemas.py` | شكل الطلب والرد |
-| `app/infrastructure/config.py` | الإعدادات الفعلية؛ تقرأ `backend/.env` |
-| `app/infrastructure/models/` | تشغيل نماذج BGE المحلية |
-| [app/instrumentation/](app/instrumentation/README.md) | نقاط قياس المراحل وربط Phoenix |
-| `scripts/` | خمس أدوات لازمة لإعادة تجهيز البيئة والبيانات |
-| [../evals/](../evals/README.md) | كل الاختبارات والتقييمات |
+يجهّز النشر الفهرس والمتجهات الناقصة ويحفظ إصدارًا في PostgreSQL. يشرح [دليل البيانات](../data/README.ar.md) إعادة استخدام الحزمة المحفوظة.
 
-## أدوات التجهيز
-
-| الملف | دوره |
-|---|---|
-| `setup.ps1` | تثبيت الاعتماديات؛ خيارات `-Models -Evals -Frontend` |
-| `scripts/setup-postgres.ps1` | تجهيز وتشغيل قاعدة البيانات المحلية |
-| `scripts/stop-postgres.ps1` | إيقاف قاعدة المشروع |
-| `scripts/download-model.py` | تحميل BGE-M3 أو التحقق منه بـ`--check-only` |
-| `scripts/download-reranker.py` | تحميل نموذج إعادة الترتيب والتحقق من بصمته |
-| `scripts/prepare-catalog.py` | تنظيف وتجهيز البيانات وفهرستها ونشر إصدارها |
-
-هذه الأدوات تحتاجها عند الإعداد أو تحديث البيانات؛ التشغيل اليومي من `run.ps1`. أوامر الإعداد بالترتيب في [README الرئيسي](../README.ar.md)، وتجهيز البيانات في [دليل البيانات](../data/README.ar.md).
-
-المفتاح في `.env` المحلي خارج Git. `/health` لفحص حياة الخدمة، و`/ready` يبقى 503 حتى اعتماد الجودة والنشر.
+يستخدم `FURSAH_EVALUATION_TIME` وقت الطلب الفعلي افتراضيًا. للوقت المرجعي التدريبي استخدم `2026-10-18T12:00:00+03:00`، دون تغيير تواريخ المصادر. يفحص `/health` أن الخادم يعمل، بينما يتضمن `/ready` فحوص الجاهزية والاعتماد؛ لذلك قد يعيد 503 رغم عمل API. الإخفاقات موضحة في [دليل التقييم](../evals/README.ar.md).

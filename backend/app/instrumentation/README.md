@@ -1,19 +1,19 @@
-# Instrumentation
+![SAAI](https://i.imgur.com/YHRhgqv.png)
 
-ابدأ العرض من **spans.py**: هذه هي نقاط قياس مراحل النظام. البحث عن `eval_span` في `catalog_workflow.py` يوضح مكان استدعاء كل نقطة.
+**English** | [العربية](README.ar.md)
 
-| الملف | دوره |
+# Instrumentation — see each request stage
+
+[Evaluation guide](../../../evals/README.md) · [Backend](../../README.md)
+
+A **trace** represents a request. A **span** measures one operation inside it. We record understanding, embeddings, retrieval, reranking, candidate checks and selection so we can explain both failures and latency.
+
+| File | Purpose |
 |---|---|
-| `spans.py` | يسجل الفهم، embeddings، الاسترجاع، reranking، فحص المرشحين والاختيار، مع الزمن والمخرجات اللازمة للتقييم |
-| `phoenix.py` | يربط OpenTelemetry بـPhoenix؛ لا يقرر جودة الإجابة |
+| [spans.py](spans.py) | Stage measurements and evaluation outputs |
+| [phoenix.py](phoenix.py) | OpenTelemetry connection to Phoenix |
+| [../catalog_workflow.py](../catalog_workflow.py) | The `eval_span` calls around actual workflow stages |
 
-التقييم يشغّل نفس مسار API المستخدم في التطبيق. يضيف `evals/run.py` span أبًا اسمه `eval.case`، ثم يرسل نتائج `evals/catalog_graders.py` إلى Phoenix كتقييمات `CODE` على هذا الـspan.
+Run `./evals/run.ps1 -Demo -Open` from the project root. In Phoenix, open **fursah-eval → eval.case**. Inspect child spans to locate slow stages, then annotations to understand grading. For example, retrieval can be fast while reranking dominates the request time.
 
-```powershell
-# من جذر المشروع
-.\evals\run.ps1 -Demo -Open
-```
-
-افتح مشروع **fursah-eval**، ثم أحد الطلبات: من شجرة الـspans تعرف أين استغرق الوقت، ومن annotations تعرف أي فحص نجح أو فشل وسببه.
-
-التفاصيل الإضافية مفعلة في عملية التقييم فقط. إعدادات تشغيل التطبيق ومفتاح API لا تتغير. لا نسجل مفتاح API أو نص الملف الشخصي داخل هذه القياسات.
+Phoenix displays measurements; it does not establish answer quality by itself. [Code graders](../../../evals/catalog_graders.py) supply the scores. Detailed evaluation outputs are enabled for synthetic evaluation runs; keep that mode off for normal traffic.

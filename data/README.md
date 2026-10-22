@@ -1,23 +1,46 @@
-![SAAI](../frontend/readme-header.png)
+![SAAI](https://i.imgur.com/YHRhgqv.png)
 
 **English** | [العربية](README.ar.md)
 
-# Data
+# Data — from announcements to a searchable catalog
 
-`raw/raw_opportunities.csv` retains all 1,000 original announcements unchanged. `preparation_helpers.py` provides the original cleaning helpers; `backend/app/dataset_preparation.py` links observations to opportunity identities, facts and source evidence.
+[Overview](../README.md) · [Next: backend](../backend/README.md)
 
-`prepared/catalog.json` contains **913 opportunities and 1,013 source records**: 900 grouped opportunities from the supplied CSV, plus 13 saved additions from `prepared/real-catalog.json`. The API searches this catalog in PostgreSQL/pgvector.
+An announcement is a source, not necessarily a separate opportunity. Our preparation groups the 1,000 supplied announcements into **900 opportunities** and adds **13 saved opportunities**, producing 913 opportunities and 1,013 source records.
+
+## How we prepared it
+
+1. Keep the original CSV unchanged and prepare observations using pandas helpers.
+2. Link related sources and extract facts with the dataset preparation code.
+3. Keep source text, quotations, missing values, explicit updates and conflicting claims.
+4. Create search documents, embed them with BGE-M3 and publish the catalog to PostgreSQL/pgvector.
+
+For example, an original deadline and a later explicit extension belong to the same opportunity. Preserve both sources; do not delete the update as a duplicate. An unstated fee remains unknown, not zero. This implementation prepares saved sources without fetching external websites.
+
+> **Initial design:** the diagram describes the earlier pilot, when extraction/grouping were planned. Preparation code now exists for the supplied dataset; it is not a guarantee of correct extraction for arbitrary announcements. The evaluation found missed closure information.
+
+![Initial data preparation design](../docs/assets/d2-data-journey-en.png)
+
+## Files to follow
+
+| File | Purpose |
+|---|---|
+| [raw/raw_opportunities.csv](raw/raw_opportunities.csv) | Original 1,000 announcements |
+| [preparation_helpers.py](preparation_helpers.py) | Cleaning and source observations |
+| [../backend/app/dataset_preparation.py](../backend/app/dataset_preparation.py) | Opportunity grouping, facts and evidence |
+| [prepared/real-catalog.json](prepared/real-catalog.json) | Saved additional opportunities |
+| [prepared/catalog.json](prepared/catalog.json) | Prepared application catalog |
+| [prepared/preparation-report.json](prepared/preparation-report.json) | Preparation counts and diagnostics |
+| [../backend/scripts/prepare-catalog.py](../backend/scripts/prepare-catalog.py) | Preparation, embedding and release publication |
+
+## Prepare and publish
+
+After [backend setup](../backend/README.md#setup), run from the repository root:
 
 ```powershell
-# From the project root; prepare, embed missing documents and publish
 .\.venv\Scripts\python.exe backend/scripts/prepare-catalog.py --publish
-
-# Publish the reviewed existing prepared package
-.\.venv\Scripts\python.exe backend/scripts/prepare-catalog.py --reuse-prepared --publish
 ```
 
-Preparation keeps original text, source IDs, missing values, contradictory claims and explicit updates. Unknown prices stay unknown. Original dates remain unchanged and availability is evaluated at request time. The process uses saved sources; it does not fetch external opportunities.
+To publish the existing prepared package instead of rebuilding it, add `--reuse-prepared`. The script also supports withdrawal and rollback; inspect `--help` before using them. Releases use the `fursah_catalog` database schema, and local vector caches live in `.local/`.
 
-Outputs are `prepared/source_preparation.json`, `prepared/catalog.json` and `prepared/preparation-report.json`. Local vectors are cached under `.local/`. Published releases live in the `fursah_catalog` schema; withdrawal and rollback preserve earlier releases. Use `--help` for their arguments.
-
-`requirements.txt` contains offline preparation dependencies. Run [backend/setup.ps1](../backend/setup.ps1) with `-Models` to install them along with local inference dependencies. [Evaluation](../evals/README.md) owns quality checks and frozen dataset fingerprints.
+Notebook observations use 18 October 2026 at noon Riyadh time. API availability uses the request's evaluation time, so an old notebook observation is not a permanent closure decision. [Evaluation](../evals/README.md) checks results against the original sources, not just these extracted fields.
