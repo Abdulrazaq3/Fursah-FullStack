@@ -3,7 +3,7 @@ import unittest
 from types import SimpleNamespace
 
 from evals.run import CaseSpans,grade_failures,run_graders,verify_manifest,BACKEND
-from evals.graders import Grade
+from evals.grading import Grade
 from evals import catalog_graders as g
 from app.schemas import DiscoveryResponse,Recommendation
 

@@ -10,7 +10,6 @@ dist/
 *.tsbuildinfo
 .pytest_cache/
 .coverage
-/FlagEmbedding/
 evals/archive/reports/*.npy
 
 # Generated evaluation runs; retained locally and in Phoenix.

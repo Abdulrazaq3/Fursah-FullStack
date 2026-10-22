@@ -626,7 +626,7 @@
       "sha256": "bcb817d35747cf536f4fd823bf025e998fd5e03558a42af0b8fccdb8175727c0"
     },
     "backend/evals/graders.py": {
-      "path": "evals/graders.py",
+      "path": "evals/archive/starter/graders.py",
       "sha256": "7d247b1d343b7c1783ff862b728343d36cbbb7cc83a4ed31ad98b5291b53213f"
     },
     "backend/evals/catalog_graders.py": {
@@ -654,7 +654,7 @@
       "sha256": "cbb2c55c6176ddf5f755b3764a84041e5f5a3a45168846f0ad175cef41ad6e99"
     },
     "backend/evals/dev_cases.jsonl": {
-      "path": "evals/cases/day4.jsonl",
+      "path": "evals/archive/cases/day4.jsonl",
       "sha256": "ad95efabec56e67cab971b0656883305b7ce2c8b2e3fb9f0cbd1c4d469edce26"
     },
     "backend/evals/catalog_cases_manifest.json": {
@@ -690,15 +690,15 @@
       "sha256": "14afaf6bacb0215ff4c895cc5c1342a58b5f78e67437ab26f0dfe319a7adb904"
     },
     "scripts/check-openrouter-understanding.py": {
-      "path": "evals/checks/check-openrouter-understanding.py",
+      "path": "evals/archive/checks/check-openrouter-understanding.py",
       "sha256": "fe0c9d8bd82247ce3dad5125e82df241f16e76c475570b2119345a7906efe848"
     },
     "scripts/verify-discovery-pilot.cjs": {
-      "path": "evals/checks/verify-discovery-pilot.cjs",
+      "path": "evals/archive/checks/verify-discovery-pilot.cjs",
       "sha256": "22ec3fae62bbcc32c55b0118174b1b58c3098bedefaba66a40533ae98a9b43a4"
     },
     "scripts/verify-query-alternatives.cjs": {
-      "path": "evals/checks/verify-query-alternatives.cjs",
+      "path": "evals/archive/checks/verify-query-alternatives.cjs",
       "sha256": "f2b78bd030cfbee55283992b710e628e018cdc2a2835ad16b06f2df9509c80b8"
     },
     "scripts/verify-local-rag.cjs": {
@@ -706,7 +706,7 @@
       "sha256": "fbcbf22b49ce56381e72a08ce1e6b98bec7019373af6a2172b8b96807c4fce36"
     },
     "scripts/smoke-fullstack.cjs": {
-      "path": "evals/checks/smoke-fullstack.cjs",
+      "path": "evals/archive/checks/smoke-fullstack.cjs",
       "sha256": "c5f6f8eb2ae797ca09d15c8939d5308ffac676163f0968a5cc2be29e0e971798"
     },
     "scripts/run-catalog-evals.ps1": {

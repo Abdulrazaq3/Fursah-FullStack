@@ -12,7 +12,7 @@ from .config import PROJECT_ROOT
 from .errors import ModelExecutionError, WorkflowBusyError
 
 
-def _experiment(name):
+def _load_model_module(name):
     spec = importlib.util.spec_from_file_location('fursah_pilot_' + name,
                                                 Path(__file__).parent / 'models' / (name + '.py'))
     module = importlib.util.module_from_spec(spec)
@@ -55,20 +55,20 @@ class LocalInference:
         os.environ['TOKENIZERS_PARALLELISM'] = 'false'
         try:
             if stage == 'reranker':
-                self._model = _experiment('local_reranker').LocalReranker()
+                self._model = _load_model_module('local_reranker').LocalReranker()
             else:
                 manifest = json.loads((PROJECT_ROOT / '.local/model-manifest.json').read_text(encoding='utf-8-sig'))
                 if (manifest['model_id'] != 'BAAI/bge-m3' or manifest['dimensions'] != 1024
                         or manifest['embedding_mode'] != 'dense'):
                     raise ValueError('Unexpected embedding manifest')
-                _experiment('model_integrity').verify_checkpoint(manifest)
+                _load_model_module('model_integrity').verify_checkpoint(manifest)
                 import torch
                 from sentence_transformers import SentenceTransformer
                 torch.set_num_threads(4)
                 self._model = SentenceTransformer(manifest['snapshot_path'], device='cpu',
                                                   local_files_only=True, trust_remote_code=False)
                 self._model.max_seq_length = 512
-                if self._model.get_sentence_embedding_dimension() != 1024:
+                if self._model.get_embedding_dimension() != 1024:
                     raise ValueError('Unexpected embedding dimensions')
             self._stage = stage
             return self._model
