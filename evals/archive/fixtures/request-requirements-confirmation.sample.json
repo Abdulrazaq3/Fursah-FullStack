@@ -1,0 +1,18 @@
+{
+  "version":"1.0",
+  "scope":"New deterministic component cases after the REQ-08 possessive-ideas defect. This tests extraction and source-evidence compatibility only; no new neural inference or full semantic-quality claim.",
+  "queries":[
+    {"id":"CONFIRM-01","query":"أريد إعداد عرض قصير يجمع أفكارنا ثم مراجعته","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]},
+    {"id":"CONFIRM-02","query":"تدريب يساعدني أعرض أفكارهم بشكل منظم","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]},
+    {"id":"CONFIRM-03","query":"أحتاج تطوير عرض لفكرتك ومراجعته","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]},
+    {"id":"CONFIRM-04","query":"تطبيق تحليل البيانات ببرنامج Microsoft Excel","tools":["excel"],"activity":"data_analysis","mode":"all","review":false,"supported_ids":["OPP-DEMO-004"]},
+    {"id":"CONFIRM-05","query":"أريد قراءة مؤشرات الجداول بإكسيل","tools":["excel"],"activity":"data_analysis","mode":"all","review":false,"supported_ids":["OPP-DEMO-004"]},
+    {"id":"CONFIRM-06","query":"تطبيق استعلامات سيكويل على الجداول","tools":["sql"],"activity":"database_querying","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0005"]},
+    {"id":"CONFIRM-07","query":"أجرب كتابة تعليمات بلغة Python","tools":["python"],"activity":"programming","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0020"]},
+    {"id":"CONFIRM-08","query":"أريد تحرير نشرة تخص أخبار المجتمع","tools":[],"activity":"newsletter_editing","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0018"]},
+    {"id":"CONFIRM-09","query":"تدريب يوضح صياغة رسائل عربية مفهومة","tools":[],"activity":"correspondence_writing","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0002"]},
+    {"id":"CONFIRM-10","query":"أبغى أتعلم SQL أو إكسيل في نشاط","tools":["excel","sql"],"activity":null,"mode":"any","review":false,"supported_ids":["OPP-DEMO-004","TOPIC-SRC-0005"]},
+    {"id":"CONFIRM-11","query":"أحتاج تعلم إكسيل وبايثون في نفس النشاط","tools":["excel","python"],"activity":null,"mode":"all","review":false,"supported_ids":[]},
+    {"id":"CONFIRM-12","query":"اشتغلت سابقا على SQL وأرغب في تعلم بايثون","tools":["python","sql"],"activity":null,"mode":"all","review":true,"supported_ids":[]}
+  ]
+}

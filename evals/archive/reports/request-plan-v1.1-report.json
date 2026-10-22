@@ -1,0 +1,4609 @@
+{
+  "generated_at": "2026-10-20T14:25:04.244171+00:00",
+  "policy_version": "request-plan-v1.1",
+  "binding": {
+    "policy_version": "request-plan-v1.1",
+    "fixture_sha256": "sha256:ca3fc8974f54126a9b13120a9c3ef7f49e0549dc0411351e7577ed6899b3dec3",
+    "code_sha256": {
+      "backend/app/request_plan.py": "6a7c5ac5bb00708bb24e2607d517cb632a25f92accecd77fa3ffb6f1cd10300f",
+      "backend/app/request_requirements.py": "d3365aaf8ab145eadbdaa18c2d4aa110ceac9eca78b68b8dbabf393e51230ee8",
+      "backend/app/schemas.py": "14d1c00cd956e5682446557d062995fb6369243badf21454b0f9ba56537b6360",
+      "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+      "backend/app/eligibility.py": "7f763bb0b6807013db72ea9aa9a3737dc28284295885662faa80a17f1bf7d73f",
+      "backend/app/eligibility_catalog.json": "ae0367eba8459cc0604889249740a99ce985b2f6ca030ececd3ce41cfd76716e",
+      "experiments/evaluate_request_plan.py": "561d5c8948dd2a4bc8adcb3cf585a0faa2a742aa409c9e43ae5e880c66760331",
+      "frontend/src/App.tsx": "d421cb404f36d5e5ade9ccb494454508fe4711d1cf475909a5ec5e9201a49d06",
+      "frontend/src/opportunities/SearchResults.tsx": "8a9db71e534fd6955c692f10172662bbf132f616629522cd75fe6ab706c6b6f9"
+    },
+    "raw_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3"
+  },
+  "freeze_sha256": "sha256:db7a8e632a9ebd62cab00e37ff9699f35a46fc55d1e85ebf5846180591da4022",
+  "cases": 30,
+  "passed_cases": 30,
+  "all_passed": true,
+  "new_neural_inferences": 0,
+  "enabled_in_application": false,
+  "general_understanding_verified": false,
+  "scope": "Replay of the same 30 known cases after a tool-OR transfer fix; not a fresh benchmark.",
+  "limitations": [
+    "Bounded phrase reader and deterministic resolver, not a general language-model adapter.",
+    "Author-written cases, not independent adjudication or query-language coverage estimates.",
+    "No search, API discovery or browser journey is implemented by this report.",
+    "Generic requirement understanding, semantic misses and application integration remain open."
+  ],
+  "results": [
+    {
+      "id": "P01",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P01",
+        "query": "أبي ورشة في ترجمة المحتوى التعليمي، مجانية وعن بعد بالكامل",
+        "constraints": {
+          "max_budget_sar": 100,
+          "delivery_modes": [
+            "online"
+          ]
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "max_budget_sar": 0,
+          "delivery_modes": [
+            "online"
+          ],
+          "opportunity_types": [
+            "workshop"
+          ]
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:b27fff5c727471777b10f1691def98acc3bc41baea6ed09d1dda6940dd017a04",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "أبي ورشة في ترجمة المحتوى التعليمي، مجانية وعن بعد بالكامل",
+        "semantic_query": "أبي في ترجمة المحتوى التعليمي",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 4,
+            "end": 8,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 0,
+            "start": 36,
+            "end": 42,
+            "quote": "مجانية"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "online"
+            ],
+            "start": 43,
+            "end": 58,
+            "quote": "وعن بعد بالكامل"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 12,
+                  "end": 17
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [
+            "online"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": 100.0,
+            "query": 0,
+            "effective": 0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "allowed_set_intersection",
+            "profile": [
+              "online"
+            ],
+            "query": [
+              "online"
+            ],
+            "effective": [
+              "online"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "أنواع الفرص: ورشة",
+          "أنماط الحضور المسموحة: عن بعد"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:46342e35bf630e3f4a4e8644f6f23196193d8b3835e9f1e2b0dc32f25e7cf79e"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P02",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P02",
+        "query": "أبي ورشة ترجمة مجانية وعن بعد بالكامل",
+        "constraints": {
+          "delivery_modes": [
+            "in_person"
+          ]
+        },
+        "expected_status": "constraint_conflict",
+        "expected_conflicts": [
+          "constraints.delivery_modes"
+        ]
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:374ddc6452df750620b6e9361246d4445adadffcd80abf7cd83577f1bfebacbe",
+        "status": "constraint_conflict",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "أبي ورشة ترجمة مجانية وعن بعد بالكامل",
+        "semantic_query": "أبي ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 4,
+            "end": 8,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 0,
+            "start": 15,
+            "end": 21,
+            "quote": "مجانية"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "online"
+            ],
+            "start": 22,
+            "end": 37,
+            "quote": "وعن بعد بالكامل"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 9,
+                  "end": 14
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [
+          {
+            "fields": [
+              "constraints.delivery_modes"
+            ],
+            "profile": [
+              "in_person"
+            ],
+            "query": [
+              "online"
+            ]
+          }
+        ],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": null,
+            "query": 0,
+            "effective": 0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "unresolved",
+            "profile": [
+              "in_person"
+            ],
+            "query": [
+              "online"
+            ],
+            "effective": null
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [
+          "constraints.delivery_modes"
+        ],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:bebcca2d7057f15f4015d1d866de06f289586a9f929ac1cf75ca7c7c9767ff91"
+      },
+      "conflict_response_example": {
+        "request_id": "P02",
+        "status": "needs_info",
+        "message": "نحتاج اختيار القيود المستخدمة لهذا البحث.",
+        "recommendations": [],
+        "missing_fields": [
+          "constraints.delivery_modes"
+        ],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [
+          "يوجد تعارض بين قيود الملف ونص البحث. اختر المصدر لهذه القيود المتعارضة فقط؛ تبقى القيود المتوافقة ويظل ملفك محفوظًا.",
+          "طريقة الحضور: في الملف «حضوري»، وفي نص البحث «عن بعد»."
+        ],
+        "constraint_conflict": true
+      }
+    },
+    {
+      "id": "P03",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P03",
+        "query": "أبي ورشة ترجمة مجانية وعن بعد بالكامل",
+        "constraints": {
+          "delivery_modes": [
+            "in_person"
+          ]
+        },
+        "resolution": "profile",
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "delivery_modes": [
+            "in_person"
+          ],
+          "max_budget_sar": 0,
+          "opportunity_types": [
+            "workshop"
+          ]
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:bd33e85071982936b75bcc59bdb1ccced7db6f8071acdf5ad2bf51414cec7efc",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "أبي ورشة ترجمة مجانية وعن بعد بالكامل",
+        "semantic_query": "أبي ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 4,
+            "end": 8,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 0,
+            "start": 15,
+            "end": 21,
+            "quote": "مجانية"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "online"
+            ],
+            "start": 22,
+            "end": 37,
+            "quote": "وعن بعد بالكامل"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 9,
+                  "end": 14
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [
+          {
+            "fields": [
+              "constraints.delivery_modes"
+            ],
+            "profile": [
+              "in_person"
+            ],
+            "query": [
+              "online"
+            ]
+          }
+        ],
+        "constraint_resolution": "profile",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [
+            "in_person"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": null,
+            "query": 0,
+            "effective": 0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "selected_profile",
+            "profile": [
+              "in_person"
+            ],
+            "query": [
+              "online"
+            ],
+            "effective": [
+              "in_person"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "أنواع الفرص: ورشة",
+          "أنماط الحضور المسموحة: حضوري"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:0a6624e1d4b5727d08d8a27bbef75840b575949868d1c84f2d00dd3cd6e64716"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P04",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P04",
+        "query": "أبي ورشة ترجمة مجانية وعن بعد بالكامل",
+        "constraints": {
+          "delivery_modes": [
+            "in_person"
+          ],
+          "max_duration_days": 3
+        },
+        "resolution": "query",
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "delivery_modes": [
+            "online"
+          ],
+          "max_duration_days": 3,
+          "max_budget_sar": 0
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:c7e50e1f38c5f5531993da144eac53c4aaaaee2a0b6a325a9ec8a9a0d75a215d",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "أبي ورشة ترجمة مجانية وعن بعد بالكامل",
+        "semantic_query": "أبي ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 4,
+            "end": 8,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 0,
+            "start": 15,
+            "end": 21,
+            "quote": "مجانية"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "online"
+            ],
+            "start": 22,
+            "end": 37,
+            "quote": "وعن بعد بالكامل"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 9,
+                  "end": 14
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [
+          {
+            "fields": [
+              "constraints.delivery_modes"
+            ],
+            "profile": [
+              "in_person"
+            ],
+            "query": [
+              "online"
+            ]
+          }
+        ],
+        "constraint_resolution": "query",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [
+            "online"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": 3,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": null,
+            "query": 0,
+            "effective": 0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "selected_query",
+            "profile": [
+              "in_person"
+            ],
+            "query": [
+              "online"
+            ],
+            "effective": [
+              "online"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": 3,
+            "query": null,
+            "effective": 3
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "المدة القصوى المصرح بها: 3 يوم",
+          "أنواع الفرص: ورشة",
+          "أنماط الحضور المسموحة: عن بعد"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:2ec113a858a14f344f564bb48d9ca8f5d5d237bfeeeeaddb888ad4d0aea8ada9"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P05",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P05",
+        "query": "ورشة ترجمة بميزانية لا تتجاوز 50 ريال",
+        "constraints": {
+          "max_budget_sar": 100
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "max_budget_sar": 50
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:59b6654a711da3e8bc0d08f69a3df0a9d74ddb1188282019f28db878d0264090",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة بميزانية لا تتجاوز 50 ريال",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 50.0,
+            "start": 11,
+            "end": 37,
+            "quote": "بميزانية لا تتجاوز 50 ريال"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 50.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": 100.0,
+            "query": 50.0,
+            "effective": 50.0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 50 ريال",
+          "أنواع الفرص: ورشة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:2567f55ab5a37767b783c488c0f89210d021028b76b66e6f7e6dce97acb80192"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P06",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P06",
+        "query": "ورشة ترجمة بميزانية لا تتجاوز 200 ريال",
+        "constraints": {
+          "max_budget_sar": 100
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "max_budget_sar": 100
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:ff46bea75d0198876b05f6bdd5897b5c4ad147379d371d39d9587793a4189d89",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة بميزانية لا تتجاوز 200 ريال",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 200.0,
+            "start": 11,
+            "end": 38,
+            "quote": "بميزانية لا تتجاوز 200 ريال"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 100.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": 100.0,
+            "query": 200.0,
+            "effective": 100.0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 100 ريال",
+          "أنواع الفرص: ورشة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:29670bf5c3591c480f0490c5ef1449e4fd397cfad07bd48d16254fee9e1c92bd"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P07",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P07",
+        "query": "ورشة ترجمة مدتها لا تتجاوز 5 أيام",
+        "constraints": {
+          "max_duration_days": 3
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "max_duration_days": 3
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:20897b1caee72e8d10955bf420b3091246c54da77f926ee16f3a2e16bac9943b",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة مدتها لا تتجاوز 5 أيام",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_duration_days",
+            "value": 5,
+            "start": 11,
+            "end": 33,
+            "quote": "مدتها لا تتجاوز 5 أيام"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": 3,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_duration_days",
+            "operation": "minimum_upper_bound",
+            "profile": 3,
+            "query": 5,
+            "effective": 3
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "المدة القصوى المصرح بها: 3 يوم",
+          "أنواع الفرص: ورشة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:6f860a4a61b6b2604e285606621497902e4ac6a131df0e6ddea7a64a6200a6cc"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P08",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P08",
+        "query": "ورشة أو دورة في ترجمة المحتوى",
+        "constraints": {
+          "opportunity_types": [
+            "workshop"
+          ]
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "opportunity_types": [
+            "workshop"
+          ]
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:285042ff676dbaa0883bc00190a5328b58b51150fdd0b22381f59f7cf18aafda",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة أو دورة في ترجمة المحتوى",
+        "semantic_query": "في ترجمة المحتوى",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "opportunity_types",
+            "value": [
+              "course"
+            ],
+            "start": 8,
+            "end": 12,
+            "quote": "دورة"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 16,
+                  "end": 21
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [
+              "workshop"
+            ],
+            "query": [
+              "workshop",
+              "course"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "أنواع الفرص: ورشة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:6f5688ca3a5036c79ee8d369b2657845e3bab9f2cc1458b2f797065b56d53957"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P09",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P09",
+        "query": "ورشة ودورة في ترجمة المحتوى",
+        "constraints": {},
+        "expected_status": "requires_interpretation"
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:06144792ac79d0138a185b30ca6cf5e96f71188b96742e8fbbc6f3e09e5c042b",
+        "status": "requires_interpretation",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ودورة في ترجمة المحتوى",
+        "semantic_query": "في ترجمة المحتوى",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "opportunity_types",
+            "value": [
+              "course"
+            ],
+            "start": 5,
+            "end": 10,
+            "quote": "ودورة"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 14,
+                  "end": 19
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [
+          "multiple_query_values_need_scope"
+        ],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop",
+              "course"
+            ],
+            "effective": [
+              "workshop",
+              "course"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:c9d51c9e0ffa8b99fb675f4ca63d6bd1f43b94d6df96b0155343a17aa1ceb67c"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P10",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P10",
+        "query": "ورشة ترجمة حضورية",
+        "constraints": {
+          "opportunity_types": [
+            "course"
+          ]
+        },
+        "expected_status": "constraint_conflict",
+        "expected_conflicts": [
+          "constraints.opportunity_types"
+        ]
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:96261e14e2a78d34cc9b00571f163bd12b85b3cf8e79e81f935d939c9f0c23f4",
+        "status": "constraint_conflict",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة حضورية",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "in_person"
+            ],
+            "start": 11,
+            "end": 17,
+            "quote": "حضورية"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [
+          {
+            "fields": [
+              "constraints.opportunity_types"
+            ],
+            "profile": [
+              "course"
+            ],
+            "query": [
+              "workshop"
+            ]
+          }
+        ],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "unresolved",
+            "profile": [
+              "course"
+            ],
+            "query": [
+              "workshop"
+            ],
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "in_person"
+            ],
+            "effective": [
+              "in_person"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [
+          "constraints.opportunity_types"
+        ],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:4aef30b52dd528bc015d93ce0a71be99f3be5934947142313726cde70d88fb3b"
+      },
+      "conflict_response_example": {
+        "request_id": "P10",
+        "status": "needs_info",
+        "message": "نحتاج اختيار القيود المستخدمة لهذا البحث.",
+        "recommendations": [],
+        "missing_fields": [
+          "constraints.opportunity_types"
+        ],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [
+          "يوجد تعارض بين قيود الملف ونص البحث. اختر المصدر لهذه القيود المتعارضة فقط؛ تبقى القيود المتوافقة ويظل ملفك محفوظًا.",
+          "نوع الفرصة: في الملف «دورة»، وفي نص البحث «ورشة»."
+        ],
+        "constraint_conflict": true
+      }
+    },
+    {
+      "id": "P11",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P11",
+        "query": "ورشة ترجمة حضورية",
+        "constraints": {
+          "opportunity_types": [
+            "course"
+          ],
+          "max_budget_sar": 0
+        },
+        "resolution": "query",
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "opportunity_types": [
+            "workshop"
+          ],
+          "max_budget_sar": 0,
+          "delivery_modes": [
+            "in_person"
+          ]
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:f86551fba81ecf3660c41460ca148782b792ae791ee3a0e7e92f27178b62686c",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة حضورية",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "in_person"
+            ],
+            "start": 11,
+            "end": 17,
+            "quote": "حضورية"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [
+          {
+            "fields": [
+              "constraints.opportunity_types"
+            ],
+            "profile": [
+              "course"
+            ],
+            "query": [
+              "workshop"
+            ]
+          }
+        ],
+        "constraint_resolution": "query",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [
+            "in_person"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "selected_query",
+            "profile": [
+              "course"
+            ],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "in_person"
+            ],
+            "effective": [
+              "in_person"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": 0.0,
+            "query": null,
+            "effective": 0.0
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "أنواع الفرص: ورشة",
+          "أنماط الحضور المسموحة: حضوري"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:e4a0a1d11cb6f09d4e4d40800cc1745150a43f469bfff418ac2ba4246321f560"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P12",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P12",
+        "query": "ورشة ترجمة من 2026-12-10 إلى 2026-12-20",
+        "constraints": {
+          "available_from": "2026-12-01",
+          "available_to": "2026-12-15"
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "available_from": "2026-12-10",
+          "available_to": "2026-12-15"
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:ef89b1881f6720accba5921de60b06dada88e70e709b3c3f8c5b16f26c4a7d74",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة من 2026-12-10 إلى 2026-12-20",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "available_from",
+            "value": "2026-12-10",
+            "start": 11,
+            "end": 39,
+            "quote": "من 2026-12-10 إلى 2026-12-20"
+          },
+          {
+            "field": "available_to",
+            "value": "2026-12-20",
+            "start": 11,
+            "end": 39,
+            "quote": "من 2026-12-10 إلى 2026-12-20"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": "2026-12-10",
+          "available_to": "2026-12-15",
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "availability_window",
+            "operation": "window_intersection",
+            "profile": {
+              "available_from": "2026-12-01",
+              "available_to": "2026-12-15"
+            },
+            "query": {
+              "available_from": "2026-12-10",
+              "available_to": "2026-12-20"
+            },
+            "effective": {
+              "available_from": "2026-12-10",
+              "available_to": "2026-12-15"
+            }
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "أنواع الفرص: ورشة",
+          "التفرغ: من 2026-12-10 إلى 2026-12-15"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:26ac17982bfeb57da6ecb9642691f7bee543c3e42deabbf9d8e92d45c9da18d3"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P13",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P13",
+        "query": "ورشة ترجمة من 2027-01-01 إلى 2027-01-10",
+        "constraints": {
+          "available_from": "2026-12-01",
+          "available_to": "2026-12-31"
+        },
+        "expected_status": "constraint_conflict",
+        "expected_conflicts": [
+          "constraints.available_from",
+          "constraints.available_to"
+        ]
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:a5cc191af6abd2ba5e8cc15365c5069f107c2ca5d3e10788126f86723ff40370",
+        "status": "constraint_conflict",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة من 2027-01-01 إلى 2027-01-10",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "available_from",
+            "value": "2027-01-01",
+            "start": 11,
+            "end": 39,
+            "quote": "من 2027-01-01 إلى 2027-01-10"
+          },
+          {
+            "field": "available_to",
+            "value": "2027-01-10",
+            "start": 11,
+            "end": 39,
+            "quote": "من 2027-01-01 إلى 2027-01-10"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [
+          {
+            "fields": [
+              "constraints.available_from",
+              "constraints.available_to"
+            ],
+            "profile": {
+              "available_from": "2026-12-01",
+              "available_to": "2026-12-31"
+            },
+            "query": {
+              "available_from": "2027-01-01",
+              "available_to": "2027-01-10"
+            }
+          }
+        ],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "availability_window",
+            "operation": "unresolved",
+            "profile": {
+              "available_from": "2026-12-01",
+              "available_to": "2026-12-31"
+            },
+            "query": {
+              "available_from": "2027-01-01",
+              "available_to": "2027-01-10"
+            },
+            "effective": {
+              "available_from": "2026-12-01",
+              "available_to": "2026-12-31"
+            }
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [
+          "constraints.available_from",
+          "constraints.available_to"
+        ],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:0de5482af07cb59b7f585a800830a77bb0f1a26e4426695f4548561d637dfdb4"
+      },
+      "conflict_response_example": {
+        "request_id": "P13",
+        "status": "needs_info",
+        "message": "نحتاج اختيار القيود المستخدمة لهذا البحث.",
+        "recommendations": [],
+        "missing_fields": [
+          "constraints.available_from",
+          "constraints.available_to"
+        ],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [
+          "يوجد تعارض بين قيود الملف ونص البحث. اختر المصدر لهذه القيود المتعارضة فقط؛ تبقى القيود المتوافقة ويظل ملفك محفوظًا.",
+          "فترة التفرغ: في الملف «من 2026-12-01 إلى 2026-12-31»، وفي نص البحث «من 2027-01-01 إلى 2027-01-10»."
+        ],
+        "constraint_conflict": true
+      }
+    },
+    {
+      "id": "P14",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P14",
+        "query": "ورشة ترجمة من 2027-01-01 إلى 2027-01-10",
+        "constraints": {
+          "available_from": "2026-12-01",
+          "available_to": "2026-12-31",
+          "max_budget_sar": 0
+        },
+        "resolution": "query",
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "available_from": "2027-01-01",
+          "available_to": "2027-01-10",
+          "max_budget_sar": 0
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:b0a22e7b58e81d8ba43c281a94fa37f2f49b57a4588cd0bf76f24c8ac9889311",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة من 2027-01-01 إلى 2027-01-10",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "available_from",
+            "value": "2027-01-01",
+            "start": 11,
+            "end": 39,
+            "quote": "من 2027-01-01 إلى 2027-01-10"
+          },
+          {
+            "field": "available_to",
+            "value": "2027-01-10",
+            "start": 11,
+            "end": 39,
+            "quote": "من 2027-01-01 إلى 2027-01-10"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [
+          {
+            "fields": [
+              "constraints.available_from",
+              "constraints.available_to"
+            ],
+            "profile": {
+              "available_from": "2026-12-01",
+              "available_to": "2026-12-31"
+            },
+            "query": {
+              "available_from": "2027-01-01",
+              "available_to": "2027-01-10"
+            }
+          }
+        ],
+        "constraint_resolution": "query",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": "2027-01-01",
+          "available_to": "2027-01-10",
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "availability_window",
+            "operation": "selected_query",
+            "profile": {
+              "available_from": "2026-12-01",
+              "available_to": "2026-12-31"
+            },
+            "query": {
+              "available_from": "2027-01-01",
+              "available_to": "2027-01-10"
+            },
+            "effective": {
+              "available_from": "2027-01-01",
+              "available_to": "2027-01-10"
+            }
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": 0.0,
+            "query": null,
+            "effective": 0.0
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "أنواع الفرص: ورشة",
+          "التفرغ: من 2027-01-01 إلى 2027-01-10"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:d5a9b488d812d0f34b701d29ed68e9ef261a9e123d6cf1cbdf38ce941db89071"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P15",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P15",
+        "query": "ورشة ترجمة في الرياض فقط",
+        "profile": {
+          "city": "جدة"
+        },
+        "constraints": {
+          "location_preference": [
+            "جدة"
+          ]
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "location_preference": [
+            "جدة"
+          ]
+        },
+        "expected_locations": [
+          "الرياض"
+        ]
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:0bdce70c390a2116692c43c2b84fe976ab298adf2229f71ba32c0a933d5842ef",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة في الرياض فقط",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "required_locations",
+            "value": [
+              "الرياض"
+            ],
+            "start": 11,
+            "end": 24,
+            "quote": "في الرياض فقط"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": [
+            "جدة"
+          ],
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [
+          "الرياض"
+        ],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": [
+              "جدة"
+            ],
+            "query": null,
+            "effective": [
+              "جدة"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [
+              "الرياض"
+            ],
+            "effective": [
+              "الرياض"
+            ]
+          }
+        ],
+        "interpreted_filters": [
+          "أنواع الفرص: ورشة",
+          "مدن مفضلة دون استبعاد غيرها: جدة",
+          "المدن الإلزامية: الرياض"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:9cdd1b97a9a5ac6a7b4808a4accfe9a428fd70630b0ff0fc27196e458d9a4352"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P16",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P16",
+        "query": "ورشة ترجمة أفضل الرياض",
+        "constraints": {
+          "location_preference": [
+            "جدة"
+          ]
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "location_preference": [
+            "جدة",
+            "الرياض"
+          ]
+        },
+        "expected_locations": []
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:575793dce0d014b5d5533425046a9105d95b52832f7b70516f9478caa23d1dd8",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة أفضل الرياض",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "location_preference",
+            "value": [
+              "الرياض"
+            ],
+            "start": 11,
+            "end": 22,
+            "quote": "أفضل الرياض"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": [
+            "جدة",
+            "الرياض"
+          ],
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "soft_preference_union",
+            "profile": [
+              "جدة"
+            ],
+            "query": [
+              "الرياض"
+            ],
+            "effective": [
+              "جدة",
+              "الرياض"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "أنواع الفرص: ورشة",
+          "مدن مفضلة دون استبعاد غيرها: جدة، الرياض"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:902fc130cefd9d25c66efa4776586248f238b676805bd4cdef5b5553f676d805"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P17",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P17",
+        "query": "أبي ورشة ترجمة مو مجانية",
+        "constraints": {},
+        "expected_status": "requires_interpretation"
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:d305d5c8632274a0ded50d1dde5dd19e51380b853d47d6208e2c9539d1750108",
+        "status": "requires_interpretation",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "أبي ورشة ترجمة مو مجانية",
+        "semantic_query": "أبي ترجمة مو",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 4,
+            "end": 8,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 0,
+            "start": 18,
+            "end": 24,
+            "quote": "مجانية"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 9,
+                  "end": 14
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": [
+            "negation_scope_needs_interpretation"
+          ]
+        },
+        "review_reasons": [
+          "negation_scope_needs_interpretation",
+          "unhandled_constraint_or_scope_marker"
+        ],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": null,
+            "query": 0,
+            "effective": 0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:7aeeecad39eeaeb9d191e674bebb2aefa6f33c6bf28e5d33b51537e038ba3ff5"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P18",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P18",
+        "query": "أبي ورشة ترجمة مو عن بعد بالكامل",
+        "constraints": {
+          "delivery_modes": [
+            "in_person"
+          ]
+        },
+        "resolution": "profile",
+        "expected_status": "requires_interpretation"
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:d4882c3bda3732defa92c53e7432186f517d853861fa63b774a6922efc014d34",
+        "status": "requires_interpretation",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "أبي ورشة ترجمة مو عن بعد بالكامل",
+        "semantic_query": "أبي ترجمة مو",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 4,
+            "end": 8,
+            "quote": "ورشة"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "online"
+            ],
+            "start": 18,
+            "end": 32,
+            "quote": "عن بعد بالكامل"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 9,
+                  "end": 14
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": [
+            "negation_scope_needs_interpretation"
+          ]
+        },
+        "review_reasons": [
+          "negation_scope_needs_interpretation",
+          "unhandled_constraint_or_scope_marker"
+        ],
+        "conflicts": [
+          {
+            "fields": [
+              "constraints.delivery_modes"
+            ],
+            "profile": [
+              "in_person"
+            ],
+            "query": [
+              "online"
+            ]
+          }
+        ],
+        "constraint_resolution": "profile",
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "selected_profile",
+            "profile": [
+              "in_person"
+            ],
+            "query": [
+              "online"
+            ],
+            "effective": [
+              "in_person"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:31000421893467f100373e412b3ea0373ec05084e65ccc1f5f8c0f50e6f7a9bd"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P19",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P19",
+        "query": "ورشة ترجمة الشهر القادم",
+        "constraints": {},
+        "expected_status": "requires_interpretation"
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:06bc2d69da2eb7d1d83ec7326f0030a8981ea961fa76c981785a13163bcfaec6",
+        "status": "requires_interpretation",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة الشهر القادم",
+        "semantic_query": "ترجمة الشهر القادم",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [
+          "unhandled_constraint_or_scope_marker"
+        ],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:fe5fa04e1814928b2784bdffaecfba5801a4ab92025f01e14d00a781446be417"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P20",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P20",
+        "query": "ورشة ترجمة من 2026-12-20 إلى 2026-12-10",
+        "constraints": {},
+        "expected_status": "requires_interpretation"
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:e6672b4ec6c0d6367e7587c80aa8905ad836ebb4ecd46cc457181aa3adbba78b",
+        "status": "requires_interpretation",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة من 2026-12-20 إلى 2026-12-10",
+        "semantic_query": "ترجمة من 2026-12-20 إلى 2026-12-10",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [
+          "invalid_query_availability",
+          "unhandled_constraint_or_scope_marker"
+        ],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:01abd3d5bf53f85f130af79010b0d9736d94587d3dde90fece2fc690728c475e"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P21",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P21",
+        "query": "ورشة ترجمة بميزانية لا تتجاوز ٥٠ ريال",
+        "constraints": {},
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "max_budget_sar": 50
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:99189cb58ecd54ad3ec0dca2bbabc1dbb500c9b679f8e8beb895e18e8cef733a",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة بميزانية لا تتجاوز ٥٠ ريال",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 50.0,
+            "start": 11,
+            "end": 37,
+            "quote": "بميزانية لا تتجاوز ٥٠ ريال"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 50.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": null,
+            "query": 50.0,
+            "effective": 50.0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 50 ريال",
+          "أنواع الفرص: ورشة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:a4218798fd6d8d465236e85a66c55ffaf537654ace5aa0d8817dabd42e7dc1e7"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P22",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P22",
+        "query": "ورشة ترجمة بميزانية لا تتجاوز 50.25 ريال",
+        "constraints": {},
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "max_budget_sar": 50.25
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:8fb6ffcf123d20b3fd03e64751abace45ef216848c723e081c25ec5d761cb6b6",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة بميزانية لا تتجاوز 50.25 ريال",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 50.25,
+            "start": 11,
+            "end": 40,
+            "quote": "بميزانية لا تتجاوز 50.25 ريال"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 50.25
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": null,
+            "query": 50.25,
+            "effective": 50.25
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 50.25 ريال",
+          "أنواع الفرص: ورشة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:d9cbf202b768b7381b0d4ed563e76e733e9ffb567c5a6390b40a01c80ed789a0"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P23",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P23",
+        "query": "ورشة ترجمة مجانية بميزانية لا تتجاوز 100 ريال",
+        "constraints": {},
+        "expected_status": "requires_interpretation"
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:9416b38c3a7c0c09b242a0539cf50a8c3ebebd3b8e4f20621c8eb91b7facc708",
+        "status": "requires_interpretation",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة مجانية بميزانية لا تتجاوز 100 ريال",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 0,
+            "start": 11,
+            "end": 17,
+            "quote": "مجانية"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 100.0,
+            "start": 18,
+            "end": 45,
+            "quote": "بميزانية لا تتجاوز 100 ريال"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [
+          "multiple_query_limits_need_scope"
+        ],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": null,
+            "query": 100.0,
+            "effective": 100.0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:768e935c51e4bdf7339017b625f5f3487583df86de92cdd23d2f7a5c3ceadb56"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P24",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P24",
+        "query": "أبي فرص ترجمة المحتوى",
+        "profile": {
+          "city": "الرياض"
+        },
+        "constraints": {},
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "location_preference": null,
+          "delivery_modes": []
+        },
+        "expected_locations": []
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:0cc1311b94f7644603cade49556a8a3091a42de1610b16a99f77feae5cb04afa",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "أبي فرص ترجمة المحتوى",
+        "semantic_query": "أبي فرص ترجمة المحتوى",
+        "topic_origin": "query",
+        "query_claims": [],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 8,
+                  "end": 13
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:34de87397431c21a509b8b55678498f0c3934a0fa93cc3bf452776151254e5ee"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P25",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P25",
+        "query": "ورشة Excel أو SQL",
+        "constraints": {},
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "opportunity_types": [
+            "workshop"
+          ]
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:f30070c165e81c5a7ff50183b7a2c0cb20530880704ca8806588712ded0ded6f",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة Excel أو SQL",
+        "semantic_query": "Excel أو SQL",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          }
+        ],
+        "requirements": {
+          "tools": [
+            {
+              "tool": "excel",
+              "quote": "Excel",
+              "start": 5,
+              "end": 10,
+              "polarity": "required"
+            },
+            {
+              "tool": "sql",
+              "quote": "SQL",
+              "start": 14,
+              "end": 17,
+              "polarity": "required"
+            }
+          ],
+          "activities": [],
+          "tool_mode": "any",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "أنواع الفرص: ورشة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:11df9fca66137ba5df4bdf61fabfa5c5b990ca2b16b06b580fbc5c513dfad1e0"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P26",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P26",
+        "query": "ورشة ترجمة حضورية أو عن بعد بالكامل",
+        "constraints": {
+          "delivery_modes": [
+            "in_person",
+            "online",
+            "hybrid"
+          ]
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "delivery_modes": [
+            "in_person",
+            "online"
+          ]
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:734b1e88175a46582beab7f66ada0f0c320eabf2315e60707c170a43354665b0",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة حضورية أو عن بعد بالكامل",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "in_person"
+            ],
+            "start": 11,
+            "end": 17,
+            "quote": "حضورية"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "online"
+            ],
+            "start": 21,
+            "end": 35,
+            "quote": "عن بعد بالكامل"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [
+            "in_person",
+            "online"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "allowed_set_intersection",
+            "profile": [
+              "in_person",
+              "online",
+              "hybrid"
+            ],
+            "query": [
+              "in_person",
+              "online"
+            ],
+            "effective": [
+              "in_person",
+              "online"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "أنواع الفرص: ورشة",
+          "أنماط الحضور المسموحة: حضوري أو عن بعد"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:b6dba1a2cb1bd2d6853b86d85c8b01ecfbb2e296dffdbe73b6b1e51a23939b94"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P27",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P27",
+        "query": "أبي ورشة ترجمة مدتها ساعات قليلة",
+        "constraints": {},
+        "expected_status": "requires_interpretation"
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:ba50a94ce9ff3dbad95781d4962792fa5eb0b11cf66e1f0ef00441473f74ea28",
+        "status": "requires_interpretation",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "أبي ورشة ترجمة مدتها ساعات قليلة",
+        "semantic_query": "أبي ترجمة مدتها ساعات قليلة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 4,
+            "end": 8,
+            "quote": "ورشة"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 9,
+                  "end": 14
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [
+          "unhandled_constraint_or_scope_marker"
+        ],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:7bbf6858d23f4408c591ef61469d9607873ab17270cef8433db5fa0cc56e30e3"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P28",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P28",
+        "query": "ورشة ترجمة مجانية",
+        "constraints": {
+          "max_budget_sar": 0
+        },
+        "expected_status": "resolved",
+        "expected_constraints": {
+          "max_budget_sar": 0
+        }
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:aa776d407cc3e2a3aef34064563e4c9fa989219a384b890f9a267b81dc7f2107",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة مجانية",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "max_budget_sar",
+            "value": 0,
+            "start": 11,
+            "end": 17,
+            "quote": "مجانية"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "provenance": [
+          {
+            "field": "max_budget_sar",
+            "operation": "minimum_upper_bound",
+            "profile": 0.0,
+            "query": 0,
+            "effective": 0.0
+          },
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "أنواع الفرص: ورشة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:6c0b179a9a3663082d7aaee0ecdd4d75684b2a647585e719cf113070d46bb3db"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P29",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P29",
+        "query": "ورشة ترجمة في جدة فقط",
+        "constraints": {
+          "location_preference": [
+            "الرياض"
+          ]
+        },
+        "resolution": "profile",
+        "expected_status": "resolved",
+        "expected_locations": [
+          "جدة"
+        ]
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:46a94c71b24b8cf131e1d99e51b66795febda5d19d168741385692d53a287114",
+        "status": "resolved",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة في جدة فقط",
+        "semantic_query": "ترجمة",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          },
+          {
+            "field": "required_locations",
+            "value": [
+              "جدة"
+            ],
+            "start": 11,
+            "end": 21,
+            "quote": "في جدة فقط"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [],
+        "conflicts": [],
+        "constraint_resolution": "profile",
+        "effective_constraints": {
+          "location_preference": [
+            "الرياض"
+          ],
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [
+          "جدة"
+        ],
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": [
+              "الرياض"
+            ],
+            "query": null,
+            "effective": [
+              "الرياض"
+            ]
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [
+              "جدة"
+            ],
+            "effective": [
+              "جدة"
+            ]
+          }
+        ],
+        "interpreted_filters": [
+          "أنواع الفرص: ورشة",
+          "مدن مفضلة دون استبعاد غيرها: الرياض",
+          "المدن الإلزامية: جدة"
+        ],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:65e4b79f504334e941e588e85d9dada9a0d180b28c146d20c410a47006b0aafb"
+      },
+      "conflict_response_example": null
+    },
+    {
+      "id": "P30",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "P30",
+        "query": "ورشة ترجمة من 2026-02-30 إلى 2026-03-02",
+        "constraints": {},
+        "expected_status": "requires_interpretation"
+      },
+      "actual": {
+        "policy_version": "request-plan-v1.1",
+        "request_version": "sha256:39d029d5f21fd294efd431449665cdbd09d6a297fc3d846492acf6d49628c495",
+        "status": "requires_interpretation",
+        "reader_scope": "bounded_literal_reference",
+        "original_query": "ورشة ترجمة من 2026-02-30 إلى 2026-03-02",
+        "semantic_query": "ترجمة من 2026-02-30 إلى 2026-03-02",
+        "topic_origin": "query",
+        "query_claims": [
+          {
+            "field": "opportunity_types",
+            "value": [
+              "workshop"
+            ],
+            "start": 0,
+            "end": 4,
+            "quote": "ورشة"
+          }
+        ],
+        "requirements": {
+          "tools": [],
+          "activities": [
+            {
+              "activity": "translation",
+              "anchors": [
+                {
+                  "quote": "ترجمة",
+                  "start": 5,
+                  "end": 10
+                }
+              ]
+            }
+          ],
+          "tool_mode": "all",
+          "review_reasons": []
+        },
+        "review_reasons": [
+          "invalid_query_availability",
+          "unhandled_constraint_or_scope_marker"
+        ],
+        "conflicts": [],
+        "constraint_resolution": null,
+        "effective_constraints": null,
+        "required_locations": null,
+        "provenance": [
+          {
+            "field": "opportunity_types",
+            "operation": "allowed_set_intersection",
+            "profile": [],
+            "query": [
+              "workshop"
+            ],
+            "effective": [
+              "workshop"
+            ]
+          },
+          {
+            "field": "location_preference",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "delivery_modes",
+            "operation": "profile_or_no_constraint",
+            "profile": [],
+            "query": null,
+            "effective": []
+          },
+          {
+            "field": "available_from",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "available_to",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_duration_days",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "max_budget_sar",
+            "operation": "profile_or_no_constraint",
+            "profile": null,
+            "query": null,
+            "effective": null
+          },
+          {
+            "field": "required_locations",
+            "operation": "explicit_query_only",
+            "profile": null,
+            "query": [],
+            "effective": []
+          }
+        ],
+        "interpreted_filters": [],
+        "missing_fields": [],
+        "general_understanding_verified": false,
+        "plan_version": "sha256:d7a81d86d851f3ce39dfaf21e89114c73dbfe6c35b3f2c19200a0671313c647b"
+      },
+      "conflict_response_example": null
+    }
+  ]
+}

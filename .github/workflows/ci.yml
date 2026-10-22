@@ -27,10 +27,13 @@ jobs:
           cache: pip
           cache-dependency-path: backend/requirements.txt
       - run: python -m pip install -r backend/requirements.txt
-      - run: python -m unittest discover -s backend/tests
+      - run: python -m pip install opentelemetry-sdk==1.44.0
+      - run: python -m unittest discover -s evals/tests/backend
         env:
-          PYTHONPATH: backend
-      - run: python -m unittest discover -s experiments -p test_model_integrity.py
+          PYTHONPATH: .:backend:evals/archive/experiments:backend/app/infrastructure/models
+      - run: python -m unittest discover -s evals/tests/experiments -p "test_*.py"
+        env:
+          PYTHONPATH: .:backend:evals/archive/experiments:backend/app/infrastructure/models
   containers:
     runs-on: ubuntu-latest
     steps:

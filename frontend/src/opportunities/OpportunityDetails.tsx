@@ -91,6 +91,9 @@ export default function OpportunityDetails({ rec, onClose }: { rec: Recommendati
           <div className="section-label">الأدلة</div>
           <div>السجلات المصدرية: <span className="mono small" dir="ltr">{det.source_ids.join(', ') || '—'}</span></div>
           <div>آخر تحقق: {fmtDate(det.last_verified_at) ?? UNKNOWN}</div>
+          {det.information_url && /^https:\/\//i.test(det.information_url) && (
+            <a href={det.information_url} target="_blank" rel="noopener noreferrer">رابط معلومات الفرصة</a>
+          )}
         </div>
       )}
     </Drawer>

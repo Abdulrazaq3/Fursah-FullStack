@@ -15,6 +15,7 @@ from .schemas import (
     HealthResponse, OpportunityDetailsResponse, ReadinessResponse,
 )
 from .workflow import discover
+from .understanding_shadow import schedule_understanding_shadow
 
 router = APIRouter()
 
@@ -113,6 +114,7 @@ async def discover_route(
         )
         raise
 
+    schedule_understanding_shadow(body, deps)
     elapsed = (time.perf_counter() - started) * 1000
     deps.tracer.emit(
         request_id=request_id,

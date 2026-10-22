@@ -1,0 +1,109 @@
+{
+  "cases": 12,
+  "outcomes": {
+    "FAIL": 5,
+    "PASS": 7
+  },
+  "metrics": {
+    "e2e.status": {
+      "mean": 0.75,
+      "n": 12,
+      "failing_cases": [
+        "CAT-DEV-05",
+        "CAT-DEV-09",
+        "CAT-DEV-10"
+      ]
+    },
+    "retrieval.recall_at_20": {
+      "mean": 0.8213464696223317,
+      "n": 10,
+      "failing_cases": []
+    },
+    "rerank.ndcg_at_20": {
+      "mean": 1.0,
+      "n": 10,
+      "failing_cases": []
+    },
+    "final.topic_precision_at_3": {
+      "mean": 1.0,
+      "n": 4,
+      "failing_cases": []
+    },
+    "final.hit_at_3": {
+      "mean": 1.0,
+      "n": 8,
+      "failing_cases": []
+    },
+    "final.hard_constraints": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "final.evidence": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "details.consistency": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "final.grounded_reason": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "tracing.coverage": {
+      "mean": 1.0,
+      "n": 12,
+      "failing_cases": []
+    },
+    "source.availability": {
+      "mean": 0.6363636363636364,
+      "n": 11,
+      "failing_cases": [
+        "CAT-DEV-01",
+        "CAT-DEV-04",
+        "CAT-DEV-05",
+        "CAT-DEV-09"
+      ]
+    },
+    "understanding.constraints": {
+      "mean": 1.0,
+      "n": 3,
+      "failing_cases": []
+    },
+    "final.allowed_precision_at_3": {
+      "mean": 1.0,
+      "n": 3,
+      "failing_cases": []
+    },
+    "final.forbidden": {
+      "mean": 0.6666666666666666,
+      "n": 3,
+      "failing_cases": [
+        "CAT-DEV-05"
+      ]
+    },
+    "retrieval.target_coverage": {
+      "mean": 1.0,
+      "n": 1,
+      "failing_cases": []
+    },
+    "e2e.missing_fields": {
+      "mean": 1.0,
+      "n": 1,
+      "failing_cases": []
+    }
+  },
+  "original_run": "evals\\results\\20261022-172811-catalog-baseline-v1.jsonl",
+  "original_run_sha256": "606f9a69aec77ed194e8202350c7f5f30892ddac11aef871cf2fd621197fc24a",
+  "traces_sha256": "0ef3d70309292905ff42a28079710bc5a23ee2be4834a77d01a0affcb73ff039",
+  "graders_sha256": "796c254a9825a75cfe719f6d88c48d4e9b44195f8249619a0f2712382ec4ab79",
+  "cases_sha256": "5ad0c74b7006330eb26218c8e27928299b6efeab880eb1897cc0551ee2a1e961",
+  "new_model_calls": 0,
+  "holdout_evaluated": false,
+  "production_approval": false,
+  "reason": "Independent original-source availability audit added after trace review; no labels or system decisions changed"
+}

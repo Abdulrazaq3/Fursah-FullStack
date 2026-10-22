@@ -1,0 +1,21 @@
+{
+  "version": "catalog-evals-v1",
+  "evaluation_time": "2026-10-22T12:00:00+03:00",
+  "catalog_opportunities": 913,
+  "dev_cases": 12,
+  "holdout_cases": 6,
+  "label_author": "AI source review, not human-approved gold",
+  "holdout_status": "sealed, not run for baseline",
+  "files": {
+    "data/raw/raw_opportunities.csv": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+    "data/prepared/catalog.json": "8ffceaa65e6357c831b2bbea9e0d9052388ce37c9e4063b51d7e7c1c2627a194",
+    "backend/evals/catalog_dev_cases.jsonl": "5ad0c74b7006330eb26218c8e27928299b6efeab880eb1897cc0551ee2a1e961",
+    "backend/evals/catalog_holdout_cases.jsonl": "cbb2c55c6176ddf5f755b3764a84041e5f5a3a45168846f0ad175cef41ad6e99"
+  },
+  "limitations": [
+    "Small development baseline, not production approval",
+    "Topic labels are exhaustive only where flagged; other alternatives remain ungraded for precision",
+    "Trace consistency alone is not independent semantic evidence",
+    "Holdout not used for debugging or tuning; add human review before production acceptance"
+  ]
+}

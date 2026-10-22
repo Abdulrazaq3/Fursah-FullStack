@@ -17,3 +17,11 @@
 Dockerfile text eol=lf
 data/raw/*.csv -text whitespace=cr-at-eol
 *.png binary
+
+# Catalog and frozen evaluation evidence are checked by their exact byte hashes.
+# Preserve their original line endings on every machine.
+data/prepared/** -text whitespace=cr-at-eol
+data/sources/** -text -whitespace
+evals/cases/** -text whitespace=cr-at-eol
+evals/archive/** -text -whitespace
+backend/app/normalized_alternatives_v31.py -text whitespace=cr-at-eol

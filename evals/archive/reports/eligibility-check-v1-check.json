@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-19T19:15:54.338911+00:00",
+  "policy_version": "eligibility-v1",
+  "backend_tests_passed": 86,
+  "experiment_tests_passed": 10,
+  "eligibility_cases_passed": 28,
+  "question_scenarios_passed": 10,
+  "source_sample_cases": 4,
+  "synthetic_eligibility_cases": 24,
+  "source_sample_eligibility_remains_uncertain": true,
+  "questions_target_supported_frontend_fields": true,
+  "code_and_fixture_hashes_match": true,
+  "prior_constraint_round_preserved": true,
+  "raw_data_unchanged": true,
+  "local_document_links_checked": 290,
+  "diagram_out_of_bounds_labels": 0,
+  "new_neural_inferences": 0,
+  "enabled_in_application": false,
+  "scope": "Bounded deterministic eligibility and simulated question-gate verification; no general requirement understanding, API discovery or live registration claim."
+}

@@ -1,0 +1,12 @@
+{
+  "version":"1.3",
+  "scope":"Fresh deterministic checks for negation word boundaries, explicit exclusions and a presentation regression control. No neural inference or general language claim.",
+  "queries":[
+    {"id":"CONFIRM13-01","query":"أريد نشاطًا صغير SQL يساعدني على الاستعلامات","tools":["sql"],"activity":"database_querying","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0005"]},
+    {"id":"CONFIRM13-02","query":"ورشة برمجة لمشروع صغير Python","tools":["python"],"activity":"programming","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0020"]},
+    {"id":"CONFIRM13-03","query":"تطبيق تحليل بيانات لحجم صغير Excel","tools":["excel"],"activity":"data_analysis","mode":"all","review":false,"supported_ids":["OPP-DEMO-004"]},
+    {"id":"CONFIRM13-04","query":"تجربة تعليمية بدون Excel","tools":[],"activity":null,"mode":"all","review":false,"supported_ids":[]},
+    {"id":"CONFIRM13-05","query":"أريد ورشة غير SQL","tools":[],"activity":null,"mode":"all","review":false,"supported_ids":[]},
+    {"id":"CONFIRM13-06","query":"تدريب كي نعرض أفكار المجموعة أمام الحضور","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]}
+  ]
+}

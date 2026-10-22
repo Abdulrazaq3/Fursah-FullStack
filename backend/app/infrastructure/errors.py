@@ -48,8 +48,13 @@ class EvidenceValidationError(FursahError):
 
 
 class WorkflowBudgetExceededError(FursahError):
-    public_code = ErrorCode.INTERNAL
-    public_message = "The workflow stopped before a safe result could be produced."
+    public_code = 'FURSAH_WORKFLOW_TIMEOUT'
+    public_message = 'توقف البحث قبل اكتمال الفحوص ضمن الوقت المحدد. حاول مرة أخرى بعد اكتمال الطلب السابق.'
+
+
+class WorkflowBusyError(FursahError):
+    public_code = 'FURSAH_BUSY'
+    public_message = 'البحث المحلي مشغول بطلب آخر. انتظر اكتماله ثم أعد المحاولة.'
 
 
 class RecordNotFound(FursahError):

@@ -81,6 +81,7 @@ function validDetails(value: unknown): value is OpportunityDetails {
     && ['session_count', 'capacity'].every(key => value[key] == null || typeof value[key] === 'number' && Number.isSafeInteger(value[key]) && value[key] > 0)
     && ['hours_per_session', 'total_hours'].every(key => value[key] == null || typeof value[key] === 'number' && Number.isFinite(value[key]) && value[key] > 0)
     && optionalText(value.application_url)
+    && optionalText(value.information_url)
     && ['required_documents_ar', 'application_steps_ar'].every(key => value[key] == null || strings(value[key]))
     && (value.hours_per_session == null || typeof value.hours_per_session === 'number' && value.hours_per_session <= 24)
     && optionalNumber(value.cost)

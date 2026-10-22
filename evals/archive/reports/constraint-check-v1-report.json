@@ -1,0 +1,5661 @@
+{
+  "generated_at": "2026-10-19T18:19:30.028490+00:00",
+  "policy_version": "structured-constraints-v1",
+  "freeze_sha256": "sha256:b0aaa200a7079f0c5129c6347d1517fd7b1ba91d6e06744b04ad3f056832120d",
+  "binding": {
+    "policy_version": "structured-constraints-v1",
+    "fixture_sha256": "sha256:e1db82354aaa50fb2b34b805c6534de5a47614a7e63b89f6d13c5c53a6447eab",
+    "sample_sha256": "sha256:e1d59ca25236cbc1697d5e0342ebfff7e0637e2ec384a738ae5f38357c45c4ea",
+    "raw_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+    "code_sha256": {
+      "backend/app/constraints.py": "ca09195590ef09ecd4cfe438698317b0ef76750cb1d6f8bdc522e93f146e0ed0",
+      "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+      "backend/app/schemas.py": "14d1c00cd956e5682446557d062995fb6369243badf21454b0f9ba56537b6360",
+      "experiments/evaluate_constraints.py": "3b1f3f6c371db2f47ced60e2f7780626b984953b318d1356f9ae78f2ecaa73a4"
+    },
+    "indexed_documents_sha256": "sha256:89a9c706ff6ba6614222e07103998c3890544d8c7ba46711b6d2c1020866bf0a"
+  },
+  "cases": 25,
+  "passed_cases": 25,
+  "all_passed": true,
+  "real_sample_cases": 4,
+  "synthetic_cases": 21,
+  "enabled_in_application": false,
+  "new_neural_inferences": 0,
+  "limitations": [
+    "Author-written cases, not independent adjudication or a production quality estimate.",
+    "No query parsing, query/profile conflict resolution, eligibility or live registration verification.",
+    "Conservative full-period availability and date-only deadline margins.",
+    "No changes to the database, raw corpus, public HTTP contracts or existing scores."
+  ],
+  "results": [
+    {
+      "id": "C01",
+      "record_kind": "OPP-DEMO-001",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C01",
+        "record": "OPP-DEMO-001",
+        "constraints": {
+          "max_budget_sar": 0,
+          "delivery_modes": [
+            "online"
+          ],
+          "opportunity_types": [
+            "workshop"
+          ],
+          "available_from": "2026-12-01",
+          "available_to": "2027-01-31"
+        },
+        "expected_decision": "constraints_satisfied",
+        "expected_registration": "requires_verification",
+        "expected_checks": {
+          "budget": "passed",
+          "remote_attendance": "passed",
+          "availability_from": "passed",
+          "availability_to": "passed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "OPP-DEMO-001",
+        "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "workshop"
+          ],
+          "delivery_modes": [
+            "online"
+          ],
+          "available_from": "2026-12-01",
+          "available_to": "2027-01-31",
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "decision": "constraints_satisfied",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "passed",
+            "reason_code": "cost_within_budget",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "known",
+                "value": 0,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-004",
+                    "source_id": "SRC-0943",
+                    "quote": "المشاركة مجانية.",
+                    "asserted_value": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "passed",
+            "reason_code": "type_allowed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "opportunity_type",
+                "status": "known",
+                "value": "workshop",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-003",
+                    "source_id": "SRC-0943",
+                    "quote": "جلسة تدريبية عملية",
+                    "asserted_value": "workshop"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "delivery_mode",
+            "status": "passed",
+            "reason_code": "delivery_mode_allowed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "delivery_mode",
+                "status": "known",
+                "value": "online",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-005",
+                    "source_id": "SRC-0943",
+                    "quote": "المشاركة عن بعد بالكامل عبر قاعة إلكترونية.",
+                    "asserted_value": "online"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "remote_attendance",
+            "status": "passed",
+            "reason_code": "physical_attendance_not_required",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "physical_attendance_required",
+                "status": "known",
+                "value": false,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-006",
+                    "source_id": "SRC-0943",
+                    "quote": "المشاركة عن بعد بالكامل عبر قاعة إلكترونية.",
+                    "asserted_value": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "availability_from",
+            "status": "passed",
+            "reason_code": "start_within_availability",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-24",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-007",
+                    "source_id": "SRC-0943",
+                    "quote": "يبدأ البرنامج يوم 24 ديسمبر 2026 وينتهي يوم 7 يناير 2027.",
+                    "asserted_value": "2026-12-24"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "availability_to",
+            "status": "passed",
+            "reason_code": "end_within_availability",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2027-01-07",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-008",
+                    "source_id": "SRC-0943",
+                    "quote": "يبدأ البرنامج يوم 24 ديسمبر 2026 وينتهي يوم 7 يناير 2027.",
+                    "asserted_value": "2027-01-07"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-24",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-007",
+                    "source_id": "SRC-0943",
+                    "quote": "يبدأ البرنامج يوم 24 ديسمبر 2026 وينتهي يوم 7 يناير 2027.",
+                    "asserted_value": "2026-12-24"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2027-01-07",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-008",
+                    "source_id": "SRC-0943",
+                    "quote": "يبدأ البرنامج يوم 24 ديسمبر 2026 وينتهي يوم 7 يناير 2027.",
+                    "asserted_value": "2027-01-07"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "unknown",
+            "reason_code": "date_only_deadline_near_boundary",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-10-19",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-009",
+                    "source_id": "SRC-0943",
+                    "quote": "آخر يوم للتقديم 19 أكتوبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-10-19",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C02",
+      "record_kind": "OPP-DEMO-002",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C02",
+        "record": "OPP-DEMO-002",
+        "constraints": {
+          "max_budget_sar": 0,
+          "delivery_modes": [
+            "online"
+          ]
+        },
+        "expected_decision": "needs_source_info",
+        "expected_registration": "requires_verification",
+        "expected_checks": {
+          "budget": "unknown",
+          "remote_attendance": "unknown"
+        }
+      },
+      "actual": {
+        "opportunity_id": "OPP-DEMO-002",
+        "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [
+            "online"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "decision": "needs_source_info",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "unknown",
+            "reason_code": "required_source_fact_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-013",
+                    "source_id": "SRC-0477",
+                    "quote": "لم تُحدد رسوم المشاركة.",
+                    "asserted_value": null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "passed",
+            "reason_code": "delivery_mode_allowed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "delivery_mode",
+                "status": "known",
+                "value": "online",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-014",
+                    "source_id": "SRC-0477",
+                    "quote": "المشاركة عن بعد بالكامل عبر قاعة إلكترونية.",
+                    "asserted_value": "online"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "remote_attendance",
+            "status": "unknown",
+            "reason_code": "physical_attendance_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "physical_attendance_required",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "unknown",
+            "reason_code": "complete_activity_dates_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              },
+              {
+                "field": "end_date",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "unknown",
+            "reason_code": "deadline_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [
+          "cost_sar",
+          "physical_attendance_required"
+        ],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C03",
+      "record_kind": "OPP-DEMO-003",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C03",
+        "record": "OPP-DEMO-003",
+        "constraints": {
+          "max_budget_sar": 0
+        },
+        "expected_decision": "excluded",
+        "expected_registration": "deadline_passed",
+        "expected_checks": {
+          "budget": "unknown",
+          "registration_opening": "conflicted",
+          "deadline": "failed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "OPP-DEMO-003",
+        "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "unknown",
+            "reason_code": "required_source_fact_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "unknown",
+            "reason_code": "complete_activity_dates_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              },
+              {
+                "field": "end_date",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "failed",
+            "reason_code": "deadline_definitely_passed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-10-15",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-018",
+                    "source_id": "SRC-0251",
+                    "quote": "آخر يوم للتقديم 15 أكتوبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-10-15",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  },
+                  {
+                    "evidence_id": "EV-019",
+                    "source_id": "SRC-0252",
+                    "quote": "آخر يوم للتقديم 15 أكتوبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-10-15",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "conflicted",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "conflicted",
+                "value": null,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "EV-015",
+                    "source_id": "SRC-0251",
+                    "quote": "لم يبدأ التسجيل بعد؛ يفتح يوم 9 أكتوبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-10-09",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  },
+                  {
+                    "evidence_id": "EV-016",
+                    "source_id": "SRC-0252",
+                    "quote": "لم يبدأ التسجيل بعد؛ يفتح يوم 13 أكتوبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-10-13",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [
+          "cost_sar"
+        ],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "deadline_passed",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C04",
+      "record_kind": "OPP-DEMO-004",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C04",
+        "record": "OPP-DEMO-004",
+        "constraints": {
+          "available_from": "2026-11-01",
+          "available_to": "2026-11-30",
+          "max_duration_days": 3
+        },
+        "expected_decision": "needs_source_info",
+        "expected_registration": "requires_verification",
+        "expected_checks": {
+          "availability_from": "passed",
+          "availability_to": "unknown",
+          "duration": "unknown"
+        }
+      },
+      "actual": {
+        "opportunity_id": "OPP-DEMO-004",
+        "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": "2026-11-01",
+          "available_to": "2026-11-30",
+          "max_duration_days": 3,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "needs_source_info",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "passed",
+            "reason_code": "start_within_availability",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-11-08",
+                "resolution": {
+                  "kind": "explicit_update",
+                  "superseded_evidence_ids": [
+                    "EV-021"
+                  ],
+                  "update_evidence_ids": [
+                    "EV-022"
+                  ]
+                },
+                "evidence": [
+                  {
+                    "evidence_id": "EV-022",
+                    "source_id": "SRC-0497",
+                    "quote": "تغيّر الموعد من 1 نوفمبر 2026 إلى 8 نوفمبر 2026",
+                    "asserted_value": "2026-11-08"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "availability_to",
+            "status": "unknown",
+            "reason_code": "required_source_fact_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "end_date",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "duration",
+            "status": "unknown",
+            "reason_code": "required_source_fact_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "duration_days",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "unknown",
+            "reason_code": "complete_activity_dates_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-11-08",
+                "resolution": {
+                  "kind": "explicit_update",
+                  "superseded_evidence_ids": [
+                    "EV-021"
+                  ],
+                  "update_evidence_ids": [
+                    "EV-022"
+                  ]
+                },
+                "evidence": [
+                  {
+                    "evidence_id": "EV-022",
+                    "source_id": "SRC-0497",
+                    "quote": "تغيّر الموعد من 1 نوفمبر 2026 إلى 8 نوفمبر 2026",
+                    "asserted_value": "2026-11-08"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-10-22",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": {
+                  "kind": "explicit_update",
+                  "superseded_evidence_ids": [
+                    "EV-023"
+                  ],
+                  "update_evidence_ids": [
+                    "EV-024"
+                  ]
+                },
+                "evidence": [
+                  {
+                    "evidence_id": "EV-024",
+                    "source_id": "SRC-0497",
+                    "quote": "ومُدد آخر يوم للتقديم من 18 أكتوبر 2026 إلى 22 أكتوبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-10-22",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [
+          "duration_days",
+          "end_date"
+        ],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C05",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C05",
+        "record": "synthetic",
+        "constraints": {
+          "max_budget_sar": 100
+        },
+        "expected_decision": "constraints_satisfied",
+        "expected_checks": {
+          "budget": "passed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C05",
+        "evidence_version": "sha256:d4030ceb7f5ec16cb4e61dedadf51d61da0b514261e59dd79208ebe9328acc45",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 100.0
+        },
+        "required_locations": [],
+        "decision": "constraints_satisfied",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "passed",
+            "reason_code": "cost_within_budget",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "known",
+                "value": 100,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C05-3",
+                    "source_id": "SYNTHETIC-C05-SOURCE",
+                    "quote": "الرسوم 100 ريال.",
+                    "asserted_value": 100
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C05-6",
+                    "source_id": "SYNTHETIC-C05-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C05-7",
+                    "source_id": "SYNTHETIC-C05-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C05-10",
+                    "source_id": "SYNTHETIC-C05-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C06",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C06",
+        "record": "synthetic",
+        "constraints": {
+          "max_budget_sar": 99.99
+        },
+        "expected_decision": "excluded",
+        "expected_checks": {
+          "budget": "failed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C06",
+        "evidence_version": "sha256:af2d638709991f59458e97d3ae7b180eed6b492307273a89959ce10078e2c3d6",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 99.99
+        },
+        "required_locations": [],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "failed",
+            "reason_code": "cost_exceeds_budget",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "known",
+                "value": 100,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C06-3",
+                    "source_id": "SYNTHETIC-C06-SOURCE",
+                    "quote": "الرسوم 100 ريال.",
+                    "asserted_value": 100
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C06-6",
+                    "source_id": "SYNTHETIC-C06-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C06-7",
+                    "source_id": "SYNTHETIC-C06-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C06-10",
+                    "source_id": "SYNTHETIC-C06-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C07",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C07",
+        "record": "synthetic",
+        "constraints": {},
+        "expected_decision": "no_constraints_requested",
+        "expected_checks": {
+          "budget": "not_applicable"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C07",
+        "evidence_version": "sha256:42cef12ae5709342100293c156872c3c68afd8cbc9d4244ac76b2c2ad8e39942",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "no_constraints_requested",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C07-6",
+                    "source_id": "SYNTHETIC-C07-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C07-7",
+                    "source_id": "SYNTHETIC-C07-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C07-10",
+                    "source_id": "SYNTHETIC-C07-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C08",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C08",
+        "record": "synthetic",
+        "overrides": {
+          "cost_sar": {
+            "status": "conflicted",
+            "value": null,
+            "alternatives": [
+              {
+                "value": 0,
+                "quote": "المشاركة مجانية."
+              },
+              {
+                "value": 100,
+                "quote": "الرسوم 100 ريال."
+              }
+            ]
+          }
+        },
+        "constraints": {
+          "max_budget_sar": 0
+        },
+        "expected_decision": "needs_source_info",
+        "expected_checks": {
+          "budget": "conflicted"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C08",
+        "evidence_version": "sha256:e7186d5d77f20076b1e65b662b618a822422928345354b9117912a536a38183d",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "decision": "needs_source_info",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "conflicted",
+            "reason_code": "required_source_fact_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "conflicted",
+                "value": null,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C08-3",
+                    "source_id": "SYNTHETIC-C08-SOURCE",
+                    "quote": "المشاركة مجانية.",
+                    "asserted_value": 0
+                  },
+                  {
+                    "evidence_id": "SYNTHETIC-C08-4",
+                    "source_id": "SYNTHETIC-C08-SOURCE",
+                    "quote": "الرسوم 100 ريال.",
+                    "asserted_value": 100
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C08-7",
+                    "source_id": "SYNTHETIC-C08-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C08-8",
+                    "source_id": "SYNTHETIC-C08-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C08-11",
+                    "source_id": "SYNTHETIC-C08-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [
+          "cost_sar"
+        ],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C09",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C09",
+        "record": "synthetic",
+        "overrides": {
+          "physical_attendance_required": {
+            "value": true,
+            "quote": "الحضور الفعلي إلزامي."
+          }
+        },
+        "constraints": {
+          "delivery_modes": [
+            "online"
+          ]
+        },
+        "expected_decision": "excluded",
+        "expected_checks": {
+          "delivery_mode": "passed",
+          "remote_attendance": "failed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C09",
+        "evidence_version": "sha256:ce840013cfde0d4c9973e57dd50818fccd5fdc80d6480145e427f6630e8b3877",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [
+            "online"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "passed",
+            "reason_code": "delivery_mode_allowed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "delivery_mode",
+                "status": "known",
+                "value": "online",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C09-4",
+                    "source_id": "SYNTHETIC-C09-SOURCE",
+                    "quote": "المشاركة عن بعد.",
+                    "asserted_value": "online"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "remote_attendance",
+            "status": "failed",
+            "reason_code": "physical_attendance_is_required",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "physical_attendance_required",
+                "status": "known",
+                "value": true,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C09-5",
+                    "source_id": "SYNTHETIC-C09-SOURCE",
+                    "quote": "الحضور الفعلي إلزامي.",
+                    "asserted_value": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C09-6",
+                    "source_id": "SYNTHETIC-C09-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C09-7",
+                    "source_id": "SYNTHETIC-C09-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C09-10",
+                    "source_id": "SYNTHETIC-C09-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C10",
+        "record": "synthetic",
+        "overrides": {
+          "physical_attendance_required": {
+            "status": "unknown",
+            "value": null
+          }
+        },
+        "constraints": {
+          "delivery_modes": [
+            "online"
+          ]
+        },
+        "expected_decision": "needs_source_info",
+        "expected_checks": {
+          "remote_attendance": "unknown"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C10",
+        "evidence_version": "sha256:39695617b6d9db812296f9a39806e83675bdc8e396e5d06d9d280be537d87333",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [
+            "online"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "needs_source_info",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "passed",
+            "reason_code": "delivery_mode_allowed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "delivery_mode",
+                "status": "known",
+                "value": "online",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C10-4",
+                    "source_id": "SYNTHETIC-C10-SOURCE",
+                    "quote": "المشاركة عن بعد.",
+                    "asserted_value": "online"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "remote_attendance",
+            "status": "unknown",
+            "reason_code": "physical_attendance_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "physical_attendance_required",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C10-5",
+                    "source_id": "SYNTHETIC-C10-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C10-6",
+                    "source_id": "SYNTHETIC-C10-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C10-9",
+                    "source_id": "SYNTHETIC-C10-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [
+          "physical_attendance_required"
+        ],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C11",
+        "record": "synthetic",
+        "overrides": {
+          "delivery_mode": {
+            "value": "hybrid",
+            "quote": "النشاط بنمط مدمج."
+          }
+        },
+        "constraints": {
+          "delivery_modes": [
+            "online",
+            "hybrid"
+          ]
+        },
+        "expected_decision": "constraints_satisfied",
+        "expected_checks": {
+          "delivery_mode": "passed",
+          "remote_attendance": "not_applicable"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C11",
+        "evidence_version": "sha256:a8e6bc5bfe49aa95caa74e29a1f382a06bf74c85f9f838e8958b0995e33dbba7",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [
+            "online",
+            "hybrid"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "constraints_satisfied",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "passed",
+            "reason_code": "delivery_mode_allowed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "delivery_mode",
+                "status": "known",
+                "value": "hybrid",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C11-4",
+                    "source_id": "SYNTHETIC-C11-SOURCE",
+                    "quote": "النشاط بنمط مدمج.",
+                    "asserted_value": "hybrid"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C11-6",
+                    "source_id": "SYNTHETIC-C11-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C11-7",
+                    "source_id": "SYNTHETIC-C11-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C11-10",
+                    "source_id": "SYNTHETIC-C11-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C12",
+        "record": "synthetic",
+        "constraints": {
+          "available_from": "2026-12-11",
+          "available_to": "2026-12-20"
+        },
+        "expected_decision": "excluded",
+        "expected_checks": {
+          "availability_from": "failed",
+          "availability_to": "passed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C12",
+        "evidence_version": "sha256:4e4a9efbc203d4bf09ef9f0cfcf293039d89fb4d96e007f865a9f91828e9bc79",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": "2026-12-11",
+          "available_to": "2026-12-20",
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "failed",
+            "reason_code": "activity_starts_before_availability",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C12-6",
+                    "source_id": "SYNTHETIC-C12-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "availability_to",
+            "status": "passed",
+            "reason_code": "end_within_availability",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C12-7",
+                    "source_id": "SYNTHETIC-C12-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C12-6",
+                    "source_id": "SYNTHETIC-C12-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C12-7",
+                    "source_id": "SYNTHETIC-C12-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C12-10",
+                    "source_id": "SYNTHETIC-C12-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C13",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C13",
+        "record": "synthetic",
+        "constraints": {
+          "available_from": "2026-12-10",
+          "available_to": "2026-12-12"
+        },
+        "expected_decision": "constraints_satisfied",
+        "expected_checks": {
+          "availability_from": "passed",
+          "availability_to": "passed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C13",
+        "evidence_version": "sha256:d8397de099384e4b45481a25619d4ecf9f8289845e53b1b3e8d5e980f9990e92",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": "2026-12-10",
+          "available_to": "2026-12-12",
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "constraints_satisfied",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "passed",
+            "reason_code": "start_within_availability",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C13-6",
+                    "source_id": "SYNTHETIC-C13-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "availability_to",
+            "status": "passed",
+            "reason_code": "end_within_availability",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C13-7",
+                    "source_id": "SYNTHETIC-C13-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C13-6",
+                    "source_id": "SYNTHETIC-C13-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C13-7",
+                    "source_id": "SYNTHETIC-C13-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C13-10",
+                    "source_id": "SYNTHETIC-C13-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C14",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C14",
+        "record": "synthetic",
+        "constraints": {
+          "max_duration_days": 2
+        },
+        "expected_decision": "excluded",
+        "expected_checks": {
+          "duration": "failed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C14",
+        "evidence_version": "sha256:5f19bce8814c84476751f2d133ac1746278ee005e5abf8970de425da8537201f",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": 2,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "failed",
+            "reason_code": "declared_duration_exceeds_limit",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "duration_days",
+                "status": "known",
+                "value": 3,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C14-8",
+                    "source_id": "SYNTHETIC-C14-SOURCE",
+                    "quote": "المدة ثلاثة أيام مشاركة.",
+                    "asserted_value": 3
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C14-6",
+                    "source_id": "SYNTHETIC-C14-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C14-7",
+                    "source_id": "SYNTHETIC-C14-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C14-10",
+                    "source_id": "SYNTHETIC-C14-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C15",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C15",
+        "record": "synthetic",
+        "overrides": {
+          "duration_days": {
+            "status": "unknown",
+            "value": null
+          }
+        },
+        "constraints": {
+          "max_duration_days": 3
+        },
+        "expected_decision": "needs_source_info",
+        "expected_checks": {
+          "duration": "unknown"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C15",
+        "evidence_version": "sha256:e4481fff716bf3b15e6f99211874a16ee1fe0d844371d2a2378a210e69c8276c",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": 3,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "needs_source_info",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "unknown",
+            "reason_code": "required_source_fact_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "duration_days",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C15-6",
+                    "source_id": "SYNTHETIC-C15-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C15-7",
+                    "source_id": "SYNTHETIC-C15-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C15-9",
+                    "source_id": "SYNTHETIC-C15-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [
+          "duration_days"
+        ],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C16",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C16",
+        "record": "synthetic",
+        "constraints": {
+          "location_preference": [
+            "جدة"
+          ]
+        },
+        "expected_decision": "no_constraints_requested",
+        "expected_preference_match": false,
+        "expected_checks": {
+          "required_location": "not_applicable"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C16",
+        "evidence_version": "sha256:9e6f217dbca0dd0231653bdbfab343d563d0f44e8d186ca10a70ec2802fdbbcc",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": [
+            "جدة"
+          ],
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "no_constraints_requested",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C16-6",
+                    "source_id": "SYNTHETIC-C16-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C16-7",
+                    "source_id": "SYNTHETIC-C16-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C16-10",
+                    "source_id": "SYNTHETIC-C16-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [
+            "جدة"
+          ],
+          "matches": false,
+          "excludes_candidate": false,
+          "facts": [
+            {
+              "field": "location",
+              "status": "known",
+              "value": "الرياض",
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-C16-9",
+                  "source_id": "SYNTHETIC-C16-SOURCE",
+                  "quote": "الموقع الرياض.",
+                  "asserted_value": "الرياض"
+                }
+              ]
+            }
+          ]
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C17",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C17",
+        "record": "synthetic",
+        "constraints": {},
+        "required_locations": [
+          "جدة"
+        ],
+        "expected_decision": "excluded",
+        "expected_checks": {
+          "required_location": "failed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C17",
+        "evidence_version": "sha256:dad85ad38248078dfac28e303e2344a7323e8b9bf8ef0ac8ed51ca8d5ef3deb0",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [
+          "جدة"
+        ],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "failed",
+            "reason_code": "required_location_does_not_match",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "location",
+                "status": "known",
+                "value": "الرياض",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C17-9",
+                    "source_id": "SYNTHETIC-C17-SOURCE",
+                    "quote": "الموقع الرياض.",
+                    "asserted_value": "الرياض"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C17-6",
+                    "source_id": "SYNTHETIC-C17-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C17-7",
+                    "source_id": "SYNTHETIC-C17-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C17-10",
+                    "source_id": "SYNTHETIC-C17-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C18",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C18",
+        "record": "synthetic",
+        "overrides": {
+          "location": {
+            "status": "unknown",
+            "value": null
+          }
+        },
+        "constraints": {},
+        "required_locations": [
+          "الرياض"
+        ],
+        "expected_decision": "needs_source_info",
+        "expected_checks": {
+          "required_location": "unknown"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C18",
+        "evidence_version": "sha256:90c7f69b178b840a4b37de9aa698d1b7b953c6ba39925979505cc3952de713f0",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [
+          "الرياض"
+        ],
+        "decision": "needs_source_info",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "unknown",
+            "reason_code": "required_source_fact_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "location",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C18-6",
+                    "source_id": "SYNTHETIC-C18-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C18-7",
+                    "source_id": "SYNTHETIC-C18-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C18-9",
+                    "source_id": "SYNTHETIC-C18-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [
+          "location"
+        ],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C19",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C19",
+        "record": "synthetic",
+        "constraints": {
+          "opportunity_types": [
+            "course",
+            "workshop"
+          ]
+        },
+        "expected_decision": "constraints_satisfied",
+        "expected_checks": {
+          "opportunity_type": "passed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C19",
+        "evidence_version": "sha256:8cfeb94840379032c8355bad0ca0b8895e1728375ea6c19a67dd7c964aead588",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "course",
+            "workshop"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "constraints_satisfied",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "passed",
+            "reason_code": "type_allowed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "opportunity_type",
+                "status": "known",
+                "value": "workshop",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C19-2",
+                    "source_id": "SYNTHETIC-C19-SOURCE",
+                    "quote": "نوع النشاط ورشة عمل.",
+                    "asserted_value": "workshop"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C19-6",
+                    "source_id": "SYNTHETIC-C19-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C19-7",
+                    "source_id": "SYNTHETIC-C19-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C19-10",
+                    "source_id": "SYNTHETIC-C19-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C20",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C20",
+        "record": "synthetic",
+        "constraints": {
+          "opportunity_types": [
+            "internship"
+          ]
+        },
+        "expected_decision": "excluded",
+        "expected_checks": {
+          "opportunity_type": "failed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C20",
+        "evidence_version": "sha256:fb7aa8e5e6ac59b48cbfeae805e5035f4686e3f5873647aa73d326c97a466de7",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [
+            "internship"
+          ],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "failed",
+            "reason_code": "type_not_allowed",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "opportunity_type",
+                "status": "known",
+                "value": "workshop",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C20-2",
+                    "source_id": "SYNTHETIC-C20-SOURCE",
+                    "quote": "نوع النشاط ورشة عمل.",
+                    "asserted_value": "workshop"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C20-6",
+                    "source_id": "SYNTHETIC-C20-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C20-7",
+                    "source_id": "SYNTHETIC-C20-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C20-10",
+                    "source_id": "SYNTHETIC-C20-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C21",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C21",
+        "record": "synthetic",
+        "overrides": {
+          "registration_opens_on": {
+            "value": "2026-12-01",
+            "quote": "يفتح التسجيل 1 ديسمبر 2026."
+          }
+        },
+        "constraints": {
+          "max_budget_sar": 200
+        },
+        "expected_decision": "excluded",
+        "expected_registration": "not_yet_open",
+        "expected_checks": {
+          "registration_opening": "failed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C21",
+        "evidence_version": "sha256:6a7e54bee89624a12af6ca03bc5edd5ea554d25d8ebb754969f3b2bc51cd4dcb",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 200.0
+        },
+        "required_locations": [],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "passed",
+            "reason_code": "cost_within_budget",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "known",
+                "value": 100,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C21-3",
+                    "source_id": "SYNTHETIC-C21-SOURCE",
+                    "quote": "الرسوم 100 ريال.",
+                    "asserted_value": 100
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C21-6",
+                    "source_id": "SYNTHETIC-C21-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C21-7",
+                    "source_id": "SYNTHETIC-C21-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C21-10",
+                    "source_id": "SYNTHETIC-C21-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "failed",
+            "reason_code": "registration_definitely_not_started",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "known",
+                "value": "2026-12-01",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C21-11",
+                    "source_id": "SYNTHETIC-C21-SOURCE",
+                    "quote": "يفتح التسجيل 1 ديسمبر 2026.",
+                    "asserted_value": "2026-12-01"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "not_yet_open",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C22",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C22",
+        "record": "synthetic",
+        "overrides": {
+          "deadline": {
+            "value": {
+              "date": "2026-10-18",
+              "time": null,
+              "timezone": null,
+              "precision": "date"
+            },
+            "quote": "آخر يوم للتقديم 18 أكتوبر 2026."
+          }
+        },
+        "constraints": {
+          "max_budget_sar": 200
+        },
+        "expected_decision": "constraints_satisfied",
+        "expected_registration": "requires_verification",
+        "expected_checks": {
+          "deadline": "unknown"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C22",
+        "evidence_version": "sha256:325cc1ce6631decf3028979c88f317dcc838238129328b01c430cb0ef4314019",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 200.0
+        },
+        "required_locations": [],
+        "decision": "constraints_satisfied",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "passed",
+            "reason_code": "cost_within_budget",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "known",
+                "value": 100,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C22-3",
+                    "source_id": "SYNTHETIC-C22-SOURCE",
+                    "quote": "الرسوم 100 ريال.",
+                    "asserted_value": 100
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C22-6",
+                    "source_id": "SYNTHETIC-C22-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C22-7",
+                    "source_id": "SYNTHETIC-C22-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "unknown",
+            "reason_code": "date_only_deadline_near_boundary",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-10-18",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C22-10",
+                    "source_id": "SYNTHETIC-C22-SOURCE",
+                    "quote": "آخر يوم للتقديم 18 أكتوبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-10-18",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C23",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C23",
+        "record": "synthetic",
+        "overrides": {
+          "start_date": {
+            "value": "2026-12-20",
+            "quote": "البداية 20 ديسمبر 2026."
+          }
+        },
+        "constraints": {
+          "available_from": "2026-12-01"
+        },
+        "expected_decision": "needs_source_info",
+        "expected_checks": {
+          "schedule_consistency": "conflicted"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C23",
+        "evidence_version": "sha256:f4f34c2578925aaa4ba21f81cbb1358af9179b86c6e95e9625e087f1f3802411",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": "2026-12-01",
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        },
+        "required_locations": [],
+        "decision": "needs_source_info",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "passed",
+            "reason_code": "start_within_availability",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-20",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C23-6",
+                    "source_id": "SYNTHETIC-C23-SOURCE",
+                    "quote": "البداية 20 ديسمبر 2026.",
+                    "asserted_value": "2026-12-20"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "conflicted",
+            "reason_code": "start_after_end",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-20",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C23-6",
+                    "source_id": "SYNTHETIC-C23-SOURCE",
+                    "quote": "البداية 20 ديسمبر 2026.",
+                    "asserted_value": "2026-12-20"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C23-7",
+                    "source_id": "SYNTHETIC-C23-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C23-10",
+                    "source_id": "SYNTHETIC-C23-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [
+          "end_date",
+          "start_date"
+        ],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C24",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C24",
+        "record": "synthetic",
+        "overrides": {
+          "cost_sar": {
+            "status": "unknown",
+            "value": null
+          }
+        },
+        "constraints": {
+          "max_budget_sar": 0,
+          "max_duration_days": 2
+        },
+        "expected_decision": "excluded",
+        "expected_checks": {
+          "budget": "unknown",
+          "duration": "failed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C24",
+        "evidence_version": "sha256:7d7c0e1c7a1502eea1563d9caccca36283ff522e67f19c25177e5a01dff77234",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": 2,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "decision": "excluded",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "unknown",
+            "reason_code": "required_source_fact_not_established",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "failed",
+            "reason_code": "declared_duration_exceeds_limit",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "duration_days",
+                "status": "known",
+                "value": 3,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C24-7",
+                    "source_id": "SYNTHETIC-C24-SOURCE",
+                    "quote": "المدة ثلاثة أيام مشاركة.",
+                    "asserted_value": 3
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C24-5",
+                    "source_id": "SYNTHETIC-C24-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C24-6",
+                    "source_id": "SYNTHETIC-C24-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C24-9",
+                    "source_id": "SYNTHETIC-C24-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [
+          "cost_sar"
+        ],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    },
+    {
+      "id": "C25",
+      "record_kind": "synthetic",
+      "passed": true,
+      "errors": [],
+      "expected": {
+        "id": "C25",
+        "record": "synthetic",
+        "overrides": {
+          "cost_sar": {
+            "value": 0,
+            "quote": "المشاركة مجانية."
+          }
+        },
+        "constraints": {
+          "max_budget_sar": 0,
+          "max_duration_days": 3
+        },
+        "expected_decision": "constraints_satisfied",
+        "expected_checks": {
+          "budget": "passed",
+          "duration": "passed"
+        }
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-C25",
+        "evidence_version": "sha256:7baa894e3f9e52e460d946d88b6aa475ea50fbb8dacd3ed4911a01c89b48adbc",
+        "policy_version": "structured-constraints-v1",
+        "evaluated_at": "2026-10-18T09:00:00+00:00",
+        "effective_constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": 3,
+          "max_budget_sar": 0.0
+        },
+        "required_locations": [],
+        "decision": "constraints_satisfied",
+        "checks": [
+          {
+            "name": "budget",
+            "status": "passed",
+            "reason_code": "cost_within_budget",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "cost_sar",
+                "status": "known",
+                "value": 0,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C25-3",
+                    "source_id": "SYNTHETIC-C25-SOURCE",
+                    "quote": "المشاركة مجانية.",
+                    "asserted_value": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "opportunity_type",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "delivery_mode",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "remote_attendance",
+            "status": "not_applicable",
+            "reason_code": "online_only_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_from",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "availability_to",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "duration",
+            "status": "passed",
+            "reason_code": "declared_duration_within_limit",
+            "blocking_if_unresolved": true,
+            "facts": [
+              {
+                "field": "duration_days",
+                "status": "known",
+                "value": 3,
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C25-8",
+                    "source_id": "SYNTHETIC-C25-SOURCE",
+                    "quote": "المدة ثلاثة أيام مشاركة.",
+                    "asserted_value": 3
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "required_location",
+            "status": "not_applicable",
+            "reason_code": "constraint_not_requested",
+            "blocking_if_unresolved": false,
+            "facts": []
+          },
+          {
+            "name": "schedule_consistency",
+            "status": "passed",
+            "reason_code": "dates_in_order",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "start_date",
+                "status": "known",
+                "value": "2026-12-10",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C25-6",
+                    "source_id": "SYNTHETIC-C25-SOURCE",
+                    "quote": "البداية 10 ديسمبر 2026.",
+                    "asserted_value": "2026-12-10"
+                  }
+                ]
+              },
+              {
+                "field": "end_date",
+                "status": "known",
+                "value": "2026-12-12",
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C25-7",
+                    "source_id": "SYNTHETIC-C25-SOURCE",
+                    "quote": "النهاية 12 ديسمبر 2026.",
+                    "asserted_value": "2026-12-12"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "deadline",
+            "status": "passed",
+            "reason_code": "deadline_date_in_future_not_proof_of_open_registration",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "deadline",
+                "status": "known",
+                "value": {
+                  "date": "2026-11-01",
+                  "time": null,
+                  "timezone": null,
+                  "precision": "date"
+                },
+                "resolution": null,
+                "evidence": [
+                  {
+                    "evidence_id": "SYNTHETIC-C25-10",
+                    "source_id": "SYNTHETIC-C25-SOURCE",
+                    "quote": "آخر يوم للتقديم 1 نوفمبر 2026.",
+                    "asserted_value": {
+                      "date": "2026-11-01",
+                      "time": null,
+                      "timezone": null,
+                      "precision": "date"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "registration_opening",
+            "status": "unknown",
+            "reason_code": "registration_opening_not_established",
+            "blocking_if_unresolved": false,
+            "facts": [
+              {
+                "field": "registration_opens_on",
+                "status": "unknown",
+                "value": null,
+                "resolution": null,
+                "evidence": []
+              }
+            ]
+          }
+        ],
+        "missing_source_fields": [],
+        "conflicting_source_fields": [],
+        "user_missing_fields": [],
+        "location_preference": {
+          "requested": [],
+          "matches": null,
+          "excludes_candidate": false,
+          "facts": []
+        },
+        "registration": {
+          "status": "requires_verification",
+          "currently_open_verified": false,
+          "date_only_policy": "UTC_calendar_date_plus_or_minus_one_day"
+        },
+        "unchecked": [
+          "semantic_relevance",
+          "eligibility",
+          "query_profile_conflict_resolution",
+          "current_registration_verification",
+          "participation_hours"
+        ]
+      }
+    }
+  ]
+}

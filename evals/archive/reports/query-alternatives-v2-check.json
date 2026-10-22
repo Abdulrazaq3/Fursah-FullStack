@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-22T11:07:38.062464+00:00",
+  "backend_tests": 135,
+  "experiment_tests": 11,
+  "fresh_cases": 20,
+  "interpretation_errors": [],
+  "accepted_false_positives": 0,
+  "positive_query_coverage": {
+    "actual": 6,
+    "total": 8
+  },
+  "full_criterion_passed": false,
+  "enabled_in_application": false,
+  "files_sha256": {
+    "backend/app/query_alternatives.py": "99f439eb13aa29153451417a9287d588791bb076591ba4ec586089de2ff76cd1",
+    "backend/app/normalized_alternatives.py": "3465710186deaa15afbc318ffbcca24e89f55394b29391bc01453fe96eb9c758",
+    "backend/tests/test_query_alternatives.py": "ce059eab6f361a87403a2717f0df86ea1550483a77dd3ddadfbec3bfc652d6f8",
+    "backend/tests/test_normalized_alternatives.py": "ca8efa1e3e892442bf614b721bc86f44eaa0dae1342374132dd5a06d583f5994",
+    "experiments/evaluate_query_alternatives.py": "621bf1c72407b8e80c6692bb1e50dcae678afcbb4e8d82963688750e4c85d8e3",
+    "experiments/evaluate_normalized_alternatives.py": "1c270898a65bbc9961760fc0557f3417a796880fae92071e80e5411d5f1f6811",
+    "examples/query-alternatives-holdout-v1.sample.json": "0d2e7e49c9d5b6a5d16a5efdcecd4b9e0d55c529bce73b553199c6d9102288f5",
+    "results/query-alternatives-v1-freeze.json": "ccb854cc462643bb3d85c588f517e1c34eb7923245f6e90e1d0d41070986fba4",
+    "results/query-alternatives-v1-diagnostic.json": "559226ce542dc0137f6fb37e6e47a0b3a68b9478bd0b67cc36562559aa5e78ef",
+    "results/query-alternatives-v2-freeze.json": "4122ce6e17036bf62b0ef7ed07300cb56e799106f03658e5b2797ab345e7904f",
+    "results/query-alternatives-v2-diagnostic.json": "d1d9af6d83bf74dcbd59a0191f413d2f7994f71a6554a27bd7ac81a57c1694d5",
+    "results/query-alternatives-v2-report.json": "3a75054b064ff153b943c8fbf64a148733229338d8c9e451c74a6dd2f2000cf0"
+  }
+}

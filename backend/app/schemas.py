@@ -177,6 +177,7 @@ class EligibilityRequirements(BaseModel):
 class OpportunityDetailsResponse(BaseModel):
     evidence_version: NonBlank | None = None
     opportunity_id: NonBlank
+    information_url: str | None = None
     canonical_id: str | None = None
     title: NonBlank
     opportunity_type: str | None = None

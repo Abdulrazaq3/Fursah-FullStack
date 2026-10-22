@@ -1,0 +1,18 @@
+{
+  "active_release": "catalog-89ca0f28ea4dd7224fb61a82",
+  "counts": {
+    "sources": 1013,
+    "opportunities": 913,
+    "evidence": 11330,
+    "documents": 913
+  },
+  "historical_demo_count": 4,
+  "vector_stats": [
+    1024,
+    1024,
+    0.999999859451757,
+    1.0000001436365988
+  ],
+  "catalog_storage_ready": true,
+  "details_and_version_confirmation": true
+}

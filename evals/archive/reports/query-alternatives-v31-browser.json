@@ -1,0 +1,267 @@
+{
+  "tested_at": "2026-10-22T11:49:20.334Z",
+  "scope": "Actual browser clicks through FastAPI, local BGE-M3 and reranker, PostgreSQL and evidence-bound response; local four-record pilot, live request time.",
+  "checks": [
+    {
+      "case": "practical-tool-alternatives",
+      "passed": true,
+      "request": {
+        "request_id": "dd245cba-055b-44d2-9ee3-927c48dad6c8",
+        "query": "أدور على فرصة لتعلم إكسل أو SQL بشكل عملي",
+        "profile": {
+          "user_id": null,
+          "education_level": null,
+          "field_of_study": null,
+          "city": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        }
+      },
+      "http_status": 200,
+      "response": {
+        "request_id": "dd245cba-055b-44d2-9ee3-927c48dad6c8",
+        "status": "ok",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا.",
+        "recommendations": [
+          {
+            "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+            "opportunity_id": "OPP-DEMO-004",
+            "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+            "opportunity_type": null,
+            "location": null,
+            "delivery_mode": null,
+            "deadline": "2026-10-22",
+            "application_status": "requires_verification",
+            "eligibility_status": "uncertain",
+            "reason": "من النشاط الموثق في المصدر: «سيتناول المشاركون ترتيب الجداول وقراءة المؤشرات، ثم يناقشون أمثلة من واقع مدنهم.»",
+            "caveats": [
+              "فتح التسجيل حاليًا غير متحقق؛ راجع المصدر قبل اتخاذ قرار.",
+              "الأهلية غير محسومة من المعلومات الموثقة؛ هذه معاينة لفرصة مرتبطة ببحثك.",
+              "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+              "موعد التقديم مذكور كتاريخ فقط؛ ساعة الإغلاق والمنطقة الزمنية غير محددتين.",
+              "لم يُسجل وقت تحقق حديث من معلومات الفرصة."
+            ],
+            "source_ids": [
+              "SRC-0496",
+              "SRC-0497"
+            ],
+            "relevance_score": null,
+            "next_action": "اطلع على التفاصيل وتحقق من شروط القبول وفتح التسجيل من الجهة."
+          }
+        ],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "seconds": 24.738
+    },
+    {
+      "case": "explicit-learning-by-trying",
+      "passed": true,
+      "request": {
+        "request_id": "b1d27bb4-23ac-473c-92de-aae64f984c01",
+        "query": "أريد تجربة Excel أو Flutter ضمن فرصة للتعلم",
+        "profile": {
+          "user_id": null,
+          "education_level": null,
+          "field_of_study": null,
+          "city": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        }
+      },
+      "http_status": 200,
+      "response": {
+        "request_id": "b1d27bb4-23ac-473c-92de-aae64f984c01",
+        "status": "ok",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا.",
+        "recommendations": [
+          {
+            "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+            "opportunity_id": "OPP-DEMO-004",
+            "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+            "opportunity_type": null,
+            "location": null,
+            "delivery_mode": null,
+            "deadline": "2026-10-22",
+            "application_status": "requires_verification",
+            "eligibility_status": "uncertain",
+            "reason": "من النشاط الموثق في المصدر: «سيتناول المشاركون ترتيب الجداول وقراءة المؤشرات، ثم يناقشون أمثلة من واقع مدنهم.»",
+            "caveats": [
+              "فتح التسجيل حاليًا غير متحقق؛ راجع المصدر قبل اتخاذ قرار.",
+              "الأهلية غير محسومة من المعلومات الموثقة؛ هذه معاينة لفرصة مرتبطة ببحثك.",
+              "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+              "موعد التقديم مذكور كتاريخ فقط؛ ساعة الإغلاق والمنطقة الزمنية غير محددتين.",
+              "لم يُسجل وقت تحقق حديث من معلومات الفرصة."
+            ],
+            "source_ids": [
+              "SRC-0496",
+              "SRC-0497"
+            ],
+            "relevance_score": null,
+            "next_action": "اطلع على التفاصيل وتحقق من شروط القبول وفتح التسجيل من الجهة."
+          }
+        ],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "seconds": 28.664
+    },
+    {
+      "case": "details-keep-evidence-version-and-source-ids",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+        "opportunity_id": "OPP-DEMO-004",
+        "canonical_id": null,
+        "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+        "opportunity_type": null,
+        "description": null,
+        "location": null,
+        "delivery_mode": null,
+        "start_date": "2026-11-08",
+        "end_date": null,
+        "remote_participation_allowed": null,
+        "physical_attendance_required": null,
+        "duration": null,
+        "session_count": null,
+        "hours_per_session": null,
+        "total_hours": null,
+        "application_url": null,
+        "required_documents_ar": null,
+        "application_steps_ar": null,
+        "capacity": null,
+        "deadline": "2026-10-22",
+        "application_status": "requires_verification",
+        "topics": [],
+        "eligibility_requirements": {
+          "mandatory": null,
+          "preferred": null
+        },
+        "required_skills": null,
+        "cost": null,
+        "source_ids": [
+          "SRC-0496",
+          "SRC-0497"
+        ],
+        "last_verified_at": null,
+        "data_warnings": [
+          "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+          "موعد التقديم مذكور كتاريخ فقط؛ ساعة الإغلاق والمنطقة الزمنية غير محددتين.",
+          "لم يُسجل وقت تحقق حديث من معلومات الفرصة."
+        ]
+      }
+    },
+    {
+      "case": "both-tools-required-is-not-an-alternative",
+      "passed": true,
+      "request": {
+        "request_id": "81399c6d-2078-457d-a5fa-b84a0a60a173",
+        "query": "أبحث عن فرصة واحدة أتعلم فيها Excel وSQL معا",
+        "profile": {
+          "user_id": null,
+          "city": null,
+          "field_of_study": null,
+          "education_level": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        }
+      },
+      "http_status": 200,
+      "response": {
+        "request_id": "81399c6d-2078-457d-a5fa-b84a0a60a173",
+        "status": "no_match",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا. لم تتجاوز أي فرصة في العينة فحوص الصلة والقيود والأهلية؛ قد يكون السبب نقص معلومات المصدر. لا يشمل هذا الحكم بقية البيانات الخام.",
+        "recommendations": [],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "seconds": 20.163
+    },
+    {
+      "case": "unknown-cost-cannot-pass-zero-budget",
+      "passed": true,
+      "request": {
+        "request_id": "c6f066b5-a6e7-428d-b6cc-8fed7ae62754",
+        "query": "أريد تجربة Excel أو Flutter ضمن فرصة للتعلم",
+        "profile": {
+          "user_id": null,
+          "city": null,
+          "field_of_study": null,
+          "education_level": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0
+        }
+      },
+      "http_status": 200,
+      "response": {
+        "request_id": "c6f066b5-a6e7-428d-b6cc-8fed7ae62754",
+        "status": "no_match",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا. لم تتجاوز أي فرصة في العينة فحوص الصلة والقيود والأهلية؛ قد يكون السبب نقص معلومات المصدر. لا يشمل هذا الحكم بقية البيانات الخام.",
+        "recommendations": [],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال"
+        ],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "seconds": 25.378
+    },
+    {
+      "case": "profile-preserved",
+      "passed": true
+    },
+    {
+      "case": "no-unhandled-browser-errors",
+      "passed": true,
+      "errors": []
+    }
+  ]
+}

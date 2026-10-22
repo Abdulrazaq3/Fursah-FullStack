@@ -1,0 +1,28 @@
+{
+  "tested_at": "2026-10-22T14:04:21.088579+00:00",
+  "checks": [
+    {
+      "case": "free-online",
+      "passed": false,
+      "http_status": 200,
+      "seconds": 32.782,
+      "response": {
+        "request_id": "local-rag-free-online",
+        "status": "no_match",
+        "message": "النتائج من قاعدة بيانات فرصة المجهزة، مع الرجوع إلى أدلة كل إعلان. لم نجد فرصة موثقة تطابق الطلب وقيوده في هذا النطاق؛ قد يكون السبب نقص معلومات التكلفة أو المواعيد أو الأهلية.",
+        "recommendations": [],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "أنماط الحضور المسموحة: عن بعد"
+        ],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "details": []
+    }
+  ],
+  "passed": false,
+  "quality_benchmark": false
+}

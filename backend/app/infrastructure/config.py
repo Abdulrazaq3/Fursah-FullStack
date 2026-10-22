@@ -31,9 +31,22 @@ class Settings(BaseSettings):
     model_base_url: str = ""
     # Explicit opt-in, restricted to loopback OpenAI-compatible servers.
     allow_keyless_local_model: bool = False
+    # off/shadow preserve the old path; active checks a grounded Gemini proposal.
+    understanding_mode: str = Field(default="off", pattern="^(off|shadow|active)$")
+    catalog_mode: str = Field(default="pilot", pattern="^(pilot|prepared)$")
+    # Synthetic evaluation runs only; detailed stage outputs stay off normally.
+    eval_telemetry_enabled: bool = False
+    catalog_retrieval_limit: int = Field(default=20, ge=3, le=20)
+    # Zero disables an absolute acceptance cutoff until full-corpus calibration.
+    # The reranker orders candidates; its raw score is not a relevance probability.
+    catalog_min_rerank_score: float = Field(default=0.0, ge=0, le=1)
+    understanding_shadow_timeout_seconds: float = Field(default=5, ge=0.1, le=15)
+    understanding_max_output_tokens: int = Field(default=768, ge=128, le=2048)
 
     model_timeout_seconds: int = Field(default=40, gt=0)
     workflow_timeout_seconds: int = Field(default=90, gt=0)
+    # Opt-in classroom integration; the relevance policy is not production-approved.
+    discovery_pilot_enabled: bool = False
     model_max_retries: int = Field(default=1, ge=0)
     model_output_retries: int = Field(default=1, ge=0)
     max_workflow_steps: int = Field(default=8, gt=0)
@@ -41,8 +54,10 @@ class Settings(BaseSettings):
     data_dir: Path = PROJECT_ROOT / "data"
     allowed_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
     trace_jsonl_path: str = ""
+    database_url: str = Field(default="", repr=False)
+    database_config_file: Path = PROJECT_ROOT / ".local" / "database.json"
 
-    # Phoenix tracing (Day 4). See infrastructure/observability.py.
+    # Phoenix tracing (Day 4). See app/instrumentation/phoenix.py.
     phoenix_enabled: bool = False
     phoenix_endpoint: str = "http://localhost:6006/v1/traces"
     phoenix_project: str = "fursah"

@@ -1,4 +1,0 @@
-# Install CPU PyTorch first; see scripts/setup-python.ps1.
-sentence-transformers>=5.2,<7
-psycopg[binary]>=3.2,<4
-pgvector>=0.4,<1

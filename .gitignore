@@ -11,4 +11,8 @@ dist/
 .pytest_cache/
 .coverage
 /FlagEmbedding/
-results/*.npy
+evals/archive/reports/*.npy
+
+# Generated evaluation runs; retained locally and in Phoenix.
+/evals/runs/*
+!/evals/runs/README.md

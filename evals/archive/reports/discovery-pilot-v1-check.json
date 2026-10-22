@@ -1,0 +1,470 @@
+{
+  "run": "discovery-pilot-v1-final",
+  "recorded_at": "2026-10-21T20:55:16.632783+00:00",
+  "scope": "Integration on existing four-record corpus; no threshold tuning, new held-out relevance claim or general activation.",
+  "checks": {
+    "backend_tests": 122,
+    "experiment_tests": 11,
+    "frontend_production_build": true,
+    "browser_checks": 8,
+    "browser_checks_passed": 8,
+    "unhandled_browser_errors": 0
+  },
+  "corpus_counts": {
+    "opportunities": 4,
+    "sources": 6,
+    "evidence": 24,
+    "documents": 4
+  },
+  "requests": {
+    "discovery_http_requests": 5,
+    "discovery_requests_with_real_embedding_and_reranking": 3,
+    "details_http_requests": 1,
+    "latency_seconds_by_request": {
+      "b4792076-a4f0-4353-828a-9a2386a3cd67": 15.44,
+      "456a543c-316d-4633-92c2-0e2f05da24ab": 14.55,
+      "5ccbf660-24d7-4f3a-9207-79070cf7eacc": 0.008,
+      "f8916a1e-16e1-46f6-9144-d6c58f5fbd8f": 0.003,
+      "50f9f60b-1ce5-4e41-9270-743aa2cdabb1": 14.569
+    },
+    "model_request_seconds": [
+      14.55,
+      14.569,
+      15.44
+    ]
+  },
+  "startup_note": "An initial cold HTTP attempt exceeded 90 seconds and returned 503; models now warm up at pilot startup. Model weights, precision and thresholds unchanged. Busy requests have their own error; worker cancellation is tested.",
+  "input_and_code_sha256": {
+    "backend/app/workflow.py": "9ad5c7372caa821616a18f4f457c5501586f8ad1178847271bf89bd47baed1d8",
+    "backend/app/repository.py": "8bb0f63132cc52c088d6e8b59b9cbcdede6022491b4526b6a3d5ab0de31bdd42",
+    "backend/app/main.py": "0b8cffc00b9c36de680ef44cdcc4859be30858a88991c1f1b8bbb44a71e98778",
+    "backend/app/infrastructure/config.py": "8a454fa66edd09599bbbcdecdecbc29405e915056157f3ec27cd93fc5f177ffa",
+    "backend/app/infrastructure/dependencies.py": "9f86857f1cc44557e5f833ac4779e2c419a9d70494ad6de7f1ef97a81823b0e3",
+    "backend/app/infrastructure/errors.py": "809b162db5b9f7f6bdc39ac6148ad845171012a5e8cda749788e3e9454407175",
+    "backend/app/infrastructure/local_inference.py": "d14af8fa709eae472e0081a81a207f6a1deca6649923c6a83b3d13df3b484d83",
+    "backend/app/request_plan.py": "6a7c5ac5bb00708bb24e2607d517cb632a25f92accecd77fa3ffb6f1cd10300f",
+    "backend/app/request_requirements.py": "d3365aaf8ab145eadbdaa18c2d4aa110ceac9eca78b68b8dbabf393e51230ee8",
+    "backend/app/constraints.py": "ca09195590ef09ecd4cfe438698317b0ef76750cb1d6f8bdc522e93f146e0ed0",
+    "backend/app/eligibility.py": "7f763bb0b6807013db72ea9aa9a3737dc28284295885662faa80a17f1bf7d73f",
+    "backend/app/topic_verifier.py": "fe7d44d3b9585e696cfd43fc2f787ea82cf92025e1153e84cfe3e612b66b6abb",
+    "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+    "frontend/src/opportunities/SearchResults.tsx": "045d81564651d666c6261cc24f08bae0fd5d80d12a3041fc3c15e66bf125a744",
+    "examples/discovery-pilot-policy.sample.json": "9d8618d548bd85d2bcfb0e2355378be8716e705bb1c7d2223026f67c12ab51db",
+    "scripts/start-discovery-pilot.ps1": "fdcceee8ceb1bd5e4157c498bd1e0f5d1fe16f187240bb2dc16ee10f254b4e99",
+    "scripts/verify-discovery-pilot.cjs": "22ec3fae62bbcc32c55b0118174b1b58c3098bedefaba66a40533ae98a9b43a4",
+    "experiments/local_reranker.py": "e5bc89ee10221926c063ba8e5da189082363e36388f375b41bc01eb8cd7918bc",
+    "experiments/model_integrity.py": "9320534133ed7d40403801b9d87c0cda8212156810a020b49fd40b1a1f801a99",
+    "data/raw/raw_opportunities.csv": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+    "examples/linked-data.sample.json": "30f9dbe96eba68246c5abf736e6c1bcb2590c1427e98425a9ddc1e889723b18b",
+    "results/indexed-documents.json": "f99132dc77773c47576e331679ba1dd6ce87ea6aa7a043f76a36e8ca2620f03b",
+    "results/relevance-expanded-v1-policy.json": "15a9665c31dceb771761aaf979997570e022715744b34c8ba642d07130df1013",
+    "results/discovery-pilot-v1-final-browser.json": "b04617244d94e7cb265021922ad1b36acc87ee5bc7911f2cefb41a7cc541b6dd"
+  },
+  "trace_events": [
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 1,
+      "step": "request_received",
+      "component": "api",
+      "outcome": "success",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 2,
+      "step": "request_plan_checked",
+      "component": "discovery_pilot",
+      "outcome": "resolved",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 3,
+      "step": "query_embedded",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 6562.999999965541,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 4,
+      "step": "candidates_retrieved",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 6687.999999965541,
+      "evidence_ids": [
+        "SRC-0496",
+        "SRC-0497",
+        "SRC-0943",
+        "SRC-0477",
+        "SRC-0251",
+        "SRC-0252"
+      ]
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 5,
+      "step": "topic_and_requirements_checked",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 15344.000000040978,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 6,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-004:related:no_constraints_requested:uncertain",
+      "elapsed_ms": 15344.000000040978,
+      "evidence_ids": [
+        "SRC-0496",
+        "SRC-0497"
+      ]
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 7,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-001:unrelated:excluded:uncertain",
+      "elapsed_ms": 15344.000000040978,
+      "evidence_ids": [
+        "SRC-0943"
+      ]
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 8,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-002:unrelated:no_constraints_requested:uncertain",
+      "elapsed_ms": 15344.000000040978,
+      "evidence_ids": [
+        "SRC-0477"
+      ]
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 9,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-003:unrelated:excluded:uncertain",
+      "elapsed_ms": 15344.000000040978,
+      "evidence_ids": [
+        "SRC-0251",
+        "SRC-0252"
+      ]
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 10,
+      "step": "response_evidence_confirmed",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 15437.999999965541,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+      "sequence": 11,
+      "step": "response_ready",
+      "component": "api",
+      "outcome": "ok",
+      "elapsed_ms": 15439.618999953382,
+      "evidence_ids": [
+        "SRC-0496",
+        "SRC-0497"
+      ]
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 1,
+      "step": "request_received",
+      "component": "api",
+      "outcome": "success",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 2,
+      "step": "request_plan_checked",
+      "component": "discovery_pilot",
+      "outcome": "resolved",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 3,
+      "step": "query_embedded",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 6530.999999959022,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 4,
+      "step": "candidates_retrieved",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 6594.000000040978,
+      "evidence_ids": [
+        "SRC-0251",
+        "SRC-0252",
+        "SRC-0477",
+        "SRC-0943",
+        "SRC-0496",
+        "SRC-0497"
+      ]
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 5,
+      "step": "topic_and_requirements_checked",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 14530.999999959022,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 6,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-003:unrelated:excluded:uncertain",
+      "elapsed_ms": 14530.999999959022,
+      "evidence_ids": [
+        "SRC-0251",
+        "SRC-0252"
+      ]
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 7,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-002:unrelated:no_constraints_requested:uncertain",
+      "elapsed_ms": 14530.999999959022,
+      "evidence_ids": [
+        "SRC-0477"
+      ]
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 8,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-001:unrelated:excluded:uncertain",
+      "elapsed_ms": 14530.999999959022,
+      "evidence_ids": [
+        "SRC-0943"
+      ]
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 9,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-004:unrelated:no_constraints_requested:uncertain",
+      "elapsed_ms": 14547.00000002049,
+      "evidence_ids": [
+        "SRC-0496",
+        "SRC-0497"
+      ]
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 10,
+      "step": "response_evidence_confirmed",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 14547.00000002049,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+      "sequence": 11,
+      "step": "response_ready",
+      "component": "api",
+      "outcome": "no_match",
+      "elapsed_ms": 14549.578699981794,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "5ccbf660-24d7-4f3a-9207-79070cf7eacc",
+      "sequence": 1,
+      "step": "request_received",
+      "component": "api",
+      "outcome": "success",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "5ccbf660-24d7-4f3a-9207-79070cf7eacc",
+      "sequence": 2,
+      "step": "request_plan_checked",
+      "component": "discovery_pilot",
+      "outcome": "requires_interpretation",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "5ccbf660-24d7-4f3a-9207-79070cf7eacc",
+      "sequence": 3,
+      "step": "response_ready",
+      "component": "api",
+      "outcome": "error",
+      "elapsed_ms": 8.096900070086122,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "f8916a1e-16e1-46f6-9144-d6c58f5fbd8f",
+      "sequence": 1,
+      "step": "request_received",
+      "component": "api",
+      "outcome": "success",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "f8916a1e-16e1-46f6-9144-d6c58f5fbd8f",
+      "sequence": 2,
+      "step": "request_plan_checked",
+      "component": "discovery_pilot",
+      "outcome": "constraint_conflict",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "f8916a1e-16e1-46f6-9144-d6c58f5fbd8f",
+      "sequence": 3,
+      "step": "response_ready",
+      "component": "api",
+      "outcome": "needs_info",
+      "elapsed_ms": 2.8171000303700566,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 1,
+      "step": "request_received",
+      "component": "api",
+      "outcome": "success",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 2,
+      "step": "request_plan_checked",
+      "component": "discovery_pilot",
+      "outcome": "resolved",
+      "elapsed_ms": 0.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 3,
+      "step": "query_embedded",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 6500.0,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 4,
+      "step": "candidates_retrieved",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 6562.000000034459,
+      "evidence_ids": [
+        "SRC-0943",
+        "SRC-0477",
+        "SRC-0496",
+        "SRC-0497",
+        "SRC-0251",
+        "SRC-0252"
+      ]
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 5,
+      "step": "topic_and_requirements_checked",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 14562.000000034459,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 6,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-001:unrelated:excluded:uncertain",
+      "elapsed_ms": 14562.000000034459,
+      "evidence_ids": [
+        "SRC-0943"
+      ]
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 7,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-002:unrelated:needs_source_info:uncertain",
+      "elapsed_ms": 14562.000000034459,
+      "evidence_ids": [
+        "SRC-0477"
+      ]
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 8,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-004:unrelated:needs_source_info:uncertain",
+      "elapsed_ms": 14562.000000034459,
+      "evidence_ids": [
+        "SRC-0496",
+        "SRC-0497"
+      ]
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 9,
+      "step": "candidate_checked",
+      "component": "discovery_pilot",
+      "outcome": "OPP-DEMO-003:unrelated:excluded:uncertain",
+      "elapsed_ms": 14562.000000034459,
+      "evidence_ids": [
+        "SRC-0251",
+        "SRC-0252"
+      ]
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 10,
+      "step": "response_evidence_confirmed",
+      "component": "discovery_pilot",
+      "outcome": "success",
+      "elapsed_ms": 14562.000000034459,
+      "evidence_ids": []
+    },
+    {
+      "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+      "sequence": 11,
+      "step": "response_ready",
+      "component": "api",
+      "outcome": "no_match",
+      "elapsed_ms": 14568.633700022474,
+      "evidence_ids": []
+    }
+  ]
+}

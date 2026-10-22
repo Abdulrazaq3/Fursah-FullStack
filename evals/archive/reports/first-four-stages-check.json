@@ -1,0 +1,56 @@
+{
+  "recorded_at": "2026-10-22T14:14:09.737400+00:00",
+  "scope": "First four implementation stages on supplied local data; no external opportunity discovery",
+  "stages": {
+    "scope_fixed": true,
+    "versioned_database_and_preparation": true,
+    "all_supplied_data_and_saved_additions_indexed": true,
+    "active_gemini_local_retrieval_rerank_and_details_connected": true
+  },
+  "source_rows_preserved": 1000,
+  "csv_opportunities_after_identity_grouping": 900,
+  "saved_additions": 13,
+  "total_opportunities": 913,
+  "total_source_rows": 1013,
+  "external_opportunity_fetches_during_preparation_or_queries": 0,
+  "active_release": "catalog-89ca0f28ea4dd7224fb61a82",
+  "embedding_model": "BAAI/bge-m3",
+  "dimensions": 1024,
+  "reranker": "BAAI/bge-reranker-v2-m3",
+  "understanding_model": "google/gemini-3.8-flash",
+  "understanding_provider": "OpenRouter",
+  "absolute_rerank_acceptance_cutoff": "disabled until full-corpus calibration",
+  "checks": {
+    "backend_tests_passed": 187,
+    "experiment_tests_passed": 11,
+    "frontend_build_passed": true,
+    "active_understanding_live_cases_passed": 3,
+    "full_pipeline_api_cases_passed": 4,
+    "browser_checks_passed": 4,
+    "storage_publish_withdraw_rollback_passed": true
+  },
+  "reports": {
+    "full-catalog-preparation.json": "3a2e848216cd5203769bd90114848ca42c48db7f5abf5eb987a3548448577c1f",
+    "catalog-storage-check.json": "71c89b663ef3f912bfb5c32716939765b47180031167ebf82e536f6b8ad91e47",
+    "catalog-live-storage-check.json": "4ab3743c89afde5cbdd09e7514b4d5973c43982bd5d5f1fef1df0af52494428a",
+    "active-understanding-live-check.json": "abae24c7bd9deaac8e12ade0c0a45a9e63f94047d26800eaa1df4c1cd8315cd5",
+    "local-rag-api-check.json": "3ebe8e18be9c72fb9e1120f1a95b4b5576bcbc0b66bee2e3776887ee9d7d9195",
+    "local-rag-browser-check.json": "53e330b54ff8bd0dff74e3553fd768880dccfbea010bf85b6843e94fb70c0f03"
+  },
+  "readiness": {
+    "status": "not_ready",
+    "checks": {
+      "storage": true,
+      "application": false
+    },
+    "details": {
+      "application": "General discovery still needs full-corpus evaluation and deployment validation before production approval."
+    }
+  },
+  "production_approval": false,
+  "remaining": [
+    "Full-corpus retrieval/ranking/abstention evaluation and acceptance calibration",
+    "Local inference performance and deployment-ready images/resources",
+    "Deployment, capacity, security, backup/restore, monitoring and launch validation"
+  ]
+}

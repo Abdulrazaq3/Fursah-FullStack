@@ -97,6 +97,7 @@ export interface OpportunityDetails {
   hours_per_session?: number | null;
   total_hours?: number | null;
   application_url?: string | null;
+  information_url?: string | null;
   required_documents_ar?: string[] | null;
   application_steps_ar?: string[] | null;
   capacity?: number | null;

@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "raw_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+  "base": "The original four indexed candidates plus four added candidates from reranker-eval.sample.json. No original reports or fixtures are overwritten.",
+  "scope": "Manually selected source candidates for topic scoring only. No registration, eligibility, date or full opportunity grouping claims.",
+  "added_candidates": [
+    {"opportunity_id":"TOPIC-SRC-0009","split":"calibration","topic":"user_experience","source_ids":["SRC-0009"],"excerpts":[
+      {"role":"title","source_id":"SRC-0009","quote":"تجربة المستخدم للخدمات المحلية خطوة بخطوة"},
+      {"role":"activity","source_id":"SRC-0009","quote":"سنبدأ بحالة صغيرة، ثم ننتقل إلى رسم رحلة المستفيد واختبار الفكرة في مجموعات."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0011","split":"calibration","topic":"presentations","source_ids":["SRC-0011"],"excerpts":[
+      {"role":"title","source_id":"SRC-0011","quote":"عرض الأفكار أمام الجمهور للمهتمين"},
+      {"role":"activity","source_id":"SRC-0011","quote":"يعمل المتدرب داخل مركز الأثر مع فريق مختص على بناء عرض قصير ومراجعته تحت إشراف موظف من الفريق، ويتابع مهاماً مهنية فعلية خلال المدة."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0016","split":"calibration","topic":"poster_design","source_ids":["SRC-0016"],"excerpts":[
+      {"role":"title","source_id":"SRC-0016","quote":"تصميم الملصق الثقافي للمهتمين"},
+      {"role":"activity","source_id":"SRC-0016","quote":"يساعد المتطوعون في تجربة الخط واللون وتوزيع العناصر ضمن فرق يشرف عليها المنظمون."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0020","split":"calibration","topic":"python","source_ids":["SRC-0020"],"excerpts":[
+      {"role":"title","source_id":"SRC-0020","quote":"مقدمة في Python للمجتمع"},
+      {"role":"activity","source_id":"SRC-0020","quote":"يستعرض المنظمون أمثلة عملية عن كتابة تعليمات صغيرة وتجربة النتائج ويجيبون عن الأسئلة."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0010","split":"evaluation_only","topic":"sleep_health","source_ids":["SRC-0010"],"excerpts":[
+      {"role":"title","source_id":"SRC-0010","quote":"التوعية بالنوم الصحي خطوة بخطوة"},
+      {"role":"activity","source_id":"SRC-0010","quote":"يعمل المتدرب داخل معمل المدار مع فريق مختص على مناقشة عادات النوم ومصادر المعلومات تحت إشراف موظف من الفريق، ويتابع مهاماً مهنية فعلية خلال المدة."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0017","split":"evaluation_only","topic":"english_conversation","source_ids":["SRC-0017"],"excerpts":[
+      {"role":"title","source_id":"SRC-0017","quote":"المحادثة الإنجليزية في العمل للمهتمين"},
+      {"role":"activity","source_id":"SRC-0017","quote":"في الجزء الأول نتعرف إلى الفكرة، وبعده نجرب التدرب على مواقف يومية واقعية."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0018","split":"evaluation_only","topic":"newsletter","source_ids":["SRC-0018"],"excerpts":[
+      {"role":"title","source_id":"SRC-0018","quote":"تحرير نشرة مجتمعية للمهتمين"},
+      {"role":"activity","source_id":"SRC-0018","quote":"يمكن للحضور متابعة شرح اختيار الأخبار ومراجعة العناوين ومشاركة ما توصلوا إليه."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0019","split":"evaluation_only","topic":"small_projects","source_ids":["SRC-0019"],"excerpts":[
+      {"role":"title","source_id":"SRC-0019","quote":"إدارة مشروع صغير من الفكرة إلى التطبيق"},
+      {"role":"activity","source_id":"SRC-0019","quote":"يساعد المتطوعون في تقسيم المهام وتقدير الموارد ضمن فرق يشرف عليها المنظمون."}
+    ]}
+  ],
+  "base_topics": {
+    "OPP-DEMO-001":"educational_translation","OPP-DEMO-002":"educational_translation",
+    "OPP-DEMO-003":"audio_story","OPP-DEMO-004":"excel",
+    "TOPIC-SRC-0001":"customer_service","TOPIC-SRC-0002":"clear_writing",
+    "TOPIC-SRC-0003":"water_saving","TOPIC-SRC-0005":"sql_queries"
+  }
+}

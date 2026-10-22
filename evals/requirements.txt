@@ -1,0 +1,7 @@
+# Classroom evaluation and local Phoenix; install after backend/requirements.txt.
+opentelemetry-sdk==1.44.0
+opentelemetry-exporter-otlp==1.44.0
+opentelemetry-instrumentation==0.65b0
+arize-phoenix==20.19.0
+arize-phoenix-otel==0.17.1
+arize-phoenix-client==3.5.0

@@ -101,7 +101,7 @@ export default function SearchResults({ view, res, onEditProfile, onRetry, onFoc
 }
 
 function summaryText(n: number) {
-  if (n === 1) return 'فرصة واحدة تطابق ملفك وقيودك الحالية';
-  if (n === 2) return 'فرصتان تطابقان ملفك وقيودك الحالية';
-  return `${n} فرص تطابق ملفك وقيودك الحالية`;
+  if (n === 1) return 'فرصة واحدة مرتبطة ببحثك؛ راجع حالة الأهلية';
+  if (n === 2) return 'فرصتان مرتبطتان ببحثك؛ راجع حالة الأهلية';
+  return `${n} فرص مرتبطة ببحثك؛ راجع حالة الأهلية`;
 }

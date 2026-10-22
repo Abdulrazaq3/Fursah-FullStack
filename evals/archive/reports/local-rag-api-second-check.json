@@ -1,0 +1,206 @@
+{
+  "tested_at": "2026-10-22T14:09:47.706973+00:00",
+  "checks": [
+    {
+      "case": "free-online",
+      "passed": true,
+      "http_status": 200,
+      "seconds": 23.954,
+      "response": {
+        "request_id": "local-rag-free-online",
+        "status": "ok",
+        "message": "النتائج من قاعدة بيانات فرصة المجهزة، مع الرجوع إلى أدلة كل إعلان.",
+        "recommendations": [
+          {
+            "evidence_version": "sha256:a0d998632f9fb1f63975f39f9e18088dd70c20629a38d093d068db3864616c71",
+            "opportunity_id": "OPP-CSV-469ae8512284cdb8846b",
+            "title": "تحليل البيانات باستخدام Excel للمهتمين",
+            "opportunity_type": "volunteering",
+            "location": null,
+            "delivery_mode": "online",
+            "deadline": null,
+            "application_status": "requires_verification",
+            "eligibility_status": "uncertain",
+            "reason": "يدعم المصدر هذا النشاط: «يساعد المتطوعون في ترتيب الجداول وقراءة المؤشرات ضمن فرق يشرف عليها المنظمون»",
+            "caveats": [
+              "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+              "آخر موعد للتقديم غير محدد في البيانات المجهزة.",
+              "الموقع غير محدد في البيانات المجهزة.",
+              "المدة بالأيام غير محدد في البيانات المجهزة.",
+              "رابط التقديم غير محدد في البيانات المجهزة.",
+              "المهارات المطلوبة غير محدد في البيانات المجهزة.",
+              "موعد فتح التسجيل غير محدد في البيانات المجهزة.",
+              "شروط الأهلية غير محدد في البيانات المجهزة.",
+              "حالة التسجيل الواردة في الإعلان تخص وقت النشر، وليست تحققًا من حالته الآن.",
+              "لم يُسجل وقت تحقق حديث من معلومات الفرصة.",
+              "المعلومات غير المذكورة تحتاج مراجعة المصدر.",
+              "الأهلية غير مؤكدة عند نقص الشروط أو عدم تفسيرها."
+            ],
+            "source_ids": [
+              "SRC-0707"
+            ],
+            "relevance_score": null,
+            "next_action": "راجع المصدر الرسمي والتفاصيل قبل البدء."
+          },
+          {
+            "evidence_version": "sha256:dbdaecc36675b20260ce5c7b5549742d975df9c41ba89f6bb101e270a536e3ad",
+            "opportunity_id": "OPP-CSV-c66e827bed6529568b81",
+            "title": "تحليل البيانات باستخدام Excel للمهتمين",
+            "opportunity_type": "volunteering",
+            "location": null,
+            "delivery_mode": "online",
+            "deadline": null,
+            "application_status": "requires_verification",
+            "eligibility_status": "uncertain",
+            "reason": "يدعم المصدر هذا النشاط: «يساعد المتطوعون في ترتيب الجداول وقراءة المؤشرات ضمن فرق يشرف عليها المنظمون»",
+            "caveats": [
+              "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+              "آخر موعد للتقديم غير محدد في البيانات المجهزة.",
+              "الموقع غير محدد في البيانات المجهزة.",
+              "المدة بالأيام غير محدد في البيانات المجهزة.",
+              "رابط التقديم غير محدد في البيانات المجهزة.",
+              "المهارات المطلوبة غير محدد في البيانات المجهزة.",
+              "موعد فتح التسجيل غير محدد في البيانات المجهزة.",
+              "شروط الأهلية غير محدد في البيانات المجهزة.",
+              "حالة التسجيل الواردة في الإعلان تخص وقت النشر، وليست تحققًا من حالته الآن.",
+              "لم يُسجل وقت تحقق حديث من معلومات الفرصة.",
+              "المعلومات غير المذكورة تحتاج مراجعة المصدر.",
+              "الأهلية غير مؤكدة عند نقص الشروط أو عدم تفسيرها."
+            ],
+            "source_ids": [
+              "SRC-0361"
+            ],
+            "relevance_score": null,
+            "next_action": "راجع المصدر الرسمي والتفاصيل قبل البدء."
+          }
+        ],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "أنماط الحضور المسموحة: عن بعد"
+        ],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "details": [
+        {
+          "evidence_version": "sha256:a0d998632f9fb1f63975f39f9e18088dd70c20629a38d093d068db3864616c71",
+          "opportunity_id": "OPP-CSV-469ae8512284cdb8846b",
+          "information_url": "https://fursah-685.example/info",
+          "canonical_id": null,
+          "title": "تحليل البيانات باستخدام Excel للمهتمين",
+          "opportunity_type": "volunteering",
+          "description": "يساعد المتطوعون في ترتيب الجداول وقراءة المؤشرات ضمن فرق يشرف عليها المنظمون",
+          "location": null,
+          "delivery_mode": "online",
+          "start_date": "2026-11-12",
+          "end_date": "2026-12-03",
+          "remote_participation_allowed": true,
+          "physical_attendance_required": false,
+          "duration": null,
+          "session_count": null,
+          "hours_per_session": null,
+          "total_hours": null,
+          "application_url": null,
+          "required_documents_ar": null,
+          "application_steps_ar": null,
+          "capacity": null,
+          "deadline": null,
+          "application_status": "requires_verification",
+          "topics": [],
+          "eligibility_requirements": {
+            "mandatory": null,
+            "preferred": null
+          },
+          "required_skills": null,
+          "cost": 0.0,
+          "source_ids": [
+            "SRC-0707"
+          ],
+          "last_verified_at": null,
+          "data_warnings": [
+            "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+            "آخر موعد للتقديم غير محدد في البيانات المجهزة.",
+            "الموقع غير محدد في البيانات المجهزة.",
+            "المدة بالأيام غير محدد في البيانات المجهزة.",
+            "رابط التقديم غير محدد في البيانات المجهزة.",
+            "المهارات المطلوبة غير محدد في البيانات المجهزة.",
+            "موعد فتح التسجيل غير محدد في البيانات المجهزة.",
+            "شروط الأهلية غير محدد في البيانات المجهزة.",
+            "حالة التسجيل الواردة في الإعلان تخص وقت النشر، وليست تحققًا من حالته الآن.",
+            "لم يُسجل وقت تحقق حديث من معلومات الفرصة."
+          ]
+        },
+        {
+          "evidence_version": "sha256:dbdaecc36675b20260ce5c7b5549742d975df9c41ba89f6bb101e270a536e3ad",
+          "opportunity_id": "OPP-CSV-c66e827bed6529568b81",
+          "information_url": "https://fursah-215.example/info",
+          "canonical_id": null,
+          "title": "تحليل البيانات باستخدام Excel للمهتمين",
+          "opportunity_type": "volunteering",
+          "description": "يساعد المتطوعون في ترتيب الجداول وقراءة المؤشرات ضمن فرق يشرف عليها المنظمون",
+          "location": null,
+          "delivery_mode": "online",
+          "start_date": "2026-12-04",
+          "end_date": "2026-12-05",
+          "remote_participation_allowed": true,
+          "physical_attendance_required": false,
+          "duration": null,
+          "session_count": null,
+          "hours_per_session": null,
+          "total_hours": null,
+          "application_url": null,
+          "required_documents_ar": null,
+          "application_steps_ar": null,
+          "capacity": null,
+          "deadline": null,
+          "application_status": "requires_verification",
+          "topics": [],
+          "eligibility_requirements": {
+            "mandatory": null,
+            "preferred": null
+          },
+          "required_skills": null,
+          "cost": 0.0,
+          "source_ids": [
+            "SRC-0361"
+          ],
+          "last_verified_at": null,
+          "data_warnings": [
+            "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+            "آخر موعد للتقديم غير محدد في البيانات المجهزة.",
+            "الموقع غير محدد في البيانات المجهزة.",
+            "المدة بالأيام غير محدد في البيانات المجهزة.",
+            "رابط التقديم غير محدد في البيانات المجهزة.",
+            "المهارات المطلوبة غير محدد في البيانات المجهزة.",
+            "موعد فتح التسجيل غير محدد في البيانات المجهزة.",
+            "شروط الأهلية غير محدد في البيانات المجهزة.",
+            "حالة التسجيل الواردة في الإعلان تخص وقت النشر، وليست تحققًا من حالته الآن.",
+            "لم يُسجل وقت تحقق حديث من معلومات الفرصة."
+          ]
+        }
+      ]
+    },
+    {
+      "case": "saved-additions",
+      "passed": false,
+      "http_status": 503,
+      "seconds": 13.812,
+      "response": {
+        "request_id": "local-rag-saved-additions",
+        "status": "error",
+        "message": "The model returned an invalid structured result.",
+        "recommendations": [],
+        "missing_fields": [],
+        "error_code": "FURSAH_INVALID_MODEL_OUTPUT",
+        "interpreted_filters": [],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "details": []
+    }
+  ],
+  "passed": false,
+  "quality_benchmark": false
+}

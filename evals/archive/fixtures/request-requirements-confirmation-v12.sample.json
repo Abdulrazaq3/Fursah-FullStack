@@ -1,0 +1,14 @@
+{
+  "version": "1.2",
+  "scope": "Eight fresh deterministic cases after the presentation-verb defect. Component extraction and source matching only, with three negative controls; no new neural inference.",
+  "queries": [
+    {"id":"CONFIRM12-01","query":"نحتاج نعرض أفكار المشروع بطريقة مرتبة","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]},
+    {"id":"CONFIRM12-02","query":"نشاط يساعد الطالب يعرض فكرته بثقة","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]},
+    {"id":"CONFIRM12-03","query":"تدريب للمشاركة كي تعرض أفكار فريقها بوضوح","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]},
+    {"id":"CONFIRM12-04","query":"أبغى أعرض فكرتي بطريقة منظمة أمام الحاضرين","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]},
+    {"id":"CONFIRM12-05","query":"أحتاج ممارسة تقديم أفكارنا أمام الجمهور","tools":[],"activity":"public_presentation","mode":"all","review":false,"supported_ids":["TOPIC-SRC-0011"]},
+    {"id":"CONFIRM12-06","query":"أبحث عن عرض أزياء وملابس","tools":[],"activity":null,"mode":"all","review":false,"supported_ids":[]},
+    {"id":"CONFIRM12-07","query":"أريد أن أعرض صورًا من الرحلة","tools":[],"activity":null,"mode":"all","review":false,"supported_ids":[]},
+    {"id":"CONFIRM12-08","query":"جولة ثقافية لزيارة المباني القديمة","tools":[],"activity":null,"mode":"all","review":false,"supported_ids":[]}
+  ]
+}

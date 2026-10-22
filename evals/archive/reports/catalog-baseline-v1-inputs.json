@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-10-22T14:30:35.127894+00:00",
+  "run": "catalog-baseline-v1",
+  "code_hashes": {
+    "backend/app/catalog_workflow.py": "2f38ebc79cce892310f08f09843e2475cf2296200a6dc402f20f44817ad9fc42",
+    "backend/app/active_understanding.py": "0e71bbc8419125a4bdff776d0f9eb4b8932bb2d36427717154667537e702ee93",
+    "backend/app/request_plan.py": "a12c1969b739c42045d1d11b16ca56cee8311bc24155f34204edfbc5aef9dad1",
+    "backend/app/catalog_store.py": "da839e839d1fa374e9a9a7de71eb781e66bf01028115c5ba3883985fa19ccec5",
+    "backend/app/constraints.py": "ca09195590ef09ecd4cfe438698317b0ef76750cb1d6f8bdc522e93f146e0ed0",
+    "backend/app/eligibility.py": "7f763bb0b6807013db72ea9aa9a3737dc28284295885662faa80a17f1bf7d73f",
+    "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+    "backend/app/infrastructure/eval_telemetry.py": "bf1482a7e0748572a46275be7f248213bebf30b85b95abe16b347685cb2edb8a",
+    "backend/evals/run_eval.py": "325991e3f9997e07ba0aee6b60b862611f8ff6f19bbd3fd61e6118acd463e84f",
+    "backend/evals/catalog_graders.py": "ea38d0190794e202bf0e1b0836da6167a241b39c2113c8aa1e4522ca6b06c085"
+  },
+  "case_manifest_sha256": "b0744f601f58d3265284a94a585602104b8488bbcc3d3d30f6bd4d50f13d2032",
+  "models": {
+    "understanding": "google/gemini-3.8-flash",
+    "embedding": "BAAI/bge-m3",
+    "reranking": "BAAI/bge-reranker-v2-m3"
+  },
+  "labels": "AI source reviewed development labels; holdout not executed",
+  "public_production_approval": false
+}

@@ -1,0 +1,178 @@
+{
+  "scope_version": "production-v1-scope-2026-10-22",
+  "reviewed_by": "assisted official-source curation; 2026-10-22; not independent quality approval",
+  "attribution_notice": "Source excerpts retain their stated licenses. Microsoft curricula: MIT; Hugging Face: Apache-2.0; Google Developers text: CC-BY-4.0. No copied course assets or brand logos.",
+  "entries": [
+    {
+      "id": "OPP-REAL-GOOGLE-INTRO-ML",
+      "url": "https://developers.google.com/machine-learning/intro-to-ml",
+      "fetch_url": "https://developers.google.com/machine-learning/intro-to-ml",
+      "provider": "Google for Developers",
+      "title_quote": "Introduction to Machine Learning",
+      "activity_quote": "Understand the key concepts of supervised machine learning.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "CC-BY-4.0",
+      "license_url": "https://developers.google.com/terms/site-policies"
+    },
+    {
+      "id": "OPP-REAL-GOOGLE-ML-CRASH",
+      "url": "https://developers.google.com/machine-learning/crash-course",
+      "fetch_url": "https://developers.google.com/machine-learning/crash-course",
+      "provider": "Google for Developers",
+      "title_quote": "Machine Learning Crash Course",
+      "activity_quote": "Google's fast-paced, practical introduction to machine learning, featuring a series of animated videos, interactive visualizations, and hands-on practice exercises.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "CC-BY-4.0",
+      "license_url": "https://developers.google.com/terms/site-policies"
+    },
+    {
+      "id": "OPP-REAL-GOOGLE-PROBLEM-FRAMING",
+      "url": "https://developers.google.com/machine-learning/problem-framing",
+      "fetch_url": "https://developers.google.com/machine-learning/problem-framing",
+      "provider": "Google for Developers",
+      "title_quote": "Introduction to Machine Learning Problem Framing",
+      "activity_quote": "Introduction to Machine Learning Problem Framing teaches you how to determine if machine learning (ML) is a good approach for a problem and explains how to outline an ML solution.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "CC-BY-4.0",
+      "license_url": "https://developers.google.com/terms/site-policies"
+    },
+    {
+      "id": "OPP-REAL-GOOGLE-MANAGE-ML",
+      "url": "https://developers.google.com/machine-learning/managing-ml-projects",
+      "fetch_url": "https://developers.google.com/machine-learning/managing-ml-projects",
+      "provider": "Google for Developers",
+      "title_quote": "Managing ML projects",
+      "activity_quote": "This course provides a comprehensive framework for managing machine learning (ML) projects, guiding you through all stages from ideation to production.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "CC-BY-4.0",
+      "license_url": "https://developers.google.com/terms/site-policies"
+    },
+    {
+      "id": "OPP-REAL-GOOGLE-DECISION-FORESTS",
+      "url": "https://developers.google.com/machine-learning/decision-forests",
+      "fetch_url": "https://developers.google.com/machine-learning/decision-forests",
+      "provider": "Google for Developers",
+      "title_quote": "Decision forests",
+      "activity_quote": "Decision forests are interpretable machine learning algorithms that work well with tabular data for tasks like classification, regression, and ranking.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "CC-BY-4.0",
+      "license_url": "https://developers.google.com/terms/site-policies"
+    },
+    {
+      "id": "OPP-REAL-GOOGLE-RECOMMENDATION",
+      "url": "https://developers.google.com/machine-learning/recommendation",
+      "fetch_url": "https://developers.google.com/machine-learning/recommendation",
+      "provider": "Google for Developers",
+      "title_quote": "Recommendation Systems",
+      "activity_quote": "Understand the components of a recommendation system including candidate generation, scoring, and re-ranking.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "CC-BY-4.0",
+      "license_url": "https://developers.google.com/terms/site-policies"
+    },
+    {
+      "id": "OPP-REAL-GOOGLE-CLUSTERING",
+      "url": "https://developers.google.com/machine-learning/clustering",
+      "fetch_url": "https://developers.google.com/machine-learning/clustering",
+      "provider": "Google for Developers",
+      "title_quote": "Introduction to clustering",
+      "activity_quote": "Cluster data with the k-means algorithm. Evaluate the quality of clustering results.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "CC-BY-4.0",
+      "license_url": "https://developers.google.com/terms/site-policies"
+    },
+    {
+      "id": "OPP-REAL-MS-DATA",
+      "url": "https://github.com/microsoft/Data-Science-For-Beginners",
+      "fetch_url": "https://raw.githubusercontent.com/microsoft/Data-Science-For-Beginners/main/README.md",
+      "provider": "Microsoft",
+      "title_quote": "Data Science for Beginners - A Curriculum",
+      "activity_quote": "Azure Cloud Advocates at Microsoft are pleased to offer a 10-week, 20-lesson curriculum all about Data Science.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "MIT",
+      "license_url": "https://github.com/microsoft/Data-Science-For-Beginners/blob/main/LICENSE"
+    },
+    {
+      "id": "OPP-REAL-MS-ML",
+      "url": "https://github.com/microsoft/ML-For-Beginners",
+      "fetch_url": "https://raw.githubusercontent.com/microsoft/ML-For-Beginners/main/README.md",
+      "provider": "Microsoft",
+      "title_quote": "Machine Learning for Beginners - A Curriculum",
+      "activity_quote": "Cloud Advocates at Microsoft are pleased to offer a 12-week, 26-lesson curriculum all about **Machine Learning**.",
+      "topics": [
+        "data_and_ml"
+      ],
+      "license": "MIT",
+      "license_url": "https://github.com/microsoft/ML-For-Beginners/blob/main/LICENSE"
+    },
+    {
+      "id": "OPP-REAL-MS-AI",
+      "url": "https://github.com/microsoft/AI-For-Beginners",
+      "fetch_url": "https://raw.githubusercontent.com/microsoft/AI-For-Beginners/main/README.md",
+      "provider": "Microsoft",
+      "title_quote": "Artificial Intelligence for Beginners - A Curriculum",
+      "activity_quote": "The curriculum is beginner-friendly and covers tools like TensorFlow and PyTorch, as well as ethics in AI",
+      "topics": [
+        "ai_engineering"
+      ],
+      "license": "MIT",
+      "license_url": "https://github.com/microsoft/AI-For-Beginners/blob/main/LICENSE"
+    },
+    {
+      "id": "OPP-REAL-MS-GENAI",
+      "url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "fetch_url": "https://raw.githubusercontent.com/microsoft/generative-ai-for-beginners/main/README.md",
+      "provider": "Microsoft",
+      "title_quote": "Generative AI for Beginners (Version 3) - A Course",
+      "activity_quote": "Learn the fundamentals of building Generative AI applications with our 21-lesson comprehensive course by Microsoft Cloud Advocates.",
+      "topics": [
+        "ai_engineering"
+      ],
+      "license": "MIT",
+      "license_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/LICENSE"
+    },
+    {
+      "id": "OPP-REAL-HF-LLM",
+      "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+      "fetch_url": "https://huggingface.co/learn/llm-course/chapter1/1",
+      "provider": "Hugging Face",
+      "title_quote": "LLM Course",
+      "topics": [
+        "ai_engineering"
+      ],
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/huggingface/course/blob/main/LICENSE",
+      "activity_quote": "This course will teach you about large language models (LLMs) and natural language processing (NLP) using libraries from the Hugging Face ecosystem — 🤗 Transformers, 🤗 Datasets, 🤗 Tokenizers, and 🤗 Accelerate — as well as the Hugging Face Hub.",
+      "free_quote": "It’s completely free and without ads."
+    },
+    {
+      "id": "OPP-REAL-HF-AGENTS",
+      "url": "https://huggingface.co/learn/agents-course/unit0/introduction",
+      "fetch_url": "https://huggingface.co/learn/agents-course/unit0/introduction",
+      "provider": "Hugging Face",
+      "title_quote": "AI Agents Course",
+      "topics": [
+        "ai_engineering"
+      ],
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/huggingface/agents-course/blob/main/LICENSE",
+      "activity_quote": "This free course will take you on a journey, from beginner to expert, in understanding, using and building AI agents.",
+      "free_quote": "This free course will take you on a journey"
+    }
+  ]
+}

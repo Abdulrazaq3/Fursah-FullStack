@@ -1,0 +1,2661 @@
+{
+  "generated_at": "2026-10-19T11:01:28.746743+00:00",
+  "scope": "Four source-backed titles, 16 calibration queries, 16 previously viewed diagnostic queries, 16 fresh evaluation queries.",
+  "model_id": "BAAI/bge-m3",
+  "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "verification_view": "title_only",
+  "threshold": 0.5336350202560425,
+  "calibration_benchmark_sha256": "sha256:dd8d382b820d5439f3007f5c34dc248450cc33dbfc2b0012a08be504072e9aea",
+  "fresh_benchmark_sha256": "sha256:6d0de89ac443d671da0ee9eebec49db29b534c87568e71eef790713e29b8c877",
+  "evidence_versions": {
+    "OPP-DEMO-001": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+    "OPP-DEMO-002": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+    "OPP-DEMO-003": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+    "OPP-DEMO-004": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d"
+  },
+  "metrics": {
+    "calibration": {
+      "queries": 16,
+      "true_positive_candidates": 11,
+      "false_positive_candidates": 0,
+      "missed_relevant_candidates": 0,
+      "candidate_precision": 1.0,
+      "candidate_recall": 1.0,
+      "positive_queries": 8,
+      "positive_queries_with_relevant_hit": 8,
+      "negative_queries": 8,
+      "negative_queries_with_any_hit": 0
+    },
+    "diagnostic": {
+      "queries": 16,
+      "true_positive_candidates": 11,
+      "false_positive_candidates": 2,
+      "missed_relevant_candidates": 0,
+      "candidate_precision": 0.8461538461538461,
+      "candidate_recall": 1.0,
+      "positive_queries": 8,
+      "positive_queries_with_relevant_hit": 8,
+      "negative_queries": 8,
+      "negative_queries_with_any_hit": 0
+    },
+    "fresh_evaluation": {
+      "queries": 16,
+      "true_positive_candidates": 11,
+      "false_positive_candidates": 2,
+      "missed_relevant_candidates": 0,
+      "candidate_precision": 0.8461538461538461,
+      "candidate_recall": 1.0,
+      "positive_queries": 8,
+      "positive_queries_with_relevant_hit": 8,
+      "negative_queries": 8,
+      "negative_queries_with_any_hit": 0
+    }
+  },
+  "development_acceptance_check_passed": false,
+  "threshold_used_in_application": false,
+  "results": [
+    {
+      "id": "CAL-01",
+      "split": "calibration",
+      "query": "ورشة ترجمة المحتوى التعليمي",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "origin": "RET-001",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.7565168738365173,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.6403537010935735
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.7284715175628662,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.6719008674798856
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.5101358890533447,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.5190023757216482
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5051528811454773,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.5924968013171195
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ]
+    },
+    {
+      "id": "CAL-02",
+      "split": "calibration",
+      "query": "أبغى أتعلم تحسين ترجمة المواد الدراسية ومراجعة المصطلحات",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "origin": "RET-002",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.621666669845581,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.6112957828464648
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.5947983264923096,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.5724349190411127
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4584071636199951,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4648518008170366
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4179586172103882,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.46262616364644005
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ]
+    },
+    {
+      "id": "CAL-03",
+      "split": "calibration",
+      "query": "إنتاج قصة صوتية قصيرة",
+      "relevant_ids": [
+        "OPP-DEMO-003"
+      ],
+      "origin": "RET-003",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.8877139091491699,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.6134707196389771
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.46005120873451233,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.35454210259757657
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4513378143310547,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.40785775137795577
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4379628896713257,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.33802767538694445
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "CAL-04",
+      "split": "calibration",
+      "query": "أبي أتعلم كتابة نص وتسجيل مقاطع صوتية لسرد قصة",
+      "relevant_ids": [
+        "OPP-DEMO-003"
+      ],
+      "origin": "RET-004",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.660771369934082,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.6063837282200184
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4622923731803894,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4302433555883137
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.45998695492744446,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4704675990064391
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4303148686885834,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.404121738180907
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "CAL-05",
+      "split": "calibration",
+      "query": "تحليل البيانات باستخدام Excel",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "origin": "RET-005",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.8062843084335327,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.6856798120927935
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.44162383675575256,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.46219557523727417
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.43427854776382446,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4365022854206253
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.41599947214126587,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4071005340158629
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-004"
+      ]
+    },
+    {
+      "id": "CAL-06",
+      "split": "calibration",
+      "query": "أتعلم ترتيب الجداول وقراءة المؤشرات في إكسل",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "origin": "RET-006",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5519845485687256,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.6110152105661861
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.46768638491630554,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.424704897474075
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.46635305881500244,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.439983404876783
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.37664344906806946,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.3733638453429029
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-004"
+      ]
+    },
+    {
+      "id": "CAL-07",
+      "split": "calibration",
+      "query": "مراجعة المصطلحات وتحسين صياغة الترجمة التعليمية",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.6854603290557861,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.6477426500473838
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.6641194820404053,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.6047847381619098
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4836193323135376,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.44979131820305374
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.42913931608200073,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4651275914755355
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ]
+    },
+    {
+      "id": "CAL-08",
+      "split": "calibration",
+      "query": "ورشة لجداول إكسل وقراءة المؤشرات",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5871615409851074,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.7162857820817374
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.47667962312698364,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.5272648334503174
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.47172772884368896,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.5427128025635755
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4062047004699707,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.46378267027243036
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-004"
+      ]
+    },
+    {
+      "id": "CAL-09",
+      "split": "calibration",
+      "query": "ورشة طبخ للمبتدئين",
+      "relevant_ids": [],
+      "origin": "RET-007",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.5056402087211609,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4436372917347037
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.432578980922699,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4959470338916131
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4081650376319885,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4628522484654788
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.36667904257774353,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.42577571561626315
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CAL-10",
+      "split": "calibration",
+      "query": "أبي تدريب على الإسعافات الأولية",
+      "relevant_ids": [],
+      "origin": "RET-008",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4040333032608032,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.369103886538513
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.3713539242744446,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.397370845079422
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.36117029190063477,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.3273763266353241
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.3540022373199463,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.3290422362660035
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CAL-11",
+      "split": "calibration",
+      "query": "أبي أتعلم تصميم المباني والرسم المعماري",
+      "relevant_ids": [],
+      "case": "out_of_topic",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.41665032505989075,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.41946821344656626
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4089350700378418,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4122927889474911
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4052146077156067,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.3713918260231336
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.40461498498916626,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.38701312774185115
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CAL-12",
+      "split": "calibration",
+      "query": "تدريب في التسويق الرقمي وإدارة الحملات",
+      "relevant_ids": [],
+      "case": "out_of_topic",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.46462270617485046,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.40086846336094273
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.46113264560699463,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.46760881140179644
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4174347519874573,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4104846822637698
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.3621704876422882,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.42927516349850137
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CAL-13",
+      "split": "calibration",
+      "query": "أبي أتعلم برمجة قواعد البيانات بلغة SQL",
+      "relevant_ids": [],
+      "case": "near_topic_different_skill",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5152854919433594,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4678366241747225
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4540186822414398,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.384713766643103
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4233623147010803,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.400469970647103
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.41780775785446167,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.3518210020385387
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CAL-14",
+      "split": "calibration",
+      "query": "ورشة مونتاج فيديو وصناعة المؤثرات البصرية",
+      "relevant_ids": [],
+      "case": "near_topic_different_medium",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4948161244392395,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.5052135881654278
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4671661853790283,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.49978259208410236
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.44125697016716003,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.47488486766815186
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4132717251777649,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4855484971077155
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CAL-15",
+      "split": "calibration",
+      "query": "أبحث عن تدريب على إدارة الموارد البشرية",
+      "relevant_ids": [],
+      "case": "out_of_topic",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.5119180083274841,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.50350990870536
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.47534483671188354,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.43979228619475097
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.42751413583755493,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.44742215306494804
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4150376319885254,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4509673177042821
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CAL-16",
+      "split": "calibration",
+      "query": "دورة لحام وصيانة معدات صناعية",
+      "relevant_ids": [],
+      "case": "out_of_topic",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.39412838220596313,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.38468263240560163
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.36698833107948303,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.3920352821329075
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.34958669543266296,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.3724149617654158
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.32681095600128174,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.38792872428894043
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "EVAL-01",
+      "split": "diagnostic",
+      "query": "ترجمة مواد تعليمية وصقل المصطلحات",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.7023881077766418,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.5841968207007382
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.7021384239196777,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.5994721293764048
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5148286819458008,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4494486213387703
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4578155279159546,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4663705865895049
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-002",
+        "OPP-DEMO-001"
+      ]
+    },
+    {
+      "id": "EVAL-02",
+      "split": "diagnostic",
+      "query": "أبحث عن ورشة ترجمة للمناهج الدراسية",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.7206684350967407,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.6280085444450378
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.6704546809196472,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.6328940233118552
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4858989417552948,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.5486411721324231
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.47118228673934937,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4898101395481751
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ]
+    },
+    {
+      "id": "EVAL-03",
+      "split": "diagnostic",
+      "query": "تحسين الصياغات المترجمة في المحتوى التعليمي",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.7441365718841553,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.5894381999969482
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.7188352942466736,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.5610504673659285
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4679546356201172,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4378370381690845
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.46563446521759033,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.40529922215347236
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ]
+    },
+    {
+      "id": "EVAL-04",
+      "split": "diagnostic",
+      "query": "كتابة قصة قصيرة وتسجيلها بصوتي",
+      "relevant_ids": [
+        "OPP-DEMO-003"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.8440660238265991,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.6237009391962933
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.48462769389152527,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.38514973102215433
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.45946580171585083,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.42942294478416443
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4474037289619446,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.36014316319566064
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "EVAL-05",
+      "split": "diagnostic",
+      "query": "تدريب على سرد القصص بالمقاطع الصوتية",
+      "relevant_ids": [
+        "OPP-DEMO-003"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.7167779803276062,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.6278731448725983
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.525230884552002,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4219853971021924
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.5198306441307068,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.48606622219085693
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.45978832244873047,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.41591910028939916
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "EVAL-06",
+      "split": "diagnostic",
+      "query": "تحليل البيانات وتنظيم الجداول في Excel",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.7159789204597473,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.653266927405184
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.424311101436615,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4170360664086292
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.41141918301582336,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4413280487060547
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.3532204329967499,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.3670168896307422
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-004"
+      ]
+    },
+    {
+      "id": "EVAL-07",
+      "split": "diagnostic",
+      "query": "قراءة مؤشرات من جداول إكسل",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5861082077026367,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.6190286732877882
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.46102508902549744,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.41634039586656235
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.45358848571777344,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4166330446819644
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.36374229192733765,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.39423097440827193
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-004"
+      ]
+    },
+    {
+      "id": "EVAL-08",
+      "split": "diagnostic",
+      "query": "أريد كتابة نص ثم تحويله إلى قصة مسموعة",
+      "relevant_ids": [
+        "OPP-DEMO-003"
+      ],
+      "case": "paraphrase",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.7701079845428467,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.6097649801057601
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.569438099861145,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4915478244636382
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.5456509590148926,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.5127819470893186
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5169639587402344,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.46735018880961077
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-003",
+        "OPP-DEMO-002",
+        "OPP-DEMO-001"
+      ]
+    },
+    {
+      "id": "EVAL-09",
+      "split": "diagnostic",
+      "query": "أتعلم تحضير وجبات وحلويات",
+      "relevant_ids": [],
+      "case": "out_of_topic",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.445773184299469,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.42859888927949796
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4362991154193878,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4357472773050177
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.42316994071006775,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.446397337532203
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4109659790992737,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.43221486422838407
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "EVAL-10",
+      "split": "diagnostic",
+      "query": "دورة إنعاش قلبي والتعامل مع الإصابات",
+      "relevant_ids": [],
+      "case": "out_of_topic",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.43511825799942017,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4221351491132297
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4001919627189636,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4354609587513837
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.3982800841331482,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4640616774559021
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.39401155710220337,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4075039437408543
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "EVAL-11",
+      "split": "diagnostic",
+      "query": "أبغى تعلم تصميم مواقع الويب وبرمجة JavaScript",
+      "relevant_ids": [],
+      "case": "near_topic_different_skill",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4624200761318207,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4144555781265067
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.44345057010650635,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.3926550213900203
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.43159937858581543,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.3952093249309867
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.41422566771507263,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.37006072758904374
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "EVAL-12",
+      "split": "diagnostic",
+      "query": "ورشة تصوير فوتوغرافي وإعداد إضاءة الاستوديو",
+      "relevant_ids": [],
+      "case": "near_topic_different_medium",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4714369773864746,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.47558618028411104
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4174620509147644,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4740074636918392
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.41559159755706787,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4865564429957083
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.38995444774627686,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4524719771776259
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "EVAL-13",
+      "split": "diagnostic",
+      "query": "تدريب على إدارة الرواتب وشؤون الموظفين",
+      "relevant_ids": [],
+      "case": "out_of_topic",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4490472674369812,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.47925645360274016
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4323694705963135,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4814011167644797
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4177226722240448,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.49356693029403687
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.3956252932548523,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.46753576591397805
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "EVAL-14",
+      "split": "diagnostic",
+      "query": "تعلم زراعة النباتات والعناية بالحدائق",
+      "relevant_ids": [],
+      "case": "out_of_topic",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.44338351488113403,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.44490823806426394
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4080631136894226,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4441179037094116
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4051242172718048,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4322422485207178
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.39656463265419006,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4134547463980476
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "EVAL-15",
+      "split": "diagnostic",
+      "query": "أبحث عن فرصة في المحاسبة وإعداد القوائم المالية",
+      "relevant_ids": [],
+      "case": "near_topic_different_domain",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4825628399848938,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.47447788867486274
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4487245976924896,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4401689803499599
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.41068798303604126,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4265264570713043
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.40166035294532776,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.42568532518323665
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "EVAL-16",
+      "split": "diagnostic",
+      "query": "ورشة تأليف موسيقى والعزف على العود",
+      "relevant_ids": [],
+      "case": "near_topic_different_activity",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.5217056274414062,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.49613657616755
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.41893497109413147,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.46472314210396237
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.41514116525650024,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.47236979337099005
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.3990625739097595,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4466548264026642
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CONF-01",
+      "query": "ورشة لتحسين ترجمة الشروحات التعليمية",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.6821234226226807,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.6307772838142817
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.670432448387146,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.6100037097930908
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5123943090438843,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.5779931200746833
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.48796749114990234,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.5018981396020576
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-002",
+        "OPP-DEMO-001"
+      ]
+    },
+    {
+      "id": "CONF-02",
+      "query": "تطوير مهارتي في ترجمة محتوى للطلاب",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.7230011820793152,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.6150020956993103
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.6939783096313477,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.5862241880626496
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.5460213422775269,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.5275847597369704
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4918496608734131,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4584049905297174
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002",
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "CONF-03",
+      "query": "تدريب عملي على ترجمة دروس تعليمية",
+      "relevant_ids": [
+        "OPP-DEMO-001",
+        "OPP-DEMO-002"
+      ],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.7308048009872437,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.617516980467207
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.7139641046524048,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.7260231375694275
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.5446180105209351,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.5840460906001286
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.5124611854553223,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.502669662078044
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-002",
+        "OPP-DEMO-001",
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "CONF-04",
+      "query": "أبي أكتب قصة وأنتج لها تسجيل صوتي",
+      "relevant_ids": [
+        "OPP-DEMO-003"
+      ],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.7269214391708374,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.5470659406741902
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4361041486263275,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.3616263435332392
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4277578294277191,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.3364887931055556
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.3962051272392273,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.3888000249862671
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "CONF-05",
+      "query": "ورشة لإنتاج حكاية قصيرة مسجلة بالصوت",
+      "relevant_ids": [
+        "OPP-DEMO-003"
+      ],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.8023335933685303,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.636457009737848
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4866015911102295,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.47833037763886943
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4613374173641205,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.47647345206299796
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.44598543643951416,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.48265689818180824
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "CONF-06",
+      "query": "أحتاج تعلم Excel لتحليل جداول بيانات",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.6797780990600586,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.644090635288878
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4338381886482239,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4246237710791051
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4271310567855835,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4558533754436158
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.40067777037620544,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4133842690725006
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-004"
+      ]
+    },
+    {
+      "id": "CONF-07",
+      "query": "تنظيم بيانات في إكسل واستخراج مؤشرات منها",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.6466894149780273,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.5978083850259562
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.42862945795059204,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.39604402827691976
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4032444357872009,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.3682786822319031
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.3736211359500885,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.3526802448820928
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-004"
+      ]
+    },
+    {
+      "id": "CONF-08",
+      "query": "تأليف نص لحكاية ثم تسجيل مقاطعها",
+      "relevant_ids": [
+        "OPP-DEMO-003"
+      ],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.754388689994812,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.6369178348330566
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.5234115719795227,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4468704290698936
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.49263203144073486,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.38507633476084513
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.46594560146331787,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.450017040965913
+        }
+      ],
+      "accepted_ids": [
+        "OPP-DEMO-003"
+      ]
+    },
+    {
+      "id": "CONF-09",
+      "query": "ورشة تعلم صنع المعجنات والمخبوزات",
+      "relevant_ids": [],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.44787871837615967,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.44225646727513057
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4049040973186493,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.5070366406110008
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.3999001085758209,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4731242217682553
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.39396125078201294,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.47016750187180967
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CONF-10",
+      "query": "تدريب للتعامل مع النزيف والجروح",
+      "relevant_ids": [],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4254295229911804,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.42898365000036986
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4173451066017151,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.48974953561274837
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.39395871758461,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.3836555068595572
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.39365509152412415,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.43931557418955824
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CONF-11",
+      "query": "تعلم شبكات الحاسب وإعداد الراوترات",
+      "relevant_ids": [],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.46918419003486633,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4594797218156035
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.44981399178504944,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.44252709239398647
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.44218236207962036,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4126975588382753
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4254876375198364,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.4387100040912628
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CONF-12",
+      "query": "أبي أتعلم رسم الشخصيات والتحريك ثلاثي الأبعاد",
+      "relevant_ids": [],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.44821396470069885,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4299583306921043
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4164465069770813,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4131843972339321
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4097105860710144,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.38431178378129804
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4082069993019104,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.44173867826875113
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CONF-13",
+      "query": "تدريب لإدارة المخزون والمشتريات",
+      "relevant_ids": [],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4432552456855774,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.40583528210696485
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4360886216163635,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.48563724756240845
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.3915051817893982,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.39418963228525994
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.33562326431274414,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.42509624808453106
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CONF-14",
+      "query": "تعلم صيانة السيارات وأعطال المحركات",
+      "relevant_ids": [],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4335821866989136,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.434978794757344
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.41865283250808716,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.43960017685888086
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.4186292588710785,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.45896786695910374
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4111901521682739,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.43731994184017875
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CONF-15",
+      "query": "دورة تصميم تطبيقات الجوال باستخدام Flutter",
+      "relevant_ids": [],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.48167234659194946,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.4587766279248442
+        },
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.48120611906051636,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4336711843405743
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.4778023958206177,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.42375232152599385
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.416586309671402,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.3969278695030297
+        }
+      ],
+      "accepted_ids": []
+    },
+    {
+      "id": "CONF-16",
+      "query": "ورشة خياطة وتصميم أزياء",
+      "relevant_ids": [],
+      "split": "fresh_evaluation",
+      "hits": [
+        {
+          "opportunity_id": "OPP-DEMO-003",
+          "cosine_similarity": 0.4617554545402527,
+          "title": "إنتاج قصة صوتية قصيرة من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0251",
+            "SRC-0252"
+          ],
+          "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+          "retrieval_similarity": 0.4228556202140088
+        },
+        {
+          "opportunity_id": "OPP-DEMO-004",
+          "cosine_similarity": 0.4228745102882385,
+          "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0496",
+            "SRC-0497"
+          ],
+          "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+          "retrieval_similarity": 0.46271184309054436
+        },
+        {
+          "opportunity_id": "OPP-DEMO-002",
+          "cosine_similarity": 0.3993366062641144,
+          "title": "الترجمة للمحتوى التعليمي من الفكرة إلى التطبيق",
+          "source_ids": [
+            "SRC-0477"
+          ],
+          "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+          "retrieval_similarity": 0.4622789964343347
+        },
+        {
+          "opportunity_id": "OPP-DEMO-001",
+          "cosine_similarity": 0.36970245838165283,
+          "title": "الترجمة للمحتوى التعليمي للمجتمع",
+          "source_ids": [
+            "SRC-0943"
+          ],
+          "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+          "retrieval_similarity": 0.3892112970352173
+        }
+      ],
+      "accepted_ids": []
+    }
+  ],
+  "limitations": [
+    "All queries share the same four documents; this does not establish full-corpus quality.",
+    "Titles can omit useful activities; future corpora require recalibration and relevance validation.",
+    "No user constraints, negation, multi-intent planning, registration or eligibility were tested."
+  ]
+}

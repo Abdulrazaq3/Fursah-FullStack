@@ -1,0 +1,21 @@
+{
+  "frozen_at": "2026-10-20T14:23:15.342388+00:00",
+  "binding": {
+    "policy_version": "request-plan-v1",
+    "fixture_sha256": "sha256:ca3fc8974f54126a9b13120a9c3ef7f49e0549dc0411351e7577ed6899b3dec3",
+    "code_sha256": {
+      "backend/app/request_plan.py": "d239b56646ba3bae67e6a6537af33806e44da15c098fbc9c97f03317cb658496",
+      "backend/app/request_requirements.py": "d3365aaf8ab145eadbdaa18c2d4aa110ceac9eca78b68b8dbabf393e51230ee8",
+      "backend/app/schemas.py": "14d1c00cd956e5682446557d062995fb6369243badf21454b0f9ba56537b6360",
+      "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+      "backend/app/eligibility.py": "7f763bb0b6807013db72ea9aa9a3737dc28284295885662faa80a17f1bf7d73f",
+      "backend/app/eligibility_catalog.json": "ae0367eba8459cc0604889249740a99ce985b2f6ca030ececd3ce41cfd76716e",
+      "experiments/evaluate_request_plan.py": "3b87fb27f41864940ae370060ecaec08a1a6511402746d5f9e8dabeee588937c",
+      "frontend/src/App.tsx": "d421cb404f36d5e5ade9ccb494454508fe4711d1cf475909a5ec5e9201a49d06",
+      "frontend/src/opportunities/SearchResults.tsx": "8a9db71e534fd6955c692f10172662bbf132f616629522cd75fe6ab706c6b6f9"
+    },
+    "raw_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3"
+  },
+  "scope": "Author-written deterministic cases, not general query understanding.",
+  "artifact_sha256": "sha256:a3536c67233cb2aa88abd36ec78839f26610b954097bb2a28f5527a1f5cf5d8d"
+}

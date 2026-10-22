@@ -1,0 +1,18 @@
+{
+  "frozen_at": "2026-10-19T18:19:30.006514+00:00",
+  "binding": {
+    "policy_version": "structured-constraints-v1",
+    "fixture_sha256": "sha256:e1db82354aaa50fb2b34b805c6534de5a47614a7e63b89f6d13c5c53a6447eab",
+    "sample_sha256": "sha256:e1d59ca25236cbc1697d5e0342ebfff7e0637e2ec384a738ae5f38357c45c4ea",
+    "raw_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+    "code_sha256": {
+      "backend/app/constraints.py": "ca09195590ef09ecd4cfe438698317b0ef76750cb1d6f8bdc522e93f146e0ed0",
+      "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+      "backend/app/schemas.py": "14d1c00cd956e5682446557d062995fb6369243badf21454b0f9ba56537b6360",
+      "experiments/evaluate_constraints.py": "3b1f3f6c371db2f47ced60e2f7780626b984953b318d1356f9ae78f2ecaa73a4"
+    },
+    "indexed_documents_sha256": "sha256:89a9c706ff6ba6614222e07103998c3890544d8c7ba46711b6d2c1020866bf0a"
+  },
+  "scope": "Deterministic, author-labelled component cases; no neural inference.",
+  "artifact_sha256": "sha256:b0aaa200a7079f0c5129c6347d1517fd7b1ba91d6e06744b04ad3f056832120d"
+}

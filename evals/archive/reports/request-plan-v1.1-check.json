@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-20T14:29:49.515140+00:00",
+  "policy_version": "request-plan-v1.1",
+  "backend_tests_passed": 107,
+  "experiment_tests_passed": 11,
+  "known_plan_cases_replayed": 30,
+  "same_unique_plan_fixture_cases": 30,
+  "tool_or_transfer_regression_test_passed": true,
+  "constraints_and_eligibility_composed_on_real_sample": true,
+  "composition_model_scores_simulated": true,
+  "historical_v1_artifacts_preserved": true,
+  "current_code_and_input_hashes_match": true,
+  "prior_constraint_and_eligibility_rounds_preserved": true,
+  "raw_data_unchanged": true,
+  "local_document_links_checked": 303,
+  "diagram_out_of_bounds_labels": 0,
+  "new_neural_inferences": 0,
+  "enabled_in_application": false,
+  "general_understanding_verified": false,
+  "scope": "Local bounded planner/resolver and function composition, not general language understanding or an HTTP discovery journey."
+}

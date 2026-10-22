@@ -1,0 +1,30 @@
+{
+  "tested_at": "2026-10-22T13:05:14.952Z",
+  "scope": "One live UI search, local BGE/PostgreSQL and background Gemini comparison; not a quality benchmark.",
+  "checks": [
+    {
+      "case": "browser-to-api-to-real-models-and-db",
+      "passed": true,
+      "http_status": 200,
+      "status": "ok",
+      "request_id": "8ff3ed53-2e66-4820-bf70-0ef42ad6200a",
+      "seconds": 15.862,
+      "recommendation_id": "OPP-DEMO-004"
+    },
+    {
+      "case": "details-preserve-source-and-evidence-version",
+      "passed": true
+    },
+    {
+      "case": "live-gemini-shadow-comparison",
+      "passed": false,
+      "outcome": "timeout",
+      "elapsed_ms": 15015.999999945052
+    },
+    {
+      "case": "verification-stopped",
+      "passed": false,
+      "error": "Error: Shadow boundary failed: timeout"
+    }
+  ]
+}

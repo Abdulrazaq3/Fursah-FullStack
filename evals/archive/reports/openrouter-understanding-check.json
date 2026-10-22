@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-10-22T15:57:58.3392110+03:00",
+  "scope": "opt_in_shadow_only",
+  "backend_tests": {
+    "result": "OK",
+    "passed": 164
+  },
+  "experiment_tests": {
+    "result": "OK",
+    "passed": 11
+  },
+  "api_response_equivalence": "verified_with_mocked_inference_repository_and_http",
+  "default_mode": "off",
+  "live_api_verified": false,
+  "live_blocker": "OpenRouter credentials not configured",
+  "diagnostic_exit": 2,
+  "recommendation_policy_changed": false,
+  "bge_models_changed": false,
+  "public_deployment_performed": false,
+  "files_sha256": {
+    "backend/app/infrastructure/openrouter_understanding.py": "fb2fc8f8ef15abf94dc28bcbae2fa44ddc04f2d24c90fb2186626e1601685515",
+    "backend/app/understanding_shadow.py": "5f7a824ff38e4b086243ffb18999002e00ff76bbc211a4662345ec1d02a755b3",
+    "backend/app/infrastructure/config.py": "b283177b9a6d5687faec61d3344b062135e0cc83d69cc7123c210ba76d338802",
+    "backend/app/routes.py": "e7cf9ea59af4cfe1eb7b784016487722d290d80d93cb2262e493b2e37cd7b35a",
+    "backend/app/main.py": "cbb0a8bd08dda6aa64b4e67dca153430c839b35550c72d1805b2e2c65fe30ce4",
+    "backend/tests/test_openrouter_understanding.py": "cb4a12875235a245e59241f4cd6b9c7fa1cbf5c7d1019c24791026e89c26ac96",
+    "scripts/check-openrouter-understanding.py": "03ee151d5466d73f135a87078f1a3f083dc7e8dad965260db1cce4bffb518631"
+  }
+}

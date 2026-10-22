@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from uuid import uuid4
+from contextlib import asynccontextmanager
+import asyncio
 
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
@@ -14,7 +16,21 @@ from .schemas import ApiErrorDetail, ApiErrorResponse
 
 settings = get_settings()
 
+
+@asynccontextmanager
+async def lifespan(app):
+    if settings.discovery_pilot_enabled or settings.catalog_mode == 'prepared':
+        from .infrastructure.local_inference import get_local_inference
+        await asyncio.to_thread(get_local_inference().warmup)
+    try:
+        yield
+    finally:
+        from .understanding_shadow import stop_understanding_shadow
+        await stop_understanding_shadow()
+
+
 app = FastAPI(
+    lifespan=lifespan,
     title="FURSAH API",
     version="1.0.0-starter",
     description="Applied AI Engineering Bootcamp starter backend.",

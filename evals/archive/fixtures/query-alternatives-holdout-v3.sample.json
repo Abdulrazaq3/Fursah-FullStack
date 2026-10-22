@@ -1,0 +1,138 @@
+{
+  "scope": "Fresh author-written wording for normalized request words and explicit learning-by-trying, on the same sixteen candidates; no independent adjudication.",
+  "acceptance": "No accepted false positives, at least one hit for every positive query, exact expected review/expansion disposition, fix both exposed v2 failures, no lost previously accepted candidates from v2.",
+  "queries": [
+    {
+      "id": "FIX3-01",
+      "query": "أبحث على نشاط أتعلم فيه SQL أو إكسل بشكل عملي",
+      "relevant_ids": [
+        "OPP-DEMO-004",
+        "TOPIC-SRC-0005"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-02",
+      "query": "أود تجربة Python أو SQL في نشاط بهدف التعلم",
+      "relevant_ids": [
+        "TOPIC-SRC-0020",
+        "TOPIC-SRC-0005"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-03",
+      "query": "أدور علي فرصة لتعلم بايثون أو Rust",
+      "relevant_ids": [
+        "TOPIC-SRC-0020"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-04",
+      "query": "أريد تجربة إكسل أو Tableau من خلال برنامج للتعلم",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-05",
+      "query": "أرغب بتعلم SQL أو Java ضمن نشاط مناسب",
+      "relevant_ids": [
+        "TOPIC-SRC-0005"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-06",
+      "query": "أبحث على فرصة لتعلم Excel أو Python",
+      "relevant_ids": [
+        "OPP-DEMO-004",
+        "TOPIC-SRC-0020"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-07",
+      "query": "أحتاج تجربة Flutter أو سيكويل ضمن فرصة للتعلم",
+      "relevant_ids": [
+        "TOPIC-SRC-0005"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-08",
+      "query": "أود تجربة بايثون أو إكسل ضمن فرصة للتعلم بشكل عملي",
+      "relevant_ids": [
+        "TOPIC-SRC-0020",
+        "OPP-DEMO-004"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-09",
+      "query": "أبحث على برنامج واحد يجمع SQL وPython",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-10",
+      "query": "أود تعلم إكسل وPython في الفرصة نفسها",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-11",
+      "query": "أود تجربة Rust أو Tableau ضمن فرصة للتعلم",
+      "relevant_ids": [],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-12",
+      "query": "أبحث على فرصة لتعلم Flutter أو Java",
+      "relevant_ids": [],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "FIX3-13",
+      "query": "خبرتي السابقة في Python وأبحث على SQL أو إكسل",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    },
+    {
+      "id": "FIX3-14",
+      "query": "أبحث على تعلم Excel أو SQL وPython معا",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    },
+    {
+      "id": "FIX3-15",
+      "query": "أود تجربة SQL أو إعداد عرض لفكرة أمام الجمهور",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    },
+    {
+      "id": "FIX3-16",
+      "query": "أحتاج فرصة لتعلم Python أو SQL أو Excel",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    }
+  ]
+}

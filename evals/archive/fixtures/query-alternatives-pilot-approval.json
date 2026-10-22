@@ -1,0 +1,27 @@
+{
+  "scope": "four_record_local_pilot_only",
+  "policy_version": "normalized-tool-alternatives-v3.1",
+  "candidate_topic_versions": {
+    "OPP-DEMO-002": "sha256:5821da80f458d059f518c31570afe89b1c607345e1c18b637f9a864c86aceb9e",
+    "OPP-DEMO-001": "sha256:37cfa4fffaaff71f8fed31aa1ba202ed771c095a7902f55ffa455dcdb9c25083",
+    "OPP-DEMO-003": "sha256:e8b59256d199dd18266d740429e2ec2cd064e695ad1f61939f3a6801e354f016",
+    "OPP-DEMO-004": "sha256:e9596626af6e145991b1a7759e3cb2f4843ea29e5bf2b8a78f43fa9e58b4e524"
+  },
+  "files_sha256": {
+    "backend/app/normalized_alternatives_v31.py": "69e2f91a6620e80c62bf1dfd73cab32b8568fb1096fe01236046e1678943d68f",
+    "backend/app/normalized_alternatives_v3.py": "6c157fbc78693f7d5b4876bc6c249946c1b2647ba710e4f9fee0fac70a391fff",
+    "backend/app/normalized_alternatives.py": "3465710186deaa15afbc318ffbcca24e89f55394b29391bc01453fe96eb9c758",
+    "backend/app/query_alternatives.py": "99f439eb13aa29153451417a9287d588791bb076591ba4ec586089de2ff76cd1",
+    "backend/app/request_requirements.py": "d3365aaf8ab145eadbdaa18c2d4aa110ceac9eca78b68b8dbabf393e51230ee8",
+    "backend/app/topic_verifier.py": "fe7d44d3b9585e696cfd43fc2f787ea82cf92025e1153e84cfe3e612b66b6abb",
+    "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+    "backend/app/relevance.py": "0140c141c47f00ef451a3c6cbc6c5274b4cf405e3b03a842a9c71e8ad008ed59",
+    "experiments/evaluate_normalized_alternatives_v31.py": "75f121d51eacb93880fc9d2a448e2f7a578116feb2c6918b5dcb816518361e81",
+    "experiments/local_reranker.py": "e5bc89ee10221926c063ba8e5da189082363e36388f375b41bc01eb8cd7918bc",
+    "results/query-alternatives-v31-report.json": "bcd30739d4440096f7517391418657341efa609a7a74a90e867aa4e92b27f007",
+    "results/query-alternatives-v31-diagnostic.json": "230662785ce3d502f3f6b91e526292e57ac183a974b13d412ebe7c3d59264065",
+    "results/query-alternatives-v31-freeze.json": "33f32ab8f5eb7fd673ce2612afd0ca317004bbc0d227408b67d66cffbbc33b13",
+    "examples/query-alternatives-holdout-v3.sample.json": "4076a7b2deeae893fe6e827ecb972119af68c6eb28bf2b799cd49b31467fb7aa"
+  },
+  "note": "Activated after the bounded fresh test passed. General readiness stays false; seven development candidates on other wording remain missed."
+}

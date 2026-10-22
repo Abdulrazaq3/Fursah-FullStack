@@ -1,0 +1,165 @@
+{
+  "scope": "Literal two-tool alternatives; author-labelled fresh wording on the same sixteen source-backed candidates. No independent human adjudication or retrieval/eligibility evaluation.",
+  "acceptance": "No false-positive accepted search candidates, a hit for each positive search query, correct expansion/review disposition, no lost previously accepted relevant candidates. Do not tune after looking at this split.",
+  "queries": [
+    {
+      "id": "ALT-01",
+      "query": "أدور على فرصة لتعلم إكسل أو SQL بشكل عملي",
+      "relevant_ids": [
+        "OPP-DEMO-004",
+        "TOPIC-SRC-0005"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-02",
+      "query": "ودي أجرب Python أو سيكويل في نشاط تعليمي",
+      "relevant_ids": [
+        "TOPIC-SRC-0020",
+        "TOPIC-SRC-0005"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-03",
+      "query": "أرغب بتعلم Excel أو بايثون من خلال فرصة مناسبة",
+      "relevant_ids": [
+        "OPP-DEMO-004",
+        "TOPIC-SRC-0020"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-04",
+      "query": "أبحث عن نشاط أتعلم فيه Rust أو إكسل",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-05",
+      "query": "أريد تجربة SQL أو Flutter ضمن فرصة للتعلم",
+      "relevant_ids": [
+        "TOPIC-SRC-0005"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-06",
+      "query": "أحتاج فرصة لتعلم Python أو Tableau",
+      "relevant_ids": [
+        "TOPIC-SRC-0020"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-07",
+      "query": "أبغى فرصة أتعلم فيها باور بي آي أو SQL",
+      "relevant_ids": [
+        "TOPIC-SRC-0005"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-08",
+      "query": "أتعلم Excel or Java في فرصة تطبيقية",
+      "relevant_ids": [
+        "OPP-DEMO-004"
+      ],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-09",
+      "query": "أبي فرصة واحدة لتعلم Excel وSQL معا",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-10",
+      "query": "أرغب بتعلم Python وإكسل في نفس الفرصة",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-11",
+      "query": "أحتاج نشاطا يجمع SQL وFlutter",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-12",
+      "query": "تعلم Rust أو Power BI من خلال نشاط مناسب",
+      "relevant_ids": [],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-13",
+      "query": "أتعلم Tableau أو Java في فرصة مناسبة",
+      "relevant_ids": [],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-14",
+      "query": "أريد التدريب على SQLite أو Flutter",
+      "relevant_ids": [],
+      "expected_expanded": true,
+      "expected_review": false
+    },
+    {
+      "id": "ALT-15",
+      "query": "سبق اشتغلت في Python وأبي الآن Excel أو SQL",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    },
+    {
+      "id": "ALT-16",
+      "query": "أبحث عن Excel أو SQL وPython كلها",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    },
+    {
+      "id": "ALT-17",
+      "query": "خبرتي السابقة في SQL وأبي Excel أو Python",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    },
+    {
+      "id": "ALT-18",
+      "query": "أبي SQL أو نشاط لعرض فكرتي أمام الجمهور",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    },
+    {
+      "id": "ALT-19",
+      "query": "أبحث عن Python أو SQL أو إكسل",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": true
+    },
+    {
+      "id": "ALT-20",
+      "query": "أبي تعلم Rust في فرصة مناسبة",
+      "relevant_ids": [],
+      "expected_expanded": false,
+      "expected_review": false
+    }
+  ]
+}

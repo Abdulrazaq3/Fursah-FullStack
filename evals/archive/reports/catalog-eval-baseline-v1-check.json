@@ -1,0 +1,269 @@
+{
+  "recorded_at": "2026-10-22T14:40:27.342171+00:00",
+  "scope": "First development evaluation of full913-catalog request workflow; original decisions unchanged",
+  "stages_1_to_4_complete": true,
+  "stage_5_status": "baseline captured; quality fixes pending",
+  "catalog_opportunities": 913,
+  "source_rows": 1013,
+  "development_cases": 12,
+  "reserved_holdout_cases": 6,
+  "holdout_executed": false,
+  "original_trace_consistency_scoring": {
+    "PASS": 9,
+    "FAIL": 3
+  },
+  "final_scoring_with_independent_source_availability": {
+    "FAIL": 5,
+    "PASS": 7
+  },
+  "raw_source_audit_added_after_initial_trace_review": true,
+  "labels_or_runtime_decisions_changed_after_baseline": false,
+  "backend_tests_passed": 208,
+  "dependency_check_passed": true,
+  "new_understanding_model_calls": 12,
+  "additional_judge_model_calls": 0,
+  "offline_rescore_new_model_calls": 0,
+  "latency_seconds": {
+    "mean": 30.09856614165862,
+    "max": 40.59814560005907,
+    "samples": 12
+  },
+  "stage_seconds": {
+    "fursah.understanding": {
+      "mean": 7.9029869,
+      "total": 94.83584280000001,
+      "samples": 12
+    },
+    "fursah.embedding": {
+      "mean": 6.3814140272727276,
+      "total": 70.1955543,
+      "samples": 11
+    },
+    "fursah.retrieval": {
+      "mean": 0.11091098181818182,
+      "total": 1.2200208,
+      "samples": 11
+    },
+    "fursah.rerank": {
+      "mean": 17.391571827272728,
+      "total": 191.30729010000005,
+      "samples": 11
+    },
+    "fursah.requirements": {
+      "mean": 2.040818181818182e-05,
+      "total": 0.0044897999999999995,
+      "samples": 220
+    },
+    "fursah.selection": {
+      "mean": 0.10427861818181818,
+      "total": 1.1470647999999999,
+      "samples": 11
+    },
+    "fursah.candidate_check": {
+      "mean": 0.0009258709090909091,
+      "total": 0.20369159999999994,
+      "samples": 220
+    },
+    "fursah.details": {
+      "mean": 0.07398519230769231,
+      "total": 1.9236150000000003,
+      "samples": 26
+    }
+  },
+  "tokens_reported_by_provider": {
+    "llm.input_tokens": 9168,
+    "llm.output_tokens": 867
+  },
+  "metrics": {
+    "e2e.status": {
+      "mean": 0.75,
+      "n": 12,
+      "failing_cases": [
+        "CAT-DEV-05",
+        "CAT-DEV-09",
+        "CAT-DEV-10"
+      ]
+    },
+    "retrieval.recall_at_20": {
+      "mean": 0.8213464696223317,
+      "n": 10,
+      "failing_cases": []
+    },
+    "rerank.ndcg_at_20": {
+      "mean": 1.0,
+      "n": 10,
+      "failing_cases": []
+    },
+    "final.topic_precision_at_3": {
+      "mean": 1.0,
+      "n": 4,
+      "failing_cases": []
+    },
+    "final.hit_at_3": {
+      "mean": 1.0,
+      "n": 8,
+      "failing_cases": []
+    },
+    "final.hard_constraints": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "final.evidence": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "details.consistency": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "final.grounded_reason": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "tracing.coverage": {
+      "mean": 1.0,
+      "n": 12,
+      "failing_cases": []
+    },
+    "source.availability": {
+      "mean": 0.6363636363636364,
+      "n": 11,
+      "failing_cases": [
+        "CAT-DEV-01",
+        "CAT-DEV-04",
+        "CAT-DEV-05",
+        "CAT-DEV-09"
+      ]
+    },
+    "understanding.constraints": {
+      "mean": 1.0,
+      "n": 3,
+      "failing_cases": []
+    },
+    "final.allowed_precision_at_3": {
+      "mean": 1.0,
+      "n": 3,
+      "failing_cases": []
+    },
+    "final.forbidden": {
+      "mean": 0.6666666666666666,
+      "n": 3,
+      "failing_cases": [
+        "CAT-DEV-05"
+      ]
+    },
+    "retrieval.target_coverage": {
+      "mean": 1.0,
+      "n": 1,
+      "failing_cases": []
+    },
+    "e2e.missing_fields": {
+      "mean": 1.0,
+      "n": 1,
+      "failing_cases": []
+    }
+  },
+  "failed_cases": [
+    {
+      "case_id": "CAT-DEV-01",
+      "query": "أبي فرص تحليل البيانات باستخدام Excel",
+      "failed_metrics": [
+        {
+          "metric": "source.availability",
+          "score": 0.0,
+          "reason": "[{\"opportunity_id\": \"OPP-CSV-0833de45812b6cf88333\", \"source_id\": \"SRC-0675\", \"rule\": \"explicitly_closed_or_cancelled\", \"normalized_quote\": \"اغلق التسجيل لاكتمال المقاعد\", \"value\": null}, {\"opportunity_id\": \"OPP-CSV-0833de45812b6cf88333\", \"source_id\": \"SRC-0675\", \"rule\": \"activity_ended\", \"normalized_quote\": \"ينتهي يوم 14 اكتوبر 2026\", \"value\": \"2026-10-14\"}]"
+        }
+      ]
+    },
+    {
+      "case_id": "CAT-DEV-04",
+      "query": "أبي فرص الكتابة العربية الواضحة",
+      "failed_metrics": [
+        {
+          "metric": "source.availability",
+          "score": 0.0,
+          "reason": "[{\"opportunity_id\": \"OPP-CSV-abbe935034bf67e0ddc4\", \"source_id\": \"SRC-0436\", \"rule\": \"explicitly_closed_or_cancelled\", \"normalized_quote\": \"باب التقديم مغلق حاليا\", \"value\": null}, {\"opportunity_id\": \"OPP-CSV-73c5b77000163cdda033\", \"source_id\": \"SRC-0220\", \"rule\": \"explicitly_closed_or_cancelled\", \"normalized_quote\": \"اعتذر المنظمون عن اقامة البرنامج والغوه\", \"value\": null}]"
+        }
+      ]
+    },
+    {
+      "case_id": "CAT-DEV-05",
+      "query": "أبي فرص تطوع في تنظيم مكتبة الحي",
+      "failed_metrics": [
+        {
+          "metric": "e2e.status",
+          "score": 0.0,
+          "reason": "expected=no_match, actual=ok"
+        },
+        {
+          "metric": "final.forbidden",
+          "score": 0.0,
+          "reason": "Forbidden returned=['OPP-CSV-6b450cd1f5e8e81e252e']"
+        },
+        {
+          "metric": "source.availability",
+          "score": 0.0,
+          "reason": "[{\"opportunity_id\": \"OPP-CSV-6b450cd1f5e8e81e252e\", \"source_id\": \"SRC-0970\", \"rule\": \"explicitly_closed_or_cancelled\", \"normalized_quote\": \"اغلق التسجيل لاكتمال المقاعد\", \"value\": null}]"
+        }
+      ]
+    },
+    {
+      "case_id": "CAT-DEV-09",
+      "query": "أبي فرص clustering مجانية",
+      "failed_metrics": [
+        {
+          "metric": "e2e.status",
+          "score": 0.0,
+          "reason": "expected=no_match, actual=ok"
+        },
+        {
+          "metric": "source.availability",
+          "score": 0.0,
+          "reason": "[{\"opportunity_id\": \"OPP-CSV-c25a759f9d44a3af6bd2\", \"source_id\": \"SRC-0179\", \"rule\": \"explicitly_closed_or_cancelled\", \"normalized_quote\": \"اغلق التسجيل لاكتمال المقاعد\", \"value\": null}]"
+        }
+      ]
+    },
+    {
+      "case_id": "CAT-DEV-10",
+      "query": "أبي برنامج متقدم في جراحة القلب بالروبوت",
+      "failed_metrics": [
+        {
+          "metric": "e2e.status",
+          "score": 0.0,
+          "reason": "expected=no_match, actual=ok"
+        }
+      ]
+    }
+  ],
+  "priorities": [
+    "Parse literal source closure and exclude activities already ended",
+    "Calibrate and evaluate semantic abstention when no suitable opportunity exists; do not re-enable arbitrary score cutoff",
+    "Measure and reduce local BGE embedding/reranking latency"
+  ],
+  "artifacts": {
+    "backend/evals/results/20261022-172811-catalog-baseline-v1.jsonl": "606f9a69aec77ed194e8202350c7f5f30892ddac11aef871cf2fd621197fc24a",
+    "backend/evals/results/20261022-172811-catalog-baseline-v1.traces.jsonl": "0ef3d70309292905ff42a28079710bc5a23ee2be4834a77d01a0affcb73ff039",
+    "backend/evals/results/20261022-172811-catalog-baseline-v1.summary.json": "55e92cdcc76680f8aa885b949df83658d51a65f6145c31a561af81b6c599fd9d",
+    "backend/evals/results/20261022-172811-catalog-baseline-v1.rescored.jsonl": "d98cb9b1cac1231bc2fc0fee4c6ee048f7ce3f618ef4a40c03759dabcc026f1b",
+    "backend/evals/results/20261022-172811-catalog-baseline-v1.rescored.summary.json": "1ff5cf02c6fa11b0fdf807e3938f212ce69e1684b35e8abe27f2ece0c006d5f3",
+    "backend/evals/catalog_cases_manifest.json": "b0744f601f58d3265284a94a585602104b8488bbcc3d3d30f6bd4d50f13d2032",
+    "results/catalog-baseline-v1-inputs.json": "5a00c9e0591c62614d9fca2dacc193e4a5bb27ccdd71c21c0dc980917263f63a",
+    "backend/evals/source_audit.py": "19f99a231ef73a04cd1320bc641752ed4d102d34693cdf85c0a388fc6fab8eca"
+  },
+  "normal_application_clock_unchanged": true,
+  "normal_detailed_eval_telemetry_enabled": false,
+  "api_restored_on_local_port": 8019,
+  "human_reviewed_gold": false,
+  "production_approval": false,
+  "limits": [
+    "Small AI-source-reviewed development suite, not a production acceptance test",
+    "Six holdout seed cases reserved; not executed",
+    "Recall@20 ceiling below1 for topic families larger than20",
+    "Source audit supplements, rather than certifies, the complete availability policy",
+    "Latency measured sequentially on local CPU, not a load test"
+  ]
+}

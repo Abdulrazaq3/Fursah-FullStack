@@ -1,0 +1,74 @@
+{
+  "verified_at": "2026-10-19T13:42:55.640466+03:00",
+  "scope": "Real HTTP requests to FastAPI backed by the existing PostgreSQL corpus; read-only details only",
+  "results": [
+    {
+      "requested_id": "OPP-DEMO-001",
+      "http_status": 200,
+      "source_ids": [
+        "SRC-0943"
+      ],
+      "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+      "cost": 0.0,
+      "deadline": "2026-10-19"
+    },
+    {
+      "requested_id": "OPP-DEMO-002",
+      "http_status": 200,
+      "source_ids": [
+        "SRC-0477"
+      ],
+      "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+      "cost": null,
+      "deadline": null
+    },
+    {
+      "requested_id": "OPP-DEMO-003",
+      "http_status": 200,
+      "source_ids": [
+        "SRC-0251",
+        "SRC-0252"
+      ],
+      "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+      "cost": null,
+      "deadline": "2026-10-15"
+    },
+    {
+      "requested_id": "OPP-DEMO-004",
+      "http_status": 200,
+      "source_ids": [
+        "SRC-0496",
+        "SRC-0497"
+      ],
+      "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+      "cost": null,
+      "deadline": "2026-10-22"
+    },
+    {
+      "requested_id": "MISSING",
+      "http_status": 404,
+      "source_ids": null,
+      "evidence_version": null,
+      "cost": null,
+      "deadline": null
+    },
+    {
+      "requested_id": "OPP-DEMO-001' OR TRUE--",
+      "http_status": 404,
+      "source_ids": null,
+      "evidence_version": null,
+      "cost": null,
+      "deadline": null
+    }
+  ],
+  "readiness": {
+    "status": "not_ready",
+    "checks": {
+      "storage": true,
+      "application": false
+    },
+    "details": {
+      "application": "Intentionally unfinished: implement this readiness hook."
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "run": "discovery-pilot-v1-final",
+  "tested_at": "2026-10-21T20:54:11.278Z",
+  "scope": "Live local models, existing PostgreSQL, actual browser clicks; integration checks, not a fresh held-out relevance benchmark.",
+  "checks": [
+    {
+      "case": "initial-ui",
+      "passed": true
+    },
+    {
+      "case": "live-excel",
+      "http_status": 200,
+      "request": {
+        "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+        "query": "أبي فرص تحليل البيانات باستخدام Excel",
+        "profile": {
+          "user_id": null,
+          "education_level": null,
+          "field_of_study": null,
+          "city": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        }
+      },
+      "response": {
+        "request_id": "b4792076-a4f0-4353-828a-9a2386a3cd67",
+        "status": "ok",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا.",
+        "recommendations": [
+          {
+            "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+            "opportunity_id": "OPP-DEMO-004",
+            "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+            "opportunity_type": null,
+            "location": null,
+            "delivery_mode": null,
+            "deadline": "2026-10-22",
+            "application_status": "requires_verification",
+            "eligibility_status": "uncertain",
+            "reason": "من النشاط الموثق في المصدر: «سيتناول المشاركون ترتيب الجداول وقراءة المؤشرات، ثم يناقشون أمثلة من واقع مدنهم.»",
+            "caveats": [
+              "فتح التسجيل حاليًا غير متحقق؛ راجع المصدر قبل اتخاذ قرار.",
+              "الأهلية غير محسومة من المعلومات الموثقة؛ هذه معاينة لفرصة مرتبطة ببحثك.",
+              "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+              "موعد التقديم مذكور كتاريخ فقط؛ ساعة الإغلاق والمنطقة الزمنية غير محددتين.",
+              "لم يُسجل وقت تحقق حديث من معلومات الفرصة."
+            ],
+            "source_ids": [
+              "SRC-0496",
+              "SRC-0497"
+            ],
+            "relevance_score": null,
+            "next_action": "اطلع على التفاصيل وتحقق من شروط القبول وفتح التسجيل من الجهة."
+          }
+        ],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "passed": true
+    },
+    {
+      "case": "recommendation-to-details",
+      "http_status": 200,
+      "response": {
+        "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+        "opportunity_id": "OPP-DEMO-004",
+        "canonical_id": null,
+        "title": "تحليل البيانات باستخدام Excel من الفكرة إلى التطبيق",
+        "opportunity_type": null,
+        "description": null,
+        "location": null,
+        "delivery_mode": null,
+        "start_date": "2026-11-08",
+        "end_date": null,
+        "remote_participation_allowed": null,
+        "physical_attendance_required": null,
+        "duration": null,
+        "session_count": null,
+        "hours_per_session": null,
+        "total_hours": null,
+        "application_url": null,
+        "required_documents_ar": null,
+        "application_steps_ar": null,
+        "capacity": null,
+        "deadline": "2026-10-22",
+        "application_status": "requires_verification",
+        "topics": [],
+        "eligibility_requirements": {
+          "mandatory": null,
+          "preferred": null
+        },
+        "required_skills": null,
+        "cost": null,
+        "source_ids": [
+          "SRC-0496",
+          "SRC-0497"
+        ],
+        "last_verified_at": null,
+        "data_warnings": [
+          "الحقول غير المذكورة لا تعني عدم وجود شروط أو متطلبات.",
+          "موعد التقديم مذكور كتاريخ فقط؛ ساعة الإغلاق والمنطقة الزمنية غير محددتين.",
+          "لم يُسجل وقت تحقق حديث من معلومات الفرصة."
+        ]
+      },
+      "passed": true
+    },
+    {
+      "case": "unrelated-topic-no-forced-results",
+      "http_status": 200,
+      "request": {
+        "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+        "query": "أبي فرص كتابة الشعر",
+        "profile": {
+          "user_id": null,
+          "city": null,
+          "field_of_study": null,
+          "education_level": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        }
+      },
+      "response": {
+        "request_id": "456a543c-316d-4633-92c2-0e2f05da24ab",
+        "status": "no_match",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا. لم تتجاوز أي فرصة في العينة فحوص الصلة والقيود والأهلية؛ قد يكون السبب نقص معلومات المصدر. لا يشمل هذا الحكم بقية البيانات الخام.",
+        "recommendations": [],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "passed": true
+    },
+    {
+      "case": "unsupported-query-visible-error",
+      "http_status": 200,
+      "request": {
+        "request_id": "5ccbf660-24d7-4f3a-9207-79070cf7eacc",
+        "query": "أبي ورشة الأسبوع الجاي",
+        "profile": {
+          "user_id": null,
+          "city": null,
+          "field_of_study": null,
+          "education_level": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": null
+        }
+      },
+      "response": {
+        "request_id": "5ccbf660-24d7-4f3a-9207-79070cf7eacc",
+        "status": "error",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا. صياغة البحث تتجاوز الفهم المتحقق في هذه التجربة. اذكر الموضوع والقيود مباشرة، واستخدم تواريخ محددة عند الحاجة.",
+        "recommendations": [],
+        "missing_fields": [],
+        "error_code": "FURSAH_QUERY_UNSUPPORTED",
+        "interpreted_filters": [],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "passed": true
+    },
+    {
+      "case": "real-query-profile-conflict",
+      "http_status": 200,
+      "request": {
+        "request_id": "f8916a1e-16e1-46f6-9144-d6c58f5fbd8f",
+        "query": "أبي ورشة ترجمة مجانية وعن بعد بالكامل",
+        "profile": {
+          "user_id": null,
+          "city": null,
+          "field_of_study": null,
+          "education_level": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [
+            "in_person"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0
+        }
+      },
+      "response": {
+        "request_id": "f8916a1e-16e1-46f6-9144-d6c58f5fbd8f",
+        "status": "needs_info",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا. نحتاج اختيار القيود المستخدمة لهذا البحث.",
+        "recommendations": [],
+        "missing_fields": [
+          "constraints.delivery_modes"
+        ],
+        "error_code": null,
+        "interpreted_filters": [],
+        "missing_explanations": [
+          "يوجد تعارض بين قيود الملف ونص البحث. اختر المصدر لهذه القيود المتعارضة فقط؛ تبقى القيود المتوافقة ويظل ملفك محفوظًا.",
+          "طريقة الحضور: في الملف «حضوري»، وفي نص البحث «عن بعد»."
+        ],
+        "constraint_conflict": true
+      },
+      "passed": true
+    },
+    {
+      "case": "temporary-query-override",
+      "http_status": 200,
+      "request": {
+        "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+        "query": "أبي ورشة ترجمة مجانية وعن بعد بالكامل",
+        "profile": {
+          "user_id": null,
+          "city": null,
+          "field_of_study": null,
+          "education_level": null,
+          "interests": [],
+          "skills": null
+        },
+        "constraints": {
+          "location_preference": null,
+          "opportunity_types": [],
+          "delivery_modes": [
+            "in_person"
+          ],
+          "available_from": null,
+          "available_to": null,
+          "max_duration_days": null,
+          "max_budget_sar": 0
+        },
+        "constraint_resolution": "query"
+      },
+      "response": {
+        "request_id": "50f9f60b-1ce5-4e41-9270-743aa2cdabb1",
+        "status": "no_match",
+        "message": "تشغيل تجريبي على أربع فرص من العينة المجهزة؛ الأهلية وفتح التسجيل يحتاجان تحققًا. لم تتجاوز أي فرصة في العينة فحوص الصلة والقيود والأهلية؛ قد يكون السبب نقص معلومات المصدر. لا يشمل هذا الحكم بقية البيانات الخام.",
+        "recommendations": [],
+        "missing_fields": [],
+        "error_code": null,
+        "interpreted_filters": [
+          "الميزانية القصوى: 0 ريال",
+          "أنواع الفرص: ورشة",
+          "أنماط الحضور المسموحة: عن بعد"
+        ],
+        "missing_explanations": [],
+        "constraint_conflict": false
+      },
+      "passed": true,
+      "profile_unchanged": true
+    },
+    {
+      "case": "no-browser-script-errors",
+      "passed": true,
+      "errors": []
+    }
+  ]
+}

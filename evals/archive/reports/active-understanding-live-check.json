@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "case": "simple",
+      "query": "أبي فرص تحليل البيانات باستخدام Excel",
+      "passed": true,
+      "status": "resolved",
+      "proposal": {
+        "topic": "تحليل البيانات باستخدام Excel",
+        "goal_quote": "فرص تحليل البيانات باستخدام Excel",
+        "claims": [],
+        "tools": [
+          {
+            "name": "excel",
+            "quote": "Excel"
+          }
+        ],
+        "tool_mode": "all",
+        "needs_review": false
+      },
+      "effective_constraints": {
+        "location_preference": null,
+        "opportunity_types": [],
+        "delivery_modes": [],
+        "available_from": null,
+        "available_to": null,
+        "max_duration_days": null,
+        "max_budget_sar": null
+      },
+      "review_reasons": []
+    },
+    {
+      "case": "free-online",
+      "query": "أبي فرص Excel مجانية عن بعد",
+      "passed": true,
+      "status": "resolved",
+      "proposal": {
+        "topic": "تعلم برنامج Excel",
+        "goal_quote": "فرص Excel",
+        "claims": [
+          {
+            "field": "max_budget_sar",
+            "value": 0.0,
+            "quote": "مجانية"
+          },
+          {
+            "field": "delivery_modes",
+            "value": [
+              "online"
+            ],
+            "quote": "عن بعد"
+          }
+        ],
+        "tools": [
+          {
+            "name": "excel",
+            "quote": "Excel"
+          }
+        ],
+        "tool_mode": "all",
+        "needs_review": false
+      },
+      "effective_constraints": {
+        "location_preference": null,
+        "opportunity_types": [],
+        "delivery_modes": [
+          "online"
+        ],
+        "available_from": null,
+        "available_to": null,
+        "max_duration_days": null,
+        "max_budget_sar": 0.0
+      },
+      "review_reasons": []
+    },
+    {
+      "case": "conflict",
+      "query": "أبي فرص Excel عن بعد",
+      "passed": true,
+      "status": "constraint_conflict",
+      "proposal": {
+        "topic": "Excel عن بعد",
+        "goal_quote": "فرص Excel عن بعد",
+        "claims": [
+          {
+            "field": "delivery_modes",
+            "value": [
+              "online"
+            ],
+            "quote": "عن بعد"
+          }
+        ],
+        "tools": [
+          {
+            "name": "excel",
+            "quote": "Excel"
+          }
+        ],
+        "tool_mode": "all",
+        "needs_review": false
+      },
+      "effective_constraints": null,
+      "review_reasons": []
+    }
+  ],
+  "passed": true,
+  "corpus_quality_approval": false
+}

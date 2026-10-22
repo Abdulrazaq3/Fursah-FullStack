@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-19T18:24:04.903888+00:00",
+  "policy_version": "structured-constraints-v1",
+  "backend_tests_passed": 63,
+  "experiment_tests_passed": 8,
+  "labelled_cases_passed": 25,
+  "labelled_real_cases": 4,
+  "labelled_synthetic_cases": 21,
+  "frozen_code_and_input_hashes_match": true,
+  "raw_data_unchanged": true,
+  "new_neural_inferences": 0,
+  "local_document_links_checked": 264,
+  "diagram_out_of_bounds_labels": 0,
+  "enabled_in_application": false,
+  "scope": "Local deterministic component verification. No API discovery, eligibility, semantic-model improvement or current-registration claim."
+}

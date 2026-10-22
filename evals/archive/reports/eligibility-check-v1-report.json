@@ -1,0 +1,3895 @@
+{
+  "generated_at": "2026-10-19T19:12:16.606572+00:00",
+  "binding": {
+    "policy_version": "eligibility-v1",
+    "fixture_sha256": "sha256:790ea024d88ff02e77cca810107ae4a9a5271e411e26c4347cd2819896448cbb",
+    "sample_sha256": "sha256:e1d59ca25236cbc1697d5e0342ebfff7e0637e2ec384a738ae5f38357c45c4ea",
+    "indexed_sha256": "sha256:89a9c706ff6ba6614222e07103998c3890544d8c7ba46711b6d2c1020866bf0a",
+    "raw_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+    "code_sha256": {
+      "backend/app/eligibility.py": "7f763bb0b6807013db72ea9aa9a3737dc28284295885662faa80a17f1bf7d73f",
+      "backend/app/eligibility_catalog.json": "ae0367eba8459cc0604889249740a99ce985b2f6ca030ececd3ce41cfd76716e",
+      "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+      "backend/app/schemas.py": "14d1c00cd956e5682446557d062995fb6369243badf21454b0f9ba56537b6360",
+      "backend/app/request_requirements.py": "d3365aaf8ab145eadbdaa18c2d4aa110ceac9eca78b68b8dbabf393e51230ee8",
+      "experiments/evaluate_constraints.py": "3b1f3f6c371db2f47ced60e2f7780626b984953b318d1356f9ae78f2ecaa73a4",
+      "experiments/evaluate_eligibility.py": "526e0e1c9b0ee0ffc4173ee9919a689f745fb4467b219548049a6184f33a73f5",
+      "frontend/src/profile/choices.ts": "76546b7b812818e36dafff77bbf85589a33764e03a1f480023cd0c6251398f95",
+      "frontend/src/labels.ts": "2281ab812d573a7aeb02f1053c5154eebd23384dfe5920c7ad6c5da068a92a17"
+    }
+  },
+  "freeze_sha256": "sha256:0b943a480b1e6a49b0df1ee1392e2a13375ca701b1910ce76f67254fa35a15a1",
+  "eligibility_cases": 28,
+  "eligibility_passed": 28,
+  "question_scenarios": 10,
+  "questions_passed": 10,
+  "all_passed": true,
+  "source_sample_cases": 4,
+  "synthetic_eligibility_cases": 24,
+  "new_neural_inferences": 0,
+  "enabled_in_application": false,
+  "limitations": [
+    "Bounded whole-clause parser, not a general requirement interpreter.",
+    "Four existing records have incomplete eligibility facts; none is declared confirmed.",
+    "Question gates are simulated, not API or retrieval integration.",
+    "Self-reported profile, fixed frontend catalog, author-written labels; no independent adjudication.",
+    "Current registration, request-plan resolution and complete recommendations remain pending."
+  ],
+  "results": [
+    {
+      "id": "E01",
+      "record_kind": "OPP-DEMO-001",
+      "passed": true,
+      "expected": {
+        "id": "E01",
+        "record": "OPP-DEMO-001",
+        "profile": {},
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "OPP-DEMO-001",
+        "evidence_version": "sha256:6e4641bc89259b27e01747a4c5368ff49a1c0cfd78b7e29dbdbd959a5b7afb53",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "required_skills",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "preferred_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "mandatory_requirements",
+          "required_skills"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E02",
+      "record_kind": "OPP-DEMO-002",
+      "passed": true,
+      "expected": {
+        "id": "E02",
+        "record": "OPP-DEMO-002",
+        "profile": {},
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "OPP-DEMO-002",
+        "evidence_version": "sha256:12ffae299e17183310d8e4665689b844d6010a518dfb03bed0c9cd902690bdda",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "required_skills",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "preferred_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "mandatory_requirements",
+          "required_skills"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E03",
+      "record_kind": "OPP-DEMO-003",
+      "passed": true,
+      "expected": {
+        "id": "E03",
+        "record": "OPP-DEMO-003",
+        "profile": {},
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "OPP-DEMO-003",
+        "evidence_version": "sha256:4bfcff32ab0445d6dec26ac4190ac84153235a69e2cf7724bb5d5912bc89bed7",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "required_skills",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "preferred_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "mandatory_requirements",
+          "required_skills"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E04",
+      "record_kind": "OPP-DEMO-004",
+      "passed": true,
+      "expected": {
+        "id": "E04",
+        "record": "OPP-DEMO-004",
+        "profile": {},
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "OPP-DEMO-004",
+        "evidence_version": "sha256:0d506c95eafc0a447eaa26135bcbbac67d8a6d3a7f93fdd78813e000f4a3072d",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "required_skills",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "preferred_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "mandatory_requirements",
+          "required_skills"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E05",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E05",
+        "record": "synthetic",
+        "profile": {},
+        "expected_status": "confirmed",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E05",
+        "evidence_version": "sha256:eeee4f43f672e38ba43c393e08046d26d80c6ee7ccab62e6c40e045217c49b6f",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "confirmed",
+        "public_eligibility_status": "confirmed",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E05-2",
+                  "source_id": "SYNTHETIC-E05-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E05-3",
+                  "source_id": "SYNTHETIC-E05-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E05-4",
+                  "source_id": "SYNTHETIC-E05-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E06",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E06",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Excel"
+            ],
+            "quote": "المهارة المطلوبة Excel."
+          }
+        },
+        "profile": {
+          "skills": null
+        },
+        "expected_status": "uncertain",
+        "expected_missing": [
+          "profile.skills"
+        ]
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E06",
+        "evidence_version": "sha256:305eb062cb380ddd50a09fc5f464d7a3cf56e74c8f8bff0ac7669b981211b76a",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E06-2",
+                  "source_id": "SYNTHETIC-E06-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E06-4",
+                  "source_id": "SYNTHETIC-E06-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E06-3",
+                  "source_id": "SYNTHETIC-E06-SOURCE",
+                  "quote": "المهارة المطلوبة Excel.",
+                  "asserted_value": [
+                    "Excel"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": null,
+              "profile_field": "profile.skills"
+            },
+            "user_field": "profile.skills",
+            "question": "هل تمتلك مهارة Excel؟ حددها في قسم المهارات أو اختر عدم امتلاك مهارات من القائمة.",
+            "status": "unknown",
+            "reason_code": "skills_not_answered",
+            "missing_origin": "user"
+          }
+        ],
+        "user_missing_fields": [
+          "profile.skills"
+        ],
+        "user_information_gaps": [
+          {
+            "check_id": "required_skills:0",
+            "field": "profile.skills",
+            "question": "هل تمتلك مهارة Excel؟ حددها في قسم المهارات أو اختر عدم امتلاك مهارات من القائمة.",
+            "requirement_text": "Excel"
+          }
+        ],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": true,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E07",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E07",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Excel"
+            ],
+            "quote": "المهارة المطلوبة Excel."
+          }
+        },
+        "profile": {
+          "skills": []
+        },
+        "expected_status": "ineligible",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E07",
+        "evidence_version": "sha256:2dd975ce14d49b2551b96067288116833c0120213dbc6acbcf349387c1ca53d9",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:0507e5be5f69c9865a4a2e841681ef5f8e6f36df48adf461c25cdf792938e983",
+        "status": "ineligible",
+        "public_eligibility_status": null,
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E07-2",
+                  "source_id": "SYNTHETIC-E07-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E07-4",
+                  "source_id": "SYNTHETIC-E07-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E07-3",
+                  "source_id": "SYNTHETIC-E07-SOURCE",
+                  "quote": "المهارة المطلوبة Excel.",
+                  "asserted_value": [
+                    "Excel"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": null,
+              "profile_field": "profile.skills"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "failed",
+            "reason_code": "explicitly_no_listed_skills",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E08",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E08",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Excel بمستوى متوسط على الأقل"
+            ],
+            "quote": "يشترط Excel بمستوى متوسط على الأقل."
+          }
+        },
+        "profile": {
+          "skills": [
+            {
+              "name": "Excel",
+              "level": "advanced"
+            }
+          ]
+        },
+        "expected_status": "confirmed",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E08",
+        "evidence_version": "sha256:c591671dba075b0b85dbc49ddac1125c3a7ffc004e714232edb51ea8f5867c6a",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:b77739e02e6be9320d44d1048eb0bdf15b3cfd2d2dd5252cce2799a45a601284",
+        "status": "confirmed",
+        "public_eligibility_status": "confirmed",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E08-2",
+                  "source_id": "SYNTHETIC-E08-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E08-4",
+                  "source_id": "SYNTHETIC-E08-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel بمستوى متوسط على الأقل",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel بمستوى متوسط على الأقل"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E08-3",
+                  "source_id": "SYNTHETIC-E08-SOURCE",
+                  "quote": "يشترط Excel بمستوى متوسط على الأقل.",
+                  "asserted_value": [
+                    "Excel بمستوى متوسط على الأقل"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": "intermediate",
+              "profile_field": "profile.skills"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "passed",
+            "reason_code": "requirement_satisfied",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E09",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E09",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Excel بمستوى متوسط على الأقل"
+            ],
+            "quote": "يشترط Excel بمستوى متوسط على الأقل."
+          }
+        },
+        "profile": {
+          "skills": [
+            {
+              "name": "Excel",
+              "level": "beginner"
+            }
+          ]
+        },
+        "expected_status": "ineligible",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E09",
+        "evidence_version": "sha256:293b000e3e6b13c7bb711c63e8ada83faa27a65b78a37236e85c7ad88ddb9e3a",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:6da989461066a139994821887ee7079dfee1e211c743297d82904454981472aa",
+        "status": "ineligible",
+        "public_eligibility_status": null,
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E09-2",
+                  "source_id": "SYNTHETIC-E09-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E09-4",
+                  "source_id": "SYNTHETIC-E09-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel بمستوى متوسط على الأقل",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel بمستوى متوسط على الأقل"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E09-3",
+                  "source_id": "SYNTHETIC-E09-SOURCE",
+                  "quote": "يشترط Excel بمستوى متوسط على الأقل.",
+                  "asserted_value": [
+                    "Excel بمستوى متوسط على الأقل"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": "intermediate",
+              "profile_field": "profile.skills"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "failed",
+            "reason_code": "skill_level_below_required_minimum",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E10",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E10",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "إكسل بمستوى متوسط على الأقل"
+            ],
+            "quote": "يشترط إكسل بمستوى متوسط على الأقل."
+          }
+        },
+        "profile": {
+          "skills": [
+            {
+              "name": "Excel",
+              "level": null
+            }
+          ]
+        },
+        "expected_status": "uncertain",
+        "expected_missing": [
+          "profile.skills"
+        ]
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E10",
+        "evidence_version": "sha256:0ad125aa2234f0095cfd5a7a028d4877bd1c9c60aa5b8432196cffd81c84e33d",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:3bcf7bddab8f5ff9ad1b2d212ec1ac87d8c825281c6ca8cac834b4997e5b3ce3",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E10-2",
+                  "source_id": "SYNTHETIC-E10-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E10-4",
+                  "source_id": "SYNTHETIC-E10-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "إكسل بمستوى متوسط على الأقل",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "إكسل بمستوى متوسط على الأقل"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E10-3",
+                  "source_id": "SYNTHETIC-E10-SOURCE",
+                  "quote": "يشترط إكسل بمستوى متوسط على الأقل.",
+                  "asserted_value": [
+                    "إكسل بمستوى متوسط على الأقل"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": "intermediate",
+              "profile_field": "profile.skills"
+            },
+            "user_field": "profile.skills",
+            "question": "ما مستواك في Excel؟ الفرصة تشترط مستوى متوسط على الأقل.",
+            "status": "unknown",
+            "reason_code": "required_skill_level_not_established",
+            "missing_origin": "user"
+          }
+        ],
+        "user_missing_fields": [
+          "profile.skills"
+        ],
+        "user_information_gaps": [
+          {
+            "check_id": "required_skills:0",
+            "field": "profile.skills",
+            "question": "ما مستواك في Excel؟ الفرصة تشترط مستوى متوسط على الأقل.",
+            "requirement_text": "إكسل بمستوى متوسط على الأقل"
+          }
+        ],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": true,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E11",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E11",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Excel"
+            ],
+            "quote": "المهارة المطلوبة Excel."
+          }
+        },
+        "profile": {
+          "skills": [
+            {
+              "name": "Python",
+              "level": "advanced"
+            }
+          ]
+        },
+        "expected_status": "uncertain",
+        "expected_missing": [
+          "profile.skills"
+        ]
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E11",
+        "evidence_version": "sha256:726604f56a0da7b1a2a11008229bbf271318b852305dcfd7de87ffd2def5b9a4",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:5abbdbf24abcb5a97cce3cf0e3227ce017a067b78844967a43f2a009c15231e0",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E11-2",
+                  "source_id": "SYNTHETIC-E11-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E11-4",
+                  "source_id": "SYNTHETIC-E11-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E11-3",
+                  "source_id": "SYNTHETIC-E11-SOURCE",
+                  "quote": "المهارة المطلوبة Excel.",
+                  "asserted_value": [
+                    "Excel"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": null,
+              "profile_field": "profile.skills"
+            },
+            "user_field": "profile.skills",
+            "question": "هل تمتلك مهارة Excel؟ وجود مهارات أخرى لا يحسم امتلاكها.",
+            "status": "unknown",
+            "reason_code": "required_skill_not_in_partial_profile",
+            "missing_origin": "user"
+          }
+        ],
+        "user_missing_fields": [
+          "profile.skills"
+        ],
+        "user_information_gaps": [
+          {
+            "check_id": "required_skills:0",
+            "field": "profile.skills",
+            "question": "هل تمتلك مهارة Excel؟ وجود مهارات أخرى لا يحسم امتلاكها.",
+            "requirement_text": "Excel"
+          }
+        ],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": true,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E12",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E12",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "المستوى التعليمي المطلوب: بكالوريوس فأعلى"
+            ],
+            "quote": "المستوى التعليمي المطلوب: بكالوريوس فأعلى."
+          }
+        },
+        "profile": {
+          "education_level": "master"
+        },
+        "expected_status": "confirmed",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E12",
+        "evidence_version": "sha256:5d3a248b6248bdf7bfcf2ad2c15d94c15fc8e882345e5ddd00e1cfb0b82c83b9",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:7b32c0337a804db565f5d9115ccf506ae74d08d24873ffb4d8dba816782975a8",
+        "status": "confirmed",
+        "public_eligibility_status": "confirmed",
+        "checks": [
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E12-3",
+                  "source_id": "SYNTHETIC-E12-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E12-4",
+                  "source_id": "SYNTHETIC-E12-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "المستوى التعليمي المطلوب: بكالوريوس فأعلى",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "المستوى التعليمي المطلوب: بكالوريوس فأعلى"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E12-2",
+                  "source_id": "SYNTHETIC-E12-SOURCE",
+                  "quote": "المستوى التعليمي المطلوب: بكالوريوس فأعلى.",
+                  "asserted_value": [
+                    "المستوى التعليمي المطلوب: بكالوريوس فأعلى"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "education",
+              "value": "bachelor",
+              "operator": "at_least",
+              "profile_field": "profile.education_level"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "passed",
+            "reason_code": "requirement_satisfied",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E13",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E13",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "المستوى التعليمي المطلوب: بكالوريوس فأعلى"
+            ],
+            "quote": "المستوى التعليمي المطلوب: بكالوريوس فأعلى."
+          }
+        },
+        "profile": {
+          "education_level": "diploma"
+        },
+        "expected_status": "ineligible",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E13",
+        "evidence_version": "sha256:991b4221f6df1ac30ebc95416e884c1f8463e003ada46ded96a22e9ed560183c",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:6f522f33be5be32ff57e02ae7ecc38f3cbef42339be2c0670463be6135928767",
+        "status": "ineligible",
+        "public_eligibility_status": null,
+        "checks": [
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E13-3",
+                  "source_id": "SYNTHETIC-E13-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E13-4",
+                  "source_id": "SYNTHETIC-E13-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "المستوى التعليمي المطلوب: بكالوريوس فأعلى",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "المستوى التعليمي المطلوب: بكالوريوس فأعلى"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E13-2",
+                  "source_id": "SYNTHETIC-E13-SOURCE",
+                  "quote": "المستوى التعليمي المطلوب: بكالوريوس فأعلى.",
+                  "asserted_value": [
+                    "المستوى التعليمي المطلوب: بكالوريوس فأعلى"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "education",
+              "value": "bachelor",
+              "operator": "at_least",
+              "profile_field": "profile.education_level"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "failed",
+            "reason_code": "education_below_required_minimum",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E14",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E14",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "المستوى التعليمي المطلوب: بكالوريوس"
+            ],
+            "quote": "المستوى التعليمي المطلوب: بكالوريوس."
+          }
+        },
+        "profile": {},
+        "expected_status": "uncertain",
+        "expected_missing": [
+          "profile.education_level"
+        ]
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E14",
+        "evidence_version": "sha256:3324fe66cdb154df0ec539a013a6bfaa3caca28bb777990139c234b23992135c",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E14-3",
+                  "source_id": "SYNTHETIC-E14-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E14-4",
+                  "source_id": "SYNTHETIC-E14-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "المستوى التعليمي المطلوب: بكالوريوس",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "المستوى التعليمي المطلوب: بكالوريوس"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E14-2",
+                  "source_id": "SYNTHETIC-E14-SOURCE",
+                  "quote": "المستوى التعليمي المطلوب: بكالوريوس.",
+                  "asserted_value": [
+                    "المستوى التعليمي المطلوب: بكالوريوس"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "education",
+              "value": "bachelor",
+              "operator": "match_or_review",
+              "profile_field": "profile.education_level"
+            },
+            "user_field": "profile.education_level",
+            "question": "حدد مستواك التعليمي للتحقق من الشرط: المستوى التعليمي المطلوب: بكالوريوس",
+            "status": "unknown",
+            "reason_code": "required_profile_field_not_established",
+            "missing_origin": "user"
+          }
+        ],
+        "user_missing_fields": [
+          "profile.education_level"
+        ],
+        "user_information_gaps": [
+          {
+            "check_id": "mandatory_requirements:0",
+            "field": "profile.education_level",
+            "question": "حدد مستواك التعليمي للتحقق من الشرط: المستوى التعليمي المطلوب: بكالوريوس",
+            "requirement_text": "المستوى التعليمي المطلوب: بكالوريوس"
+          }
+        ],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": true,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E15",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E15",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "العمر لا يقل عن 18 سنة"
+            ],
+            "quote": "العمر لا يقل عن 18 سنة."
+          }
+        },
+        "profile": {
+          "education_level": "bachelor"
+        },
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E15",
+        "evidence_version": "sha256:7158f725815f4083691895c05e67c09a1c563573adcb794e990bb633725567a2",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:a4e3637e7f1a96b33d40e16b2f29c4869aaa634b13bb5fd9abdee5163b0d0130",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "العمر لا يقل عن 18 سنة",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "العمر لا يقل عن 18 سنة"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E15-2",
+                  "source_id": "SYNTHETIC-E15-SOURCE",
+                  "quote": "العمر لا يقل عن 18 سنة.",
+                  "asserted_value": [
+                    "العمر لا يقل عن 18 سنة"
+                  ]
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null,
+            "status": "unknown",
+            "reason_code": "requirement_needs_interpretation_or_uncollected_attribute",
+            "missing_origin": "interpretation"
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E15-3",
+                  "source_id": "SYNTHETIC-E15-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E15-4",
+                  "source_id": "SYNTHETIC-E15-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "mandatory_requirements:0"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E16",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E16",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "يشترط أن يكون المتقدم طالبًا جامعيًا"
+            ],
+            "quote": "يشترط أن يكون المتقدم طالبًا جامعيًا."
+          }
+        },
+        "profile": {
+          "education_level": "bachelor"
+        },
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E16",
+        "evidence_version": "sha256:3690dea40a02172f8633f9e860c290e42b0342c5a080230f11eb5e1fda0af14b",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:a4e3637e7f1a96b33d40e16b2f29c4869aaa634b13bb5fd9abdee5163b0d0130",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "يشترط أن يكون المتقدم طالبًا جامعيًا",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "يشترط أن يكون المتقدم طالبًا جامعيًا"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E16-2",
+                  "source_id": "SYNTHETIC-E16-SOURCE",
+                  "quote": "يشترط أن يكون المتقدم طالبًا جامعيًا.",
+                  "asserted_value": [
+                    "يشترط أن يكون المتقدم طالبًا جامعيًا"
+                  ]
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null,
+            "status": "unknown",
+            "reason_code": "requirement_needs_interpretation_or_uncollected_attribute",
+            "missing_origin": "interpretation"
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E16-3",
+                  "source_id": "SYNTHETIC-E16-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E16-4",
+                  "source_id": "SYNTHETIC-E16-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "mandatory_requirements:0"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E17",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E17",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "التخصص المطلوب: علوم الحاسب"
+            ],
+            "quote": "التخصص المطلوب: علوم الحاسب."
+          }
+        },
+        "profile": {
+          "field_of_study": "علوم الحاسب"
+        },
+        "expected_status": "confirmed",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E17",
+        "evidence_version": "sha256:e8967728965c74e21d5d617caf1090d07f3bb88ff9800c89698cd1cd4b9720b3",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:ce68a3b17303d0edf59f54faa7d9176d7f955815de23d8337c66f2245077dbee",
+        "status": "confirmed",
+        "public_eligibility_status": "confirmed",
+        "checks": [
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E17-3",
+                  "source_id": "SYNTHETIC-E17-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E17-4",
+                  "source_id": "SYNTHETIC-E17-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "التخصص المطلوب: علوم الحاسب",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "التخصص المطلوب: علوم الحاسب"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E17-2",
+                  "source_id": "SYNTHETIC-E17-SOURCE",
+                  "quote": "التخصص المطلوب: علوم الحاسب.",
+                  "asserted_value": [
+                    "التخصص المطلوب: علوم الحاسب"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "major",
+              "value": "علوم الحاسب",
+              "operator": "equals",
+              "profile_field": "profile.field_of_study"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "passed",
+            "reason_code": "requirement_satisfied",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E18",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E18",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "التخصص المطلوب: علوم الحاسب"
+            ],
+            "quote": "التخصص المطلوب: علوم الحاسب."
+          }
+        },
+        "profile": {
+          "field_of_study": "هندسة البرمجيات"
+        },
+        "expected_status": "ineligible",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E18",
+        "evidence_version": "sha256:5488b0169810533da7fcec27b2e6a307cc0bf335cd2cc6c563f333a5835ac1b8",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:a8ad4d6a796159dda2c65ec8a109842df10210e57a83609cf482786fc8e7ab9d",
+        "status": "ineligible",
+        "public_eligibility_status": null,
+        "checks": [
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E18-3",
+                  "source_id": "SYNTHETIC-E18-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E18-4",
+                  "source_id": "SYNTHETIC-E18-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "التخصص المطلوب: علوم الحاسب",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "التخصص المطلوب: علوم الحاسب"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E18-2",
+                  "source_id": "SYNTHETIC-E18-SOURCE",
+                  "quote": "التخصص المطلوب: علوم الحاسب.",
+                  "asserted_value": [
+                    "التخصص المطلوب: علوم الحاسب"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "major",
+              "value": "علوم الحاسب",
+              "operator": "equals",
+              "profile_field": "profile.field_of_study"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "failed",
+            "reason_code": "declared_profile_value_does_not_match",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E19",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E19",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "المدينة المطلوبة: الرياض"
+            ],
+            "quote": "المدينة المطلوبة: الرياض."
+          }
+        },
+        "profile": {},
+        "expected_status": "uncertain",
+        "expected_missing": [
+          "profile.city"
+        ]
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E19",
+        "evidence_version": "sha256:85e682a2eb2f4a37fea588c50d64e4aea4984e17e263f413a2de663ffc1ca75f",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E19-3",
+                  "source_id": "SYNTHETIC-E19-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E19-4",
+                  "source_id": "SYNTHETIC-E19-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "المدينة المطلوبة: الرياض",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "المدينة المطلوبة: الرياض"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E19-2",
+                  "source_id": "SYNTHETIC-E19-SOURCE",
+                  "quote": "المدينة المطلوبة: الرياض.",
+                  "asserted_value": [
+                    "المدينة المطلوبة: الرياض"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "city",
+              "value": "الرياض",
+              "operator": "equals",
+              "profile_field": "profile.city"
+            },
+            "user_field": "profile.city",
+            "question": "حدد مدينتك الحالية للتحقق من الشرط: المدينة المطلوبة: الرياض",
+            "status": "unknown",
+            "reason_code": "required_profile_field_not_established",
+            "missing_origin": "user"
+          }
+        ],
+        "user_missing_fields": [
+          "profile.city"
+        ],
+        "user_information_gaps": [
+          {
+            "check_id": "mandatory_requirements:0",
+            "field": "profile.city",
+            "question": "حدد مدينتك الحالية للتحقق من الشرط: المدينة المطلوبة: الرياض",
+            "requirement_text": "المدينة المطلوبة: الرياض"
+          }
+        ],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": true,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E20",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E20",
+        "record": "synthetic",
+        "overrides": {
+          "preferred_requirements": {
+            "value": [
+              "إجادة Excel"
+            ],
+            "quote": "يفضل إجادة Excel، وليس شرطًا إلزاميًا."
+          }
+        },
+        "profile": {
+          "skills": []
+        },
+        "expected_status": "confirmed",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E20",
+        "evidence_version": "sha256:c93b02f02f6e8029b424be9cb04de7fdc6d9f93670acc6410afbae5b0d72b6f2",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:0507e5be5f69c9865a4a2e841681ef5f8e6f36df48adf461c25cdf792938e983",
+        "status": "confirmed",
+        "public_eligibility_status": "confirmed",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E20-2",
+                  "source_id": "SYNTHETIC-E20-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E20-3",
+                  "source_id": "SYNTHETIC-E20-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements:0",
+            "mandatory": false,
+            "requirement_text": "إجادة Excel",
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [
+                "إجادة Excel"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E20-4",
+                  "source_id": "SYNTHETIC-E20-SOURCE",
+                  "quote": "يفضل إجادة Excel، وليس شرطًا إلزاميًا.",
+                  "asserted_value": [
+                    "إجادة Excel"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": null,
+              "profile_field": "profile.skills"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "failed",
+            "reason_code": "explicitly_no_listed_skills",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E21",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E21",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "status": "conflicted",
+            "value": null,
+            "alternatives": [
+              {
+                "value": [
+                  "Excel"
+                ],
+                "quote": "يشترط Excel."
+              },
+              {
+                "value": [],
+                "quote": "لا توجد مهارات مطلوبة."
+              }
+            ]
+          }
+        },
+        "profile": {
+          "skills": []
+        },
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E21",
+        "evidence_version": "sha256:fdf14f44a811ae3738bbeae18fb1b3a826baaccc7b423e1bdd2a6b12d20fe6f6",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:0507e5be5f69c9865a4a2e841681ef5f8e6f36df48adf461c25cdf792938e983",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E21-2",
+                  "source_id": "SYNTHETIC-E21-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "conflicted",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "required_skills",
+              "status": "conflicted",
+              "value": null,
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E21-3",
+                  "source_id": "SYNTHETIC-E21-SOURCE",
+                  "quote": "يشترط Excel.",
+                  "asserted_value": [
+                    "Excel"
+                  ]
+                },
+                {
+                  "evidence_id": "SYNTHETIC-E21-4",
+                  "source_id": "SYNTHETIC-E21-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E21-5",
+                  "source_id": "SYNTHETIC-E21-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "required_skills"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E22",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E22",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Excel أو SQL"
+            ],
+            "quote": "يشترط Excel أو SQL."
+          }
+        },
+        "profile": {
+          "skills": [
+            {
+              "name": "Excel",
+              "level": "advanced"
+            }
+          ]
+        },
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E22",
+        "evidence_version": "sha256:ede0356ca679b04c8537c253280586fc8edfbafa27a68e843a2f817da62b1005",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:b77739e02e6be9320d44d1048eb0bdf15b3cfd2d2dd5252cce2799a45a601284",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E22-2",
+                  "source_id": "SYNTHETIC-E22-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel أو SQL",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel أو SQL"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E22-3",
+                  "source_id": "SYNTHETIC-E22-SOURCE",
+                  "quote": "يشترط Excel أو SQL.",
+                  "asserted_value": [
+                    "Excel أو SQL"
+                  ]
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null,
+            "status": "unknown",
+            "reason_code": "requirement_needs_interpretation_or_uncollected_attribute",
+            "missing_origin": "interpretation"
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E22-4",
+                  "source_id": "SYNTHETIC-E22-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "required_skills:0"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E23",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E23",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Rust"
+            ],
+            "quote": "المهارة المطلوبة Rust."
+          }
+        },
+        "profile": {},
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E23",
+        "evidence_version": "sha256:d1c98e244ea6ead6bf561442d36d9203360c0d8c71089be8b7e423d950b0f1a6",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E23-2",
+                  "source_id": "SYNTHETIC-E23-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Rust",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Rust"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E23-3",
+                  "source_id": "SYNTHETIC-E23-SOURCE",
+                  "quote": "المهارة المطلوبة Rust.",
+                  "asserted_value": [
+                    "Rust"
+                  ]
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null,
+            "status": "unknown",
+            "reason_code": "requirement_needs_interpretation_or_uncollected_attribute",
+            "missing_origin": "interpretation"
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E23-4",
+                  "source_id": "SYNTHETIC-E23-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "required_skills:0"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E24",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E24",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "المستوى التعليمي المطلوب: بكالوريوس",
+              "المستوى التعليمي المطلوب: ماجستير"
+            ],
+            "quote": "المستوى التعليمي المطلوب: بكالوريوس. المستوى التعليمي المطلوب: ماجستير."
+          }
+        },
+        "profile": {
+          "education_level": "bachelor"
+        },
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E24",
+        "evidence_version": "sha256:b1c89c73c5d6612bc53509f224a9e35c889becf3cc12789ad6e790c20579138a",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:a4e3637e7f1a96b33d40e16b2f29c4869aaa634b13bb5fd9abdee5163b0d0130",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E24-3",
+                  "source_id": "SYNTHETIC-E24-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E24-4",
+                  "source_id": "SYNTHETIC-E24-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "المستوى التعليمي المطلوب: بكالوريوس",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "المستوى التعليمي المطلوب: بكالوريوس",
+                "المستوى التعليمي المطلوب: ماجستير"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E24-2",
+                  "source_id": "SYNTHETIC-E24-SOURCE",
+                  "quote": "المستوى التعليمي المطلوب: بكالوريوس. المستوى التعليمي المطلوب: ماجستير.",
+                  "asserted_value": [
+                    "المستوى التعليمي المطلوب: بكالوريوس",
+                    "المستوى التعليمي المطلوب: ماجستير"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "education",
+              "value": "bachelor",
+              "operator": "match_or_review",
+              "profile_field": "profile.education_level"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "conflicted",
+            "reason_code": "single_value_requirement_scope_conflict",
+            "missing_origin": "interpretation"
+          },
+          {
+            "id": "mandatory_requirements:1",
+            "mandatory": true,
+            "requirement_text": "المستوى التعليمي المطلوب: ماجستير",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "المستوى التعليمي المطلوب: بكالوريوس",
+                "المستوى التعليمي المطلوب: ماجستير"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E24-2",
+                  "source_id": "SYNTHETIC-E24-SOURCE",
+                  "quote": "المستوى التعليمي المطلوب: بكالوريوس. المستوى التعليمي المطلوب: ماجستير.",
+                  "asserted_value": [
+                    "المستوى التعليمي المطلوب: بكالوريوس",
+                    "المستوى التعليمي المطلوب: ماجستير"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "education",
+              "value": "master",
+              "operator": "match_or_review",
+              "profile_field": "profile.education_level"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "conflicted",
+            "reason_code": "single_value_requirement_scope_conflict",
+            "missing_origin": "interpretation"
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "mandatory_requirements:0",
+          "mandatory_requirements:1"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E25",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E25",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "status": "unknown",
+            "value": null
+          }
+        },
+        "profile": {},
+        "expected_status": "uncertain",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E25",
+        "evidence_version": "sha256:7f5ca4c08e9e4336c656a4a5c8729113da1550a633e222cf1d870806a2034267",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "status": "uncertain",
+        "public_eligibility_status": "uncertain",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "unknown",
+            "reason_code": "requirements_not_established",
+            "missing_origin": "source",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "unknown",
+              "value": null,
+              "resolution": null,
+              "evidence": []
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E25-2",
+                  "source_id": "SYNTHETIC-E25-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E25-3",
+                  "source_id": "SYNTHETIC-E25-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [
+          "mandatory_requirements"
+        ],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E26",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E26",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Excel",
+              "Python بمستوى متوسط على الأقل"
+            ],
+            "quote": "يشترط Excel، وPython بمستوى متوسط على الأقل."
+          }
+        },
+        "profile": {
+          "skills": [
+            {
+              "name": "Python",
+              "level": "beginner"
+            }
+          ]
+        },
+        "expected_status": "ineligible",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E26",
+        "evidence_version": "sha256:bab0016582c96b84506de134a9a2b0fa5aaf05edd6b62e95e2ed84f10d2dd46b",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:cea1f511a98328831ee2cba0867e20b888023f0ac7384730c8af4cc6c8408021",
+        "status": "ineligible",
+        "public_eligibility_status": null,
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E26-2",
+                  "source_id": "SYNTHETIC-E26-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E26-4",
+                  "source_id": "SYNTHETIC-E26-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel",
+                "Python بمستوى متوسط على الأقل"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E26-3",
+                  "source_id": "SYNTHETIC-E26-SOURCE",
+                  "quote": "يشترط Excel، وPython بمستوى متوسط على الأقل.",
+                  "asserted_value": [
+                    "Excel",
+                    "Python بمستوى متوسط على الأقل"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": null,
+              "profile_field": "profile.skills"
+            },
+            "user_field": "profile.skills",
+            "question": "هل تمتلك مهارة Excel؟ وجود مهارات أخرى لا يحسم امتلاكها.",
+            "status": "unknown",
+            "reason_code": "required_skill_not_in_partial_profile",
+            "missing_origin": "user"
+          },
+          {
+            "id": "required_skills:1",
+            "mandatory": true,
+            "requirement_text": "Python بمستوى متوسط على الأقل",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel",
+                "Python بمستوى متوسط على الأقل"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E26-3",
+                  "source_id": "SYNTHETIC-E26-SOURCE",
+                  "quote": "يشترط Excel، وPython بمستوى متوسط على الأقل.",
+                  "asserted_value": [
+                    "Excel",
+                    "Python بمستوى متوسط على الأقل"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Python",
+              "minimum_level": "intermediate",
+              "profile_field": "profile.skills"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "failed",
+            "reason_code": "skill_level_below_required_minimum",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E27",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E27",
+        "record": "synthetic",
+        "overrides": {
+          "mandatory_requirements": {
+            "value": [
+              "يشترط إجادة إكسل بمستوى متوسط على الأقل"
+            ],
+            "quote": "يشترط إجادة إكسل بمستوى متوسط على الأقل."
+          }
+        },
+        "profile": {
+          "skills": [
+            {
+              "name": "Excel",
+              "level": "intermediate"
+            }
+          ]
+        },
+        "expected_status": "confirmed",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E27",
+        "evidence_version": "sha256:ed4d38ce0eb9f8d67d4f482089b9f0a1a3f3c4affcd7c6879dba63c5c9ea21e9",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:a5d8171f7bd3be05091d861d732df5f0edb0937edbb0ba1208c933183b074c50",
+        "status": "confirmed",
+        "public_eligibility_status": "confirmed",
+        "checks": [
+          {
+            "id": "required_skills",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E27-3",
+                  "source_id": "SYNTHETIC-E27-SOURCE",
+                  "quote": "لا توجد مهارات مطلوبة.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E27-4",
+                  "source_id": "SYNTHETIC-E27-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "يشترط إجادة إكسل بمستوى متوسط على الأقل",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "يشترط إجادة إكسل بمستوى متوسط على الأقل"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E27-2",
+                  "source_id": "SYNTHETIC-E27-SOURCE",
+                  "quote": "يشترط إجادة إكسل بمستوى متوسط على الأقل.",
+                  "asserted_value": [
+                    "يشترط إجادة إكسل بمستوى متوسط على الأقل"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": "intermediate",
+              "profile_field": "profile.skills"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "passed",
+            "reason_code": "requirement_satisfied",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    },
+    {
+      "id": "E28",
+      "record_kind": "synthetic",
+      "passed": true,
+      "expected": {
+        "id": "E28",
+        "record": "synthetic",
+        "overrides": {
+          "required_skills": {
+            "value": [
+              "Excel"
+            ],
+            "quote": "المهارة المطلوبة Excel."
+          }
+        },
+        "profile": {
+          "skills": [
+            {
+              "name": "Excel",
+              "level": null
+            }
+          ]
+        },
+        "expected_status": "confirmed",
+        "expected_missing": []
+      },
+      "actual": {
+        "opportunity_id": "SYNTHETIC-E28",
+        "evidence_version": "sha256:7e771f874340760657266c6d62982129439bae3d0ae56ee4ed77663c72af8e0c",
+        "policy_version": "eligibility-v1",
+        "profile_version": "sha256:3bcf7bddab8f5ff9ad1b2d212ec1ac87d8c825281c6ca8cac834b4997e5b3ce3",
+        "status": "confirmed",
+        "public_eligibility_status": "confirmed",
+        "checks": [
+          {
+            "id": "mandatory_requirements",
+            "mandatory": true,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E28-2",
+                  "source_id": "SYNTHETIC-E28-SOURCE",
+                  "quote": "لا توجد شروط أهلية إلزامية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "preferred_requirements",
+            "mandatory": false,
+            "status": "passed",
+            "reason_code": "explicitly_no_requirements_in_category",
+            "missing_origin": null,
+            "source": {
+              "field": "preferred_requirements",
+              "status": "known",
+              "value": [],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E28-4",
+                  "source_id": "SYNTHETIC-E28-SOURCE",
+                  "quote": "لا توجد تفضيلات إضافية.",
+                  "asserted_value": []
+                }
+              ]
+            },
+            "rule": null,
+            "user_field": null,
+            "question": null
+          },
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E28-3",
+                  "source_id": "SYNTHETIC-E28-SOURCE",
+                  "quote": "المهارة المطلوبة Excel.",
+                  "asserted_value": [
+                    "Excel"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": null,
+              "profile_field": "profile.skills"
+            },
+            "user_field": null,
+            "question": null,
+            "status": "passed",
+            "reason_code": "requirement_satisfied",
+            "missing_origin": null
+          }
+        ],
+        "user_missing_fields": [],
+        "user_information_gaps": [],
+        "non_user_blockers": [],
+        "eligible_for_question_selection": false,
+        "unchecked": [
+          "semantic_relevance",
+          "structured_constraints",
+          "current_registration_verification",
+          "query_profile_conflict_resolution",
+          "general_requirement_interpretation"
+        ]
+      }
+    }
+  ],
+  "question_results": [
+    {
+      "id": "Q01",
+      "passed": true,
+      "expected": {
+        "id": "Q01",
+        "candidates": [
+          {
+            "case": "E06",
+            "id": "A",
+            "topic": "related",
+            "constraints": "constraints_satisfied"
+          }
+        ],
+        "expected_decision": "ask_user",
+        "expected_fields": [
+          "profile.skills"
+        ],
+        "expected_candidate": "A"
+      },
+      "actual": {
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "missing_fields": [
+          "profile.skills"
+        ],
+        "missing_explanations": [
+          "هل تمتلك مهارة Excel؟ حددها في قسم المهارات أو اختر عدم امتلاك مهارات من القائمة."
+        ],
+        "selected_candidate_id": "SYNTHETIC-E06",
+        "evidence_version": "sha256:305eb062cb380ddd50a09fc5f464d7a3cf56e74c8f8bff0ac7669b981211b76a",
+        "question_checks": [
+          {
+            "id": "required_skills:0",
+            "mandatory": true,
+            "requirement_text": "Excel",
+            "source": {
+              "field": "required_skills",
+              "status": "known",
+              "value": [
+                "Excel"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E06-3",
+                  "source_id": "SYNTHETIC-E06-SOURCE",
+                  "quote": "المهارة المطلوبة Excel.",
+                  "asserted_value": [
+                    "Excel"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "skill",
+              "value": "Excel",
+              "minimum_level": null,
+              "profile_field": "profile.skills"
+            },
+            "user_field": "profile.skills",
+            "question": "هل تمتلك مهارة Excel؟ حددها في قسم المهارات أو اختر عدم امتلاك مهارات من القائمة.",
+            "status": "unknown",
+            "reason_code": "skills_not_answered",
+            "missing_origin": "user"
+          }
+        ],
+        "decision": "ask_user"
+      },
+      "selected_fixture_candidate": "A",
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q02",
+      "passed": true,
+      "expected": {
+        "id": "Q02",
+        "candidates": [
+          {
+            "case": "E05",
+            "id": "A",
+            "topic": "related",
+            "constraints": "constraints_satisfied"
+          },
+          {
+            "case": "E06",
+            "id": "B",
+            "topic": "related",
+            "constraints": "constraints_satisfied"
+          }
+        ],
+        "expected_decision": "eligible_candidates_available",
+        "expected_fields": []
+      },
+      "actual": {
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "missing_fields": [],
+        "missing_explanations": [],
+        "selected_candidate_id": null,
+        "evidence_version": null,
+        "question_checks": [],
+        "decision": "eligible_candidates_available"
+      },
+      "selected_fixture_candidate": null,
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q03",
+      "passed": true,
+      "expected": {
+        "id": "Q03",
+        "candidates": [
+          {
+            "case": "E06",
+            "id": "A",
+            "topic": "unrelated",
+            "constraints": "constraints_satisfied"
+          }
+        ],
+        "expected_decision": "no_viable_candidates",
+        "expected_fields": []
+      },
+      "actual": {
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "missing_fields": [],
+        "missing_explanations": [],
+        "selected_candidate_id": null,
+        "evidence_version": null,
+        "question_checks": [],
+        "decision": "no_viable_candidates"
+      },
+      "selected_fixture_candidate": null,
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q04",
+      "passed": true,
+      "expected": {
+        "id": "Q04",
+        "candidates": [
+          {
+            "case": "E06",
+            "id": "A",
+            "topic": "related",
+            "constraints": "excluded"
+          }
+        ],
+        "expected_decision": "no_viable_candidates",
+        "expected_fields": []
+      },
+      "actual": {
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "missing_fields": [],
+        "missing_explanations": [],
+        "selected_candidate_id": null,
+        "evidence_version": null,
+        "question_checks": [],
+        "decision": "no_viable_candidates"
+      },
+      "selected_fixture_candidate": null,
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q05",
+      "passed": true,
+      "expected": {
+        "id": "Q05",
+        "candidates": [
+          {
+            "case": "E07",
+            "id": "A",
+            "topic": "related",
+            "constraints": "constraints_satisfied"
+          }
+        ],
+        "expected_decision": "no_actionable_question",
+        "expected_fields": []
+      },
+      "actual": {
+        "profile_version": "sha256:0507e5be5f69c9865a4a2e841681ef5f8e6f36df48adf461c25cdf792938e983",
+        "missing_fields": [],
+        "missing_explanations": [],
+        "selected_candidate_id": null,
+        "evidence_version": null,
+        "question_checks": [],
+        "decision": "no_actionable_question"
+      },
+      "selected_fixture_candidate": null,
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q06",
+      "passed": true,
+      "expected": {
+        "id": "Q06",
+        "candidates": [
+          {
+            "case": "E15",
+            "id": "A",
+            "topic": "related",
+            "constraints": "constraints_satisfied"
+          }
+        ],
+        "expected_decision": "no_actionable_question",
+        "expected_fields": []
+      },
+      "actual": {
+        "profile_version": "sha256:a4e3637e7f1a96b33d40e16b2f29c4869aaa634b13bb5fd9abdee5163b0d0130",
+        "missing_fields": [],
+        "missing_explanations": [],
+        "selected_candidate_id": null,
+        "evidence_version": null,
+        "question_checks": [],
+        "decision": "no_actionable_question"
+      },
+      "selected_fixture_candidate": null,
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q07",
+      "passed": true,
+      "expected": {
+        "id": "Q07",
+        "candidates": [
+          {
+            "case": "E01",
+            "id": "A",
+            "topic": "related",
+            "constraints": "constraints_satisfied"
+          }
+        ],
+        "expected_decision": "no_actionable_question",
+        "expected_fields": []
+      },
+      "actual": {
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "missing_fields": [],
+        "missing_explanations": [],
+        "selected_candidate_id": null,
+        "evidence_version": null,
+        "question_checks": [],
+        "decision": "no_actionable_question"
+      },
+      "selected_fixture_candidate": null,
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q08",
+      "passed": true,
+      "expected": {
+        "id": "Q08",
+        "candidates": [
+          {
+            "case": "E14",
+            "id": "A",
+            "topic": "related",
+            "constraints": "constraints_satisfied"
+          },
+          {
+            "case": "E19",
+            "id": "B",
+            "topic": "related",
+            "constraints": "constraints_satisfied"
+          }
+        ],
+        "expected_decision": "ask_user",
+        "expected_fields": [
+          "profile.education_level"
+        ],
+        "expected_candidate": "A"
+      },
+      "actual": {
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "missing_fields": [
+          "profile.education_level"
+        ],
+        "missing_explanations": [
+          "حدد مستواك التعليمي للتحقق من الشرط: المستوى التعليمي المطلوب: بكالوريوس"
+        ],
+        "selected_candidate_id": "SYNTHETIC-E14",
+        "evidence_version": "sha256:3324fe66cdb154df0ec539a013a6bfaa3caca28bb777990139c234b23992135c",
+        "question_checks": [
+          {
+            "id": "mandatory_requirements:0",
+            "mandatory": true,
+            "requirement_text": "المستوى التعليمي المطلوب: بكالوريوس",
+            "source": {
+              "field": "mandatory_requirements",
+              "status": "known",
+              "value": [
+                "المستوى التعليمي المطلوب: بكالوريوس"
+              ],
+              "resolution": null,
+              "evidence": [
+                {
+                  "evidence_id": "SYNTHETIC-E14-2",
+                  "source_id": "SYNTHETIC-E14-SOURCE",
+                  "quote": "المستوى التعليمي المطلوب: بكالوريوس.",
+                  "asserted_value": [
+                    "المستوى التعليمي المطلوب: بكالوريوس"
+                  ]
+                }
+              ]
+            },
+            "rule": {
+              "kind": "education",
+              "value": "bachelor",
+              "operator": "match_or_review",
+              "profile_field": "profile.education_level"
+            },
+            "user_field": "profile.education_level",
+            "question": "حدد مستواك التعليمي للتحقق من الشرط: المستوى التعليمي المطلوب: بكالوريوس",
+            "status": "unknown",
+            "reason_code": "required_profile_field_not_established",
+            "missing_origin": "user"
+          }
+        ],
+        "decision": "ask_user"
+      },
+      "selected_fixture_candidate": "A",
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q09",
+      "passed": true,
+      "expected": {
+        "id": "Q09",
+        "candidates": [
+          {
+            "case": "E06",
+            "id": "A",
+            "topic": "related",
+            "constraints": "needs_source_info"
+          }
+        ],
+        "expected_decision": "no_viable_candidates",
+        "expected_fields": []
+      },
+      "actual": {
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "missing_fields": [],
+        "missing_explanations": [],
+        "selected_candidate_id": null,
+        "evidence_version": null,
+        "question_checks": [],
+        "decision": "no_viable_candidates"
+      },
+      "selected_fixture_candidate": null,
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    },
+    {
+      "id": "Q10",
+      "passed": true,
+      "expected": {
+        "id": "Q10",
+        "candidates": [
+          {
+            "case": "E06",
+            "id": "A",
+            "topic": "insufficient_evidence",
+            "constraints": "constraints_satisfied"
+          }
+        ],
+        "expected_decision": "no_viable_candidates",
+        "expected_fields": []
+      },
+      "actual": {
+        "profile_version": "sha256:14e1e64469aa9f32fe2b4e7c30bc26f1e2cd612cb7351ce41a890e1bdba60870",
+        "missing_fields": [],
+        "missing_explanations": [],
+        "selected_candidate_id": null,
+        "evidence_version": null,
+        "question_checks": [],
+        "decision": "no_viable_candidates"
+      },
+      "selected_fixture_candidate": null,
+      "scope": "Simulated upstream gates for question selection, not a retrieval/HTTP test."
+    }
+  ]
+}

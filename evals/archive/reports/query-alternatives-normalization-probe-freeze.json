@@ -1,0 +1,18 @@
+{
+  "scope": "Exposed development probe only; no held-out queries, threshold or candidate text changes.",
+  "queries": [
+    "تعلم Excel",
+    "تعلم SQL",
+    "تعلم Python",
+    "تعلم استخدام Excel",
+    "تعلم استخدام SQL",
+    "تعلم استخدام Python",
+    "Learning Excel",
+    "Learning SQL",
+    "Learning Python",
+    "Try Excel",
+    "Try SQL",
+    "Try Python"
+  ],
+  "artifact_sha256": "sha256:c617bff2731c6bade275ad7b6adedcf0ca77947e43220587ca67cf40345a19df"
+}

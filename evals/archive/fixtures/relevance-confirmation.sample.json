@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "scope": "Fresh query evaluation for title-based verification after discovering full-document threshold recall loss. Same four opportunity documents; not an independent full-corpus benchmark.",
+  "rule": "Labels are written before title scoring. Calibration uses CAL cases from relevance-eval.sample.json only. Earlier EVAL cases are diagnostic, not a fresh held-out set.",
+  "queries": [
+    {"id":"CONF-01","query":"ورشة لتحسين ترجمة الشروحات التعليمية","relevant_ids":["OPP-DEMO-001","OPP-DEMO-002"]},
+    {"id":"CONF-02","query":"تطوير مهارتي في ترجمة محتوى للطلاب","relevant_ids":["OPP-DEMO-001","OPP-DEMO-002"]},
+    {"id":"CONF-03","query":"تدريب عملي على ترجمة دروس تعليمية","relevant_ids":["OPP-DEMO-001","OPP-DEMO-002"]},
+    {"id":"CONF-04","query":"أبي أكتب قصة وأنتج لها تسجيل صوتي","relevant_ids":["OPP-DEMO-003"]},
+    {"id":"CONF-05","query":"ورشة لإنتاج حكاية قصيرة مسجلة بالصوت","relevant_ids":["OPP-DEMO-003"]},
+    {"id":"CONF-06","query":"أحتاج تعلم Excel لتحليل جداول بيانات","relevant_ids":["OPP-DEMO-004"]},
+    {"id":"CONF-07","query":"تنظيم بيانات في إكسل واستخراج مؤشرات منها","relevant_ids":["OPP-DEMO-004"]},
+    {"id":"CONF-08","query":"تأليف نص لحكاية ثم تسجيل مقاطعها","relevant_ids":["OPP-DEMO-003"]},
+    {"id":"CONF-09","query":"ورشة تعلم صنع المعجنات والمخبوزات","relevant_ids":[]},
+    {"id":"CONF-10","query":"تدريب للتعامل مع النزيف والجروح","relevant_ids":[]},
+    {"id":"CONF-11","query":"تعلم شبكات الحاسب وإعداد الراوترات","relevant_ids":[]},
+    {"id":"CONF-12","query":"أبي أتعلم رسم الشخصيات والتحريك ثلاثي الأبعاد","relevant_ids":[]},
+    {"id":"CONF-13","query":"تدريب لإدارة المخزون والمشتريات","relevant_ids":[]},
+    {"id":"CONF-14","query":"تعلم صيانة السيارات وأعطال المحركات","relevant_ids":[]},
+    {"id":"CONF-15","query":"دورة تصميم تطبيقات الجوال باستخدام Flutter","relevant_ids":[]},
+    {"id":"CONF-16","query":"ورشة خياطة وتصميم أزياء","relevant_ids":[]}
+  ]
+}

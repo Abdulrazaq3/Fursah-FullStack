@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "scope": "Joint request/activity relevance; not constraints, eligibility or registration. Existing CAL queries on four original opportunities calibrate the policy. All earlier EVAL/CONF queries are diagnostic only. Fresh queries test eight candidates, including four unseen source-backed activities. Labels frozen before inference, manually authored by the implementer.",
+  "raw_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+  "acceptance_rule": "No accepted false-positive candidates and at least one accepted relevant candidate for every positive fresh query. Uncertain results are not accepted. No retuning after fresh evaluation.",
+  "added_candidates": [
+    {"opportunity_id":"TOPIC-SRC-0001","source_ids":["SRC-0001"],"excerpts":[
+      {"role":"title","source_id":"SRC-0001","quote":"خدمة العملاء في المتاجر من الفكرة إلى التطبيق"},
+      {"role":"activity","source_id":"SRC-0001","quote":"تتنافس الفرق في فهم الطلبات وصياغة الردود، وتعرض مقترحاتها على لجنة في نهاية الفترة."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0002","source_ids":["SRC-0002"],"excerpts":[
+      {"role":"title","source_id":"SRC-0002","quote":"الكتابة العربية الواضحة خطوة بخطوة"},
+      {"role":"activity","source_id":"SRC-0002","quote":"في الجزء الأول نتعرف إلى الفكرة، وبعده نجرب تحرير رسائل قصيرة لجمهور متنوع."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0003","source_ids":["SRC-0003"],"excerpts":[
+      {"role":"title","source_id":"SRC-0003","quote":"ترشيد المياه في المباني في الممارسة"},
+      {"role":"activity","source_id":"SRC-0003","quote":"يعمل المشاركون على فحص أمثلة من استهلاك المياه قبل تبادل المقترحات مع بقية الحضور."}
+    ]},
+    {"opportunity_id":"TOPIC-SRC-0005","source_ids":["SRC-0005"],"excerpts":[
+      {"role":"title","source_id":"SRC-0005","quote":"استعلامات SQL للبيانات"},
+      {"role":"activity","source_id":"SRC-0005","quote":"في الجزء الأول نتعرف إلى الفكرة، وبعده نجرب طرح الأسئلة على الجداول."}
+    ]}
+  ],
+  "fresh_queries": [
+    {"id":"JOINT-01","query":"أبغى أتدرب على ترجمة شرح دراسي وتحرير مصطلحاته","relevant_ids":["OPP-DEMO-001","OPP-DEMO-002"]},
+    {"id":"JOINT-02","query":"تحسين ترجمتي للنصوص المستخدمة في التعليم","relevant_ids":["OPP-DEMO-001","OPP-DEMO-002"]},
+    {"id":"JOINT-03","query":"أبحث عن نشاط أكتب فيه حكاية وأسجلها بصوتي","relevant_ids":["OPP-DEMO-003"]},
+    {"id":"JOINT-04","query":"تدريب عملي يجمع تأليف قصة قصيرة وإنتاجها صوتيا","relevant_ids":["OPP-DEMO-003"]},
+    {"id":"JOINT-05","query":"أحتاج تطبيق ترتيب جداول البيانات وتحليلها ببرنامج إكسل","relevant_ids":["OPP-DEMO-004"]},
+    {"id":"JOINT-06","query":"استخدام Excel لفهم مؤشرات البيانات","relevant_ids":["OPP-DEMO-004"]},
+    {"id":"JOINT-07","query":"أبي أصيغ ردودا أفضل لطلبات زبائن المتجر","relevant_ids":["TOPIC-SRC-0001"]},
+    {"id":"JOINT-08","query":"تطوير خدمة العملاء في المتاجر بفهم طلباتهم والرد عليها","relevant_ids":["TOPIC-SRC-0001"]},
+    {"id":"JOINT-09","query":"أريد كتابة رسائل عربية قصيرة وواضحة لجمهور متنوع","relevant_ids":["TOPIC-SRC-0002"]},
+    {"id":"JOINT-10","query":"تحرير مراسلات عربية بلغة يسهل فهمها","relevant_ids":["TOPIC-SRC-0002"]},
+    {"id":"JOINT-11","query":"أبحث عن نشاط لفهم استهلاك المياه داخل المباني وترشيده","relevant_ids":["TOPIC-SRC-0003"]},
+    {"id":"JOINT-12","query":"فحص أمثلة عملية لتقليل هدر الماء في المبنى","relevant_ids":["TOPIC-SRC-0003"]},
+    {"id":"JOINT-13","query":"أبي أكتب استعلامات SQL للحصول على بيانات من الجداول","relevant_ids":["TOPIC-SRC-0005"]},
+    {"id":"JOINT-14","query":"التدرب على طرح أسئلة على قاعدة البيانات باستعلامات SQL","relevant_ids":["TOPIC-SRC-0005"]},
+    {"id":"JOINT-15","query":"تدريب على صنع الكعك وتزيين الحلويات","relevant_ids":[]},
+    {"id":"JOINT-16","query":"أبي أتعلم إنعاش القلب والإسعافات الأولية","relevant_ids":[]},
+    {"id":"JOINT-17","query":"تعلم برمجة مواقع الويب بلغة Python","relevant_ids":[]},
+    {"id":"JOINT-18","query":"مونتاج مقاطع الفيديو وإضافة مؤثرات بصرية","relevant_ids":[]},
+    {"id":"JOINT-19","query":"ورشة لتصميم الشخصيات ثلاثية الأبعاد","relevant_ids":[]},
+    {"id":"JOINT-20","query":"تدريب على كتابة الشعر ونقد القصائد","relevant_ids":[]},
+    {"id":"JOINT-21","query":"إدارة خوادم SQL وتثبيتها وإصلاح أعطالها","relevant_ids":[]},
+    {"id":"JOINT-22","query":"تعلم إصلاح مواسير المياه وتركيب الأدوات الصحية","relevant_ids":[]}
+  ]
+}

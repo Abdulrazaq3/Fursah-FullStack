@@ -1,0 +1,155 @@
+{
+  "run": "catalog-baseline-v1",
+  "cases": 12,
+  "outcomes": {
+    "PASS": 9,
+    "FAIL": 3
+  },
+  "metrics": {
+    "e2e.status": {
+      "mean": 0.75,
+      "n": 12,
+      "failing_cases": [
+        "CAT-DEV-05",
+        "CAT-DEV-09",
+        "CAT-DEV-10"
+      ]
+    },
+    "retrieval.recall_at_20": {
+      "mean": 0.8213464696223317,
+      "n": 10,
+      "failing_cases": [
+        "CAT-DEV-01",
+        "CAT-DEV-02",
+        "CAT-DEV-03",
+        "CAT-DEV-04",
+        "CAT-DEV-05",
+        "CAT-DEV-08"
+      ]
+    },
+    "rerank.ndcg_at_20": {
+      "mean": 1.0,
+      "n": 10,
+      "failing_cases": []
+    },
+    "final.precision_at_3": {
+      "mean": 1.0,
+      "n": 7,
+      "failing_cases": []
+    },
+    "final.hit_at_3": {
+      "mean": 1.0,
+      "n": 8,
+      "failing_cases": []
+    },
+    "final.hard_constraints": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "final.evidence": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "details.consistency": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "final.grounded_reason": {
+      "mean": 1.0,
+      "n": 11,
+      "failing_cases": []
+    },
+    "tracing.coverage": {
+      "mean": 1.0,
+      "n": 12,
+      "failing_cases": []
+    },
+    "understanding.constraints": {
+      "mean": 1.0,
+      "n": 3,
+      "failing_cases": []
+    },
+    "final.forbidden": {
+      "mean": 0.6666666666666666,
+      "n": 3,
+      "failing_cases": [
+        "CAT-DEV-05"
+      ]
+    },
+    "retrieval.target_coverage": {
+      "mean": 1.0,
+      "n": 1,
+      "failing_cases": []
+    },
+    "e2e.missing_fields": {
+      "mean": 1.0,
+      "n": 1,
+      "failing_cases": []
+    }
+  },
+  "latency_seconds": {
+    "mean": 30.09856614165862,
+    "max": 40.59814560005907,
+    "samples": 12
+  },
+  "stage_seconds": {
+    "fursah.understanding": {
+      "mean": 7.9029869,
+      "total": 94.83584280000001,
+      "samples": 12
+    },
+    "fursah.embedding": {
+      "mean": 6.3814140272727276,
+      "total": 70.1955543,
+      "samples": 11
+    },
+    "fursah.retrieval": {
+      "mean": 0.11091098181818182,
+      "total": 1.2200208,
+      "samples": 11
+    },
+    "fursah.rerank": {
+      "mean": 17.391571827272728,
+      "total": 191.30729010000005,
+      "samples": 11
+    },
+    "fursah.requirements": {
+      "mean": 2.040818181818182e-05,
+      "total": 0.0044897999999999995,
+      "samples": 220
+    },
+    "fursah.selection": {
+      "mean": 0.10427861818181818,
+      "total": 1.1470647999999999,
+      "samples": 11
+    },
+    "fursah.candidate_check": {
+      "mean": 0.0009258709090909091,
+      "total": 0.20369159999999994,
+      "samples": 220
+    },
+    "fursah.details": {
+      "mean": 0.07398519230769231,
+      "total": 1.9236150000000003,
+      "samples": 26
+    }
+  },
+  "token_totals": {
+    "llm.input_tokens": 9168,
+    "llm.output_tokens": 867
+  },
+  "trace_export": "memory",
+  "evaluation_time": "2026-10-22T12:00:00+03:00",
+  "cases_sha256": "5ad0c74b7006330eb26218c8e27928299b6efeab880eb1897cc0551ee2a1e961",
+  "graders_sha256": "ea38d0190794e202bf0e1b0836da6167a241b39c2113c8aa1e4522ca6b06c085",
+  "catalog_sha256": "8ffceaa65e6357c831b2bbea9e0d9052388ce37c9e4063b51d7e7c1c2627a194",
+  "absolute_rerank_score_cutoff": 0.0,
+  "production_approval": false,
+  "holdout_evaluated": false,
+  "manifest_sha256": "b0744f601f58d3265284a94a585602104b8488bbcc3d3d30f6bd4d50f13d2032",
+  "results_file": "D:\\Disktop\\fursah-fullstack\\backend\\evals\\results\\20261022-172811-catalog-baseline-v1.jsonl",
+  "traces_file": "D:\\Disktop\\fursah-fullstack\\backend\\evals\\results\\20261022-172811-catalog-baseline-v1.traces.jsonl"
+}

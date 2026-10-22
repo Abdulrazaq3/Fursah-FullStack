@@ -1,0 +1,30 @@
+{
+  "tested_at": "2026-10-22T13:07:45.586Z",
+  "scope": "One live UI search, local BGE/PostgreSQL and background Gemini comparison; not a quality benchmark.",
+  "checks": [
+    {
+      "case": "browser-to-api-to-real-models-and-db",
+      "passed": true,
+      "http_status": 200,
+      "status": "ok",
+      "request_id": "b60a4bcc-c6bb-4b9d-a861-15cd3c50f151",
+      "seconds": 16.212,
+      "recommendation_id": "OPP-DEMO-004"
+    },
+    {
+      "case": "details-preserve-source-and-evidence-version",
+      "passed": true
+    },
+    {
+      "case": "live-gemini-shadow-comparison",
+      "passed": true,
+      "outcome": "matches_reference;model=google/gemini-3.8-flash;input_tokens=212;output_tokens=68",
+      "elapsed_ms": 13530.999999959022
+    },
+    {
+      "case": "no-browser-errors",
+      "passed": true,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "frozen_at": "2026-10-19T19:12:16.572275+00:00",
+  "binding": {
+    "policy_version": "eligibility-v1",
+    "fixture_sha256": "sha256:790ea024d88ff02e77cca810107ae4a9a5271e411e26c4347cd2819896448cbb",
+    "sample_sha256": "sha256:e1d59ca25236cbc1697d5e0342ebfff7e0637e2ec384a738ae5f38357c45c4ea",
+    "indexed_sha256": "sha256:89a9c706ff6ba6614222e07103998c3890544d8c7ba46711b6d2c1020866bf0a",
+    "raw_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+    "code_sha256": {
+      "backend/app/eligibility.py": "7f763bb0b6807013db72ea9aa9a3737dc28284295885662faa80a17f1bf7d73f",
+      "backend/app/eligibility_catalog.json": "ae0367eba8459cc0604889249740a99ce985b2f6ca030ececd3ce41cfd76716e",
+      "backend/app/details.py": "e09b748bf0d7ef0cef2da62b3f5aebfd673fb862e9e9530cd47ff41b746f6361",
+      "backend/app/schemas.py": "14d1c00cd956e5682446557d062995fb6369243badf21454b0f9ba56537b6360",
+      "backend/app/request_requirements.py": "d3365aaf8ab145eadbdaa18c2d4aa110ceac9eca78b68b8dbabf393e51230ee8",
+      "experiments/evaluate_constraints.py": "3b1f3f6c371db2f47ced60e2f7780626b984953b318d1356f9ae78f2ecaa73a4",
+      "experiments/evaluate_eligibility.py": "526e0e1c9b0ee0ffc4173ee9919a689f745fb4467b219548049a6184f33a73f5",
+      "frontend/src/profile/choices.ts": "76546b7b812818e36dafff77bbf85589a33764e03a1f480023cd0c6251398f95",
+      "frontend/src/labels.ts": "2281ab812d573a7aeb02f1053c5154eebd23384dfe5920c7ad6c5da068a92a17"
+    }
+  },
+  "scope": "Author-written deterministic cases, not general language accuracy.",
+  "artifact_sha256": "sha256:0b943a480b1e6a49b0df1ee1392e2a13375ca701b1910ce76f67254fa35a15a1"
+}

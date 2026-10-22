@@ -1,113 +1,71 @@
-![SAAI — Learn AI by building](docs/assets/saai-header.png)
+![SAAI — Learn AI by building](frontend/readme-header.png)
 
 **English** | [العربية](README.ar.md)
 
 # FURSAH — فرصة
 
-An opportunity recommendation application that connects a person's profile, interests and constraints with source-supported opportunities. This workspace brings together the frontend, API, data, experiments and the decisions behind the system.
+An opportunity recommendation app over a local catalog of **913 opportunities**: the 1,000 supplied announcements grouped into 900 opportunities, plus 13 saved additions.
 
-**Current milestone:** local semantic retrieval works on a small documented sample. The frontend reaches the API; the recommendation workflow and details implementation are still pending.
+React → FastAPI → Gemini request understanding → BGE-M3 embeddings → PostgreSQL/pgvector → BGE reranking → source, constraint and eligibility checks. Requests search the saved catalog; they do not fetch opportunities from external sites.
 
-[Start locally](#start) · [Guides](#guides) · [Project map](#map) · [Current status](#status)
+## Run the existing workspace
 
----
-
-<a id="start"></a>
-## Start locally
-
-Run these commands from `fursah-fullstack/`. The supplied scripts use Windows PowerShell, Python 3.11 and Node.js 22 with npm.
-
-**1. Prepare the frontend and API dependencies**
+Open **PowerShell** in this folder. Start the API and interface in separate terminals:
 
 ```powershell
-.\scripts\setup-fullstack.ps1
+.\backend\run.ps1 -Port 8019
 ```
-
-**2. Start the API in one terminal**
 
 ```powershell
-.\scripts\start-backend.ps1
+npm --prefix frontend run dev
 ```
 
-**3. Start the interface in a second terminal**
+Interface: [127.0.0.1:5173](http://127.0.0.1:5173). API: [127.0.0.1:8019/docs](http://127.0.0.1:8019/docs). The frontend's local API target must match the backend port. Existing `.env` files, database and model cache stay in place.
+
+## Evaluation in Phoenix
+
+Start at [instrumentation](backend/app/instrumentation/README.md), run the eval, then inspect **fursah-eval** in Phoenix:
 
 ```powershell
-.\scripts\start-frontend.ps1
+.\evals\run.ps1 -Demo -Open
 ```
 
-| Open | Address | What to expect |
-|---|---|---|
-| Interface | [127.0.0.1:5173](http://127.0.0.1:5173) | Profile, constraints and search form |
-| API documentation | [127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) | Request and response contracts |
-| Liveness | [127.0.0.1:8000/health](http://127.0.0.1:8000/health) | HTTP 200 |
-| Application readiness | [127.0.0.1:8000/ready](http://127.0.0.1:8000/ready) | HTTP 503 until storage and workflow integration are complete |
+The demo selects three cases. For all twelve development cases:
 
-Stop either server with **Ctrl+C**. This setup does not download a model or start the retrieval database. A search currently returns `FURSAH_NOT_IMPLEMENTED`; the frontend displays that state.
+```powershell
+.\evals\run.ps1 -Label full-dev -Open
+```
 
-<a id="guides"></a>
-## Follow the project
+Open saved traces without rerunning models: `.\evals\phoenix.ps1 -Open`. Regression checks: `.\evals\test.ps1`. See the [eval guide](evals/README.md).
 
-| Step | Guide | What it explains |
-|---|---|---|
-| 1. Understand the design | [Design and decisions](docs/README.md) | Responsibilities, data contracts and build notes |
-| 2. Understand the evidence | [Data](data/README.md) | Raw announcements, original sources and preparation |
-| 3. Inspect retrieval | [Experiments](experiments/README.md) | Local embeddings, vector search and measured results |
-| 4. Connect the application | [Backend](backend/README.md) | API contracts, storage access and the pending workflow |
-| 5. Use the interface | [Frontend](frontend/README.md) | User input, HTTP requests and displayed states |
-| 6. Operate the workspace | [Scripts](scripts/README.md) | Setup, execution, checks and container commands |
+## First setup on another machine
 
-<a id="map"></a>
+Windows prerequisites: Python 3.11, Node.js 22, PostgreSQL 18 and Visual Studio C++ build tools for the local pgvector build.
+
+```powershell
+.\backend\setup.ps1 -Models -Evals -Frontend
+.\backend\scripts\setup-postgres.ps1
+.\.venv\Scripts\python.exe backend/scripts/download-model.py
+.\.venv\Scripts\python.exe backend/scripts/download-reranker.py
+.\.venv\Scripts\python.exe backend/scripts/prepare-catalog.py --publish
+```
+
+Create `backend/.env` from its example if it does not already exist. Add the OpenRouter key there; use `FURSAH_CATALOG_MODE=prepared` and `FURSAH_UNDERSTANDING_MODE=active`. Never commit keys. See [backend](backend/README.md) and [data](data/README.md).
+
 ## Project map
 
-```text
-fursah-fullstack/
-├── README.md / README.ar.md
-├── frontend/                 # React interface and HTTP client
-├── backend/                  # FastAPI service, contracts and tests
-├── data/                     # Raw announcements and preparation notebooks
-├── experiments/              # Independent retrieval experiment
-├── examples/                 # Hand-prepared records and evaluation queries
-├── results/                  # Measured reports and verification evidence
-├── docs/                     # Design, decisions and documentation assets
-├── scripts/                  # Setup and execution commands
-├── .github/workflows/        # CI definitions
-├── compose.yaml              # Frontend and API containers
-└── .local/                   # Local models and database files; excluded from Git
-```
+| Folder | Purpose |
+|---|---|
+| [frontend/](frontend/README.md) | Interface and API client |
+| [backend/](backend/README.md) | API, workflow, settings, model adapters and operational scripts |
+| [data/](data/README.md) | Raw sources, preparation helpers and saved catalog |
+| [evals/](evals/README.md) | Cases, graders, tests, run outputs, Phoenix and historical evaluation evidence |
+| `.local/` | Ignored local database, models, Phoenix state and cleanup backup |
 
-See [project structure](docs/project-structure.md) for boundaries and deployment preparation. Experiments remain separate from the API until their logic is integrated into the application.
+Settings used at runtime live in `backend/app/infrastructure/config.py` and `backend/.env`. Docker definitions remain in the root.
 
-<a id="status"></a>
 ## Current status
 
-Last reviewed: **16 October 2026**.
+Local integration is working. The original full development baseline passed **7/12** after independent source checks; the three-case demo reveals the known closed-registration failure. [Baseline report](evals/archive/reports/catalog-eval-baseline-v1-review.md).
 
-| Area | Status | Evidence or next task |
-|---|---|---|
-| Frontend and API transport | Verified locally | [Fullstack verification](docs/fullstack-verification.md) |
-| Raw evidence | 1,000 fictional announcements available | [Data guide](data/README.md) |
-| Local retrieval | Completed on four opportunities and eight queries | [Measured review](results/retrieval-review.md) |
-| Requests outside sample topics | Nearest neighbours still returned | Expand evaluation and implement relevance/abstention handling |
-| Constraints and eligibility | Designed; application integration pending | [Data model](docs/data-model.md) and [tool design](docs/agent-tools.md) |
-| Discovery and details API | Contract available; implementation pending | [Backend guide](backend/README.md) |
-| Container build and startup | Verified on GitHub Actions | [Build, startup and HTTP checks](https://github.com/Abdulrazaq3/Fursah-FullStack/actions/runs/38888508034); Docker is not installed locally |
-
-The first retrieval experiment reached **Recall@2 = 100% on six in-scope development queries**. The other two queries have no relevant opportunity in the sample. This does not establish full-corpus quality or production readiness.
-
-## Main components
-
-| Responsibility | Current choice |
-|---|---|
-| Interface | React, TypeScript and Vite |
-| HTTP API and validation | FastAPI and Pydantic |
-| Local embeddings experiment | BGE-M3 through SentenceTransformers; dense, 1024 dimensions |
-| Experiment storage and search | PostgreSQL with pgvector; exact cosine search |
-| Deployment definitions | Separate frontend/API images, nginx and Docker Compose |
-
-The reasoning model and orchestration framework remain decisions for application implementation.
-
-## Continue building
-
-We are in **stage 8: build, evaluate and improve** of the [build notes](fursah-ai-build-notes.md). Next, expand relevance evaluation, address unrelated results and connect constraints, evidence, registration and eligibility checks to the API workflow.
-
-**Next: [design and decisions](docs/README.md).**
+The next work is source availability, unrelated-result abstention, broader development coverage, latency and deployment validation. The independent six-case holdout remains sealed. `/ready` remains 503 until production approval; the current demo is not production approval.

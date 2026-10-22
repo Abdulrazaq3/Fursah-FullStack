@@ -1,0 +1,2 @@
+# Offline preparation uses the supplied data/preparation_helpers.py.
+pandas==3.1.0

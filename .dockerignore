@@ -1,12 +1,8 @@
 .git
 .local
 .venv
-FlagEmbedding
-results
-experiments
-docs
-examples
-scripts
+evals
+backend/scripts
 .github
 **/node_modules
 **/dist

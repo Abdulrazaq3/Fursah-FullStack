@@ -1,0 +1,52 @@
+{
+  "version":"1.0",
+  "scope":"Author-written deterministic eligibility and question-impact cases, defined before implementation. Four source-sample cases plus explicitly synthetic records. No neural inference or end-to-end eligibility accuracy claim.",
+  "synthetic_facts":{
+    "title":{"value":"فرصة أهلية مصطنعة للاختبار","quote":"العنوان: فرصة أهلية مصطنعة للاختبار."},
+    "mandatory_requirements":{"value":[],"quote":"لا توجد شروط أهلية إلزامية."},
+    "required_skills":{"value":[],"quote":"لا توجد مهارات مطلوبة."},
+    "preferred_requirements":{"value":[],"quote":"لا توجد تفضيلات إضافية."}
+  },
+  "cases":[
+    {"id":"E01","record":"OPP-DEMO-001","profile":{},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E02","record":"OPP-DEMO-002","profile":{},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E03","record":"OPP-DEMO-003","profile":{},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E04","record":"OPP-DEMO-004","profile":{},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E05","record":"synthetic","profile":{},"expected_status":"confirmed","expected_missing":[]},
+    {"id":"E06","record":"synthetic","overrides":{"required_skills":{"value":["Excel"],"quote":"المهارة المطلوبة Excel."}},"profile":{"skills":null},"expected_status":"uncertain","expected_missing":["profile.skills"]},
+    {"id":"E07","record":"synthetic","overrides":{"required_skills":{"value":["Excel"],"quote":"المهارة المطلوبة Excel."}},"profile":{"skills":[]},"expected_status":"ineligible","expected_missing":[]},
+    {"id":"E08","record":"synthetic","overrides":{"required_skills":{"value":["Excel بمستوى متوسط على الأقل"],"quote":"يشترط Excel بمستوى متوسط على الأقل."}},"profile":{"skills":[{"name":"Excel","level":"advanced"}]},"expected_status":"confirmed","expected_missing":[]},
+    {"id":"E09","record":"synthetic","overrides":{"required_skills":{"value":["Excel بمستوى متوسط على الأقل"],"quote":"يشترط Excel بمستوى متوسط على الأقل."}},"profile":{"skills":[{"name":"Excel","level":"beginner"}]},"expected_status":"ineligible","expected_missing":[]},
+    {"id":"E10","record":"synthetic","overrides":{"required_skills":{"value":["إكسل بمستوى متوسط على الأقل"],"quote":"يشترط إكسل بمستوى متوسط على الأقل."}},"profile":{"skills":[{"name":"Excel","level":null}]},"expected_status":"uncertain","expected_missing":["profile.skills"]},
+    {"id":"E11","record":"synthetic","overrides":{"required_skills":{"value":["Excel"],"quote":"المهارة المطلوبة Excel."}},"profile":{"skills":[{"name":"Python","level":"advanced"}]},"expected_status":"uncertain","expected_missing":["profile.skills"]},
+    {"id":"E12","record":"synthetic","overrides":{"mandatory_requirements":{"value":["المستوى التعليمي المطلوب: بكالوريوس فأعلى"],"quote":"المستوى التعليمي المطلوب: بكالوريوس فأعلى."}},"profile":{"education_level":"master"},"expected_status":"confirmed","expected_missing":[]},
+    {"id":"E13","record":"synthetic","overrides":{"mandatory_requirements":{"value":["المستوى التعليمي المطلوب: بكالوريوس فأعلى"],"quote":"المستوى التعليمي المطلوب: بكالوريوس فأعلى."}},"profile":{"education_level":"diploma"},"expected_status":"ineligible","expected_missing":[]},
+    {"id":"E14","record":"synthetic","overrides":{"mandatory_requirements":{"value":["المستوى التعليمي المطلوب: بكالوريوس"],"quote":"المستوى التعليمي المطلوب: بكالوريوس."}},"profile":{},"expected_status":"uncertain","expected_missing":["profile.education_level"]},
+    {"id":"E15","record":"synthetic","overrides":{"mandatory_requirements":{"value":["العمر لا يقل عن 18 سنة"],"quote":"العمر لا يقل عن 18 سنة."}},"profile":{"education_level":"bachelor"},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E16","record":"synthetic","overrides":{"mandatory_requirements":{"value":["يشترط أن يكون المتقدم طالبًا جامعيًا"],"quote":"يشترط أن يكون المتقدم طالبًا جامعيًا."}},"profile":{"education_level":"bachelor"},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E17","record":"synthetic","overrides":{"mandatory_requirements":{"value":["التخصص المطلوب: علوم الحاسب"],"quote":"التخصص المطلوب: علوم الحاسب."}},"profile":{"field_of_study":"علوم الحاسب"},"expected_status":"confirmed","expected_missing":[]},
+    {"id":"E18","record":"synthetic","overrides":{"mandatory_requirements":{"value":["التخصص المطلوب: علوم الحاسب"],"quote":"التخصص المطلوب: علوم الحاسب."}},"profile":{"field_of_study":"هندسة البرمجيات"},"expected_status":"ineligible","expected_missing":[]},
+    {"id":"E19","record":"synthetic","overrides":{"mandatory_requirements":{"value":["المدينة المطلوبة: الرياض"],"quote":"المدينة المطلوبة: الرياض."}},"profile":{},"expected_status":"uncertain","expected_missing":["profile.city"]},
+    {"id":"E20","record":"synthetic","overrides":{"preferred_requirements":{"value":["إجادة Excel"],"quote":"يفضل إجادة Excel، وليس شرطًا إلزاميًا."}},"profile":{"skills":[]},"expected_status":"confirmed","expected_missing":[]},
+    {"id":"E21","record":"synthetic","overrides":{"required_skills":{"status":"conflicted","value":null,"alternatives":[{"value":["Excel"],"quote":"يشترط Excel."},{"value":[],"quote":"لا توجد مهارات مطلوبة."}]}},"profile":{"skills":[]},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E22","record":"synthetic","overrides":{"required_skills":{"value":["Excel أو SQL"],"quote":"يشترط Excel أو SQL."}},"profile":{"skills":[{"name":"Excel","level":"advanced"}]},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E23","record":"synthetic","overrides":{"required_skills":{"value":["Rust"],"quote":"المهارة المطلوبة Rust."}},"profile":{},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E24","record":"synthetic","overrides":{"mandatory_requirements":{"value":["المستوى التعليمي المطلوب: بكالوريوس","المستوى التعليمي المطلوب: ماجستير"],"quote":"المستوى التعليمي المطلوب: بكالوريوس. المستوى التعليمي المطلوب: ماجستير."}},"profile":{"education_level":"bachelor"},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E25","record":"synthetic","overrides":{"mandatory_requirements":{"status":"unknown","value":null}},"profile":{},"expected_status":"uncertain","expected_missing":[]},
+    {"id":"E26","record":"synthetic","overrides":{"required_skills":{"value":["Excel","Python بمستوى متوسط على الأقل"],"quote":"يشترط Excel، وPython بمستوى متوسط على الأقل."}},"profile":{"skills":[{"name":"Python","level":"beginner"}]},"expected_status":"ineligible","expected_missing":[]},
+    {"id":"E27","record":"synthetic","overrides":{"mandatory_requirements":{"value":["يشترط إجادة إكسل بمستوى متوسط على الأقل"],"quote":"يشترط إجادة إكسل بمستوى متوسط على الأقل."}},"profile":{"skills":[{"name":"Excel","level":"intermediate"}]},"expected_status":"confirmed","expected_missing":[]},
+    {"id":"E28","record":"synthetic","overrides":{"required_skills":{"value":["Excel"],"quote":"المهارة المطلوبة Excel."}},"profile":{"skills":[{"name":"Excel","level":null}]},"expected_status":"confirmed","expected_missing":[]}
+  ],
+  "question_scenarios":[
+    {"id":"Q01","candidates":[{"case":"E06","id":"A","topic":"related","constraints":"constraints_satisfied"}],"expected_decision":"ask_user","expected_fields":["profile.skills"],"expected_candidate":"A"},
+    {"id":"Q02","candidates":[{"case":"E05","id":"A","topic":"related","constraints":"constraints_satisfied"},{"case":"E06","id":"B","topic":"related","constraints":"constraints_satisfied"}],"expected_decision":"eligible_candidates_available","expected_fields":[]},
+    {"id":"Q03","candidates":[{"case":"E06","id":"A","topic":"unrelated","constraints":"constraints_satisfied"}],"expected_decision":"no_viable_candidates","expected_fields":[]},
+    {"id":"Q04","candidates":[{"case":"E06","id":"A","topic":"related","constraints":"excluded"}],"expected_decision":"no_viable_candidates","expected_fields":[]},
+    {"id":"Q05","candidates":[{"case":"E07","id":"A","topic":"related","constraints":"constraints_satisfied"}],"expected_decision":"no_actionable_question","expected_fields":[]},
+    {"id":"Q06","candidates":[{"case":"E15","id":"A","topic":"related","constraints":"constraints_satisfied"}],"expected_decision":"no_actionable_question","expected_fields":[]},
+    {"id":"Q07","candidates":[{"case":"E01","id":"A","topic":"related","constraints":"constraints_satisfied"}],"expected_decision":"no_actionable_question","expected_fields":[]},
+    {"id":"Q08","candidates":[{"case":"E14","id":"A","topic":"related","constraints":"constraints_satisfied"},{"case":"E19","id":"B","topic":"related","constraints":"constraints_satisfied"}],"expected_decision":"ask_user","expected_fields":["profile.education_level"],"expected_candidate":"A"},
+    {"id":"Q09","candidates":[{"case":"E06","id":"A","topic":"related","constraints":"needs_source_info"}],"expected_decision":"no_viable_candidates","expected_fields":[]},
+    {"id":"Q10","candidates":[{"case":"E06","id":"A","topic":"insufficient_evidence","constraints":"constraints_satisfied"}],"expected_decision":"no_viable_candidates","expected_fields":[]}
+  ]
+}

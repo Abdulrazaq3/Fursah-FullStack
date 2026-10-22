@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-10-22T16:09:24.2579321+03:00",
+  "model": "google/gemini-3.8-flash",
+  "scope": "local_shadow_comparison_only",
+  "local_mode": "shadow",
+  "timeout_seconds": 15,
+  "reasoning_effort": "low",
+  "standalone_attempts": [
+    {
+      "status": "timeout",
+      "timeout_seconds": 5
+    },
+    {
+      "reasoning_effort": "provider_default",
+      "timeout_seconds": 15,
+      "comparison": "matches_reference",
+      "completion_tokens": 388,
+      "status": "api_verified",
+      "prompt_tokens": 898
+    }
+  ],
+  "first_browser_report": "results/openrouter-understanding-browser-check.json",
+  "final_browser_report": "results/openrouter-understanding-browser-v2-check.json",
+  "browser_checks_passed": 4,
+  "backend_tests_after_change": {
+    "passed": 164,
+    "result": "OK"
+  },
+  "recommendation_policy_changed": false,
+  "public_deployment_performed": false,
+  "files_sha256": {
+    "backend/app/infrastructure/openrouter_understanding.py": "04a9dfa689c15433eaa5ac2eaf98a8b0729b16edb091d2f34ff5ced6e7b19f6d",
+    "backend/app/understanding_shadow.py": "5f7a824ff38e4b086243ffb18999002e00ff76bbc211a4662345ec1d02a755b3",
+    "backend/tests/test_openrouter_understanding.py": "78eb128542ab725c78fd2af288096f156dce831d5ac3da6eabcce0aad54b3498",
+    "scripts/check-openrouter-understanding.py": "fe0c9d8bd82247ce3dad5125e82df241f16e76c475570b2119345a7906efe848"
+  }
+}

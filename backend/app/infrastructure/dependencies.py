@@ -41,6 +41,9 @@ class AppDependencies:
                 checks[name] = result is True
                 if result is not True:
                     details[name] = "Not ready: inspect the team's implementation and configuration."
+                    if name == 'application':
+                        details[name] = ("General discovery still needs full-corpus evaluation and "
+                                         "deployment validation before production approval.")
             except NotImplementedError:
                 checks[name] = False
                 details[name] = "Intentionally unfinished: implement this readiness hook."
@@ -73,7 +76,7 @@ def get_app_dependencies() -> AppDependencies:
     settings = get_settings()
     bridge = DatasetLoader(settings)
     tracer = Tracer(settings.trace_jsonl_path)
-    repository = OpportunityRepository(bridge)
+    repository = OpportunityRepository(bridge, settings)
     return AppDependencies(
         settings=settings,
         bridge=bridge,

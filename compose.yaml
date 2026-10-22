@@ -7,6 +7,7 @@ services:
     restart: unless-stopped
     environment:
       FURSAH_EVALUATION_TIME: ${FURSAH_EVALUATION_TIME:-}
+      FURSAH_DATABASE_URL: ${FURSAH_DATABASE_URL:-}
       FURSAH_ALLOWED_ORIGINS: ${FURSAH_ALLOWED_ORIGINS:-http://localhost:8080,http://127.0.0.1:8080}
     expose:
       - "8000"

@@ -1,0 +1,12 @@
+{
+  "opportunities": 913,
+  "sources": 1013,
+  "documents": 913,
+  "idempotent_publication": true,
+  "withdrawal_hides_one_record": true,
+  "rollback_restores_release": true,
+  "unknown_rollback_rejected": true,
+  "diagnostic_writes_rolled_back": true,
+  "checks_use_synthetic_vectors": true,
+  "semantic_quality_measured": false
+}

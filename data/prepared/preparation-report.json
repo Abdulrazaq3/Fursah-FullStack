@@ -1,0 +1,22 @@
+{
+  "reused_prepared_package": true,
+  "release_id": "catalog-89ca0f28ea4dd7224fb61a82",
+  "published": true,
+  "recorded_at": "2026-10-22T14:00:36.087288+00:00",
+  "input_announcements": 1000,
+  "prepared_source_observations": 1000,
+  "grouped_csv_opportunities": 900,
+  "extra_opportunities": 13,
+  "explicit_update_resolutions": 36,
+  "raw_csv_unchanged": true,
+  "raw_csv_sha256": "c70b623714f9356fc73c4cf7329360858d5977e7f5b218136ea46396b2927ae3",
+  "helper": "data/preparation_helpers.py:prepare_announcements",
+  "total_opportunities": 913,
+  "total_sources": 1013,
+  "active_opportunities": 913,
+  "raw_csv_sources": 1000,
+  "external_fetches": 0,
+  "embedding_model": "BAAI/bge-m3",
+  "embedding_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "vector_dimensions": 1024
+}

@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-19T18:03:54.192048+00:00",
+  "rule_version": "explicit-requirements-v1.3",
+  "rule_sha256": "d3365aaf8ab145eadbdaa18c2d4aa110ceac9eca78b68b8dbabf393e51230ee8",
+  "fresh_component_cases_passed": 6,
+  "previous_confirmation_cases_diagnostic_passed": 20,
+  "previous_32_cases_parser_and_review_diagnostic_passed": 32,
+  "prior_185_search_cases_never_promoted": true,
+  "source_and_freeze_integrity": true,
+  "raw_data_unchanged": true,
+  "local_document_links_checked": 234,
+  "backend_unit_tests_passed": 43,
+  "enabled_in_application": false,
+  "scope": "Final component audit; all prior cases are diagnostics. Zero new neural scores."
+}
