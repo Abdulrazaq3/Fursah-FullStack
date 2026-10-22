@@ -55,7 +55,7 @@
 
 ```powershell
 .\.venv\Scripts\python.exe backend/scripts/prepare-catalog.py --publish
-.\backend\run.ps1 -Port 8019
+.\backend\run.ps1 -Port 8000
 ```
 
 أمر `run.ps1` يختار Python الموجود في `.venv` تلقائيًا. للتشغيل المباشر من داخل مجلد `backend`، في CMD أو PowerShell:

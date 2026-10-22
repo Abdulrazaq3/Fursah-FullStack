@@ -45,11 +45,11 @@ The supplied setup scripts target **Windows PowerShell**, Python 3.11, Node.js 2
 From the repository root, use separate terminals:
 
 ```powershell
-.\backend\run.ps1 -Port 8019
+.\backend\run.ps1 -Port 8000
 npm --prefix frontend run dev
 ```
 
-In `frontend/.env`, set `FURSAH_DEV_API_TARGET=http://127.0.0.1:8019`. Open [the interface](http://127.0.0.1:5173) and [API documentation](http://127.0.0.1:8019/docs). The supplied Windows scripts have not been validated on macOS/Linux in this documentation update.
+In `frontend/.env.local`, set `FURSAH_DEV_API_TARGET=http://127.0.0.1:8000`. If you change the backend port, update this address and restart the frontend. Open [the interface](http://127.0.0.1:5173) and [API documentation](http://127.0.0.1:8000/docs). The supplied Windows scripts have not been validated on macOS/Linux in this documentation update.
 
 ## What evaluation taught us
 

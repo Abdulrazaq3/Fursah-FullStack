@@ -6,7 +6,7 @@ import time
 import httpx
 
 ROOT=Path(__file__).resolve().parents[2]
-BASE='http://127.0.0.1:8019'
+BASE='http://127.0.0.1:8000'
 
 
 def main():

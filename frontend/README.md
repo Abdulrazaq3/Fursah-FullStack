@@ -32,12 +32,14 @@ npm --prefix frontend ci
 npm --prefix frontend run dev
 ```
 
-Create `frontend/.env` from [.env.example](.env.example) if missing. For the backend started on port 8019, use:
+Create `frontend/.env.local` from [.env.example](.env.example) if missing. The backend uses port 8000 by default:
 
 ```dotenv
-FURSAH_DEV_API_TARGET=http://127.0.0.1:8019
+FURSAH_DEV_API_TARGET=http://127.0.0.1:8000
 VITE_API_BASE_URL=
 ```
+
+If you choose a different backend port, update `FURSAH_DEV_API_TARGET` to match and restart the frontend. An unreachable proxy target can appear in the browser as HTTP 500.
 
 Open [127.0.0.1:5173](http://127.0.0.1:5173). A blank `VITE_API_BASE_URL` uses Vite's local proxy; for a separately hosted API, set its origin without `/api`.
 

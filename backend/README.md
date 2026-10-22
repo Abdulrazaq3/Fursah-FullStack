@@ -55,7 +55,7 @@ Create `backend/.env` from [.env.example](.env.example) only if it is missing. S
 
 ```powershell
 .\.venv\Scripts\python.exe backend/scripts/prepare-catalog.py --publish
-.\backend\run.ps1 -Port 8019
+.\backend\run.ps1 -Port 8000
 ```
 
 The `run.ps1` script selects the project's `.venv` Python automatically. To run directly from **inside `backend/`**, in CMD or PowerShell:

@@ -45,11 +45,11 @@
 من جذر المستودع، شغّل كل أمر في طرفية منفصلة:
 
 ```powershell
-.\backend\run.ps1 -Port 8019
+.\backend\run.ps1 -Port 8000
 npm --prefix frontend run dev
 ```
 
-ضع `FURSAH_DEV_API_TARGET=http://127.0.0.1:8019` في `frontend/.env`. افتح [الواجهة](http://127.0.0.1:5173) و[توثيق API](http://127.0.0.1:8019/docs). لم نتحقق من تشغيل سكربتات Windows على macOS أو Linux ضمن تحديث التوثيق هذا.
+ضع `FURSAH_DEV_API_TARGET=http://127.0.0.1:8000` في `frontend/.env.local`. إذا غيّرت منفذ الخلفية، حدّث هذا العنوان وأعد تشغيل الواجهة. افتح [الواجهة](http://127.0.0.1:5173) و[توثيق API](http://127.0.0.1:8000/docs). لم نتحقق من تشغيل سكربتات Windows على macOS أو Linux ضمن تحديث التوثيق هذا.
 
 ## ماذا تعلمنا من التقييم؟
 

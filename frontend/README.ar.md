@@ -32,12 +32,14 @@ npm --prefix frontend ci
 npm --prefix frontend run dev
 ```
 
-أنشئ `frontend/.env` من [.env.example](.env.example) إذا لم يكن موجودًا. إذا شغّلت الخلفية على المنفذ 8019 فاستخدم:
+أنشئ `frontend/.env.local` من [.env.example](.env.example) إذا لم يكن موجودًا. تستخدم الخلفية المنفذ 8000 افتراضيًا:
 
 ```dotenv
-FURSAH_DEV_API_TARGET=http://127.0.0.1:8019
+FURSAH_DEV_API_TARGET=http://127.0.0.1:8000
 VITE_API_BASE_URL=
 ```
+
+إذا اخترت منفذًا آخر للخلفية، حدّث `FURSAH_DEV_API_TARGET` ليطابقه ثم أعد تشغيل الواجهة. قد يظهر تعذّر الاتصال بعنوان الخلفية على شكل HTTP 500 في المتصفح.
 
 افتح [127.0.0.1:5173](http://127.0.0.1:5173). ترك `VITE_API_BASE_URL` فارغًا يستخدم وسيط Vite المحلي؛ للخلفية المستضافة منفصلة ضع عنوان أصلها دون `/api`.
 
